@@ -1,3 +1,7 @@
 .ui-checkboxradio-radio-label.ui-checkboxradio-checked .ui-checkboxradio-icon {
   background: white;
 }
+
+.ui-menu {
+  width: 100px;
+}

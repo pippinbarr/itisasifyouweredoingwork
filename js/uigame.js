@@ -31,9 +31,12 @@ function setup() {
   addDate(dateField);
   fieldset.append(dateField);
 
-  theDialog = $('<div></div>');
-  theDialog.append(createDialog("Title","Message"));
-  fieldset.append(theDialog);
+  // theDialog = $('<div></div>');
+  // theDialog.append(createDialog("Title","Message"));
+  // fieldset.append(theDialog);
+
+  menu = createMenu(8,10,0.5);
+  fieldset.append(menu);
 
   accordionContent = [
     {
@@ -93,4 +96,19 @@ function createDialog(title,message) {
   var dialog = $('<div id="dialog" title="'+title+'"><p>'+message+'</p></div>');
   dialog.dialog();
   return dialog;
+}
+
+function createMenu(depth,maxItems,subMenuChance) {
+  if (depth == 0) return;
+  var menu = $('<ul></ul>');
+  var numItems = 1 + Math.floor(Math.random()*maxItems);
+  for (var i = 0; i < numItems; i++) {
+    var item = $('<li></li>');
+    item.append('<div>Item</div>');
+    if (Math.random() < subMenuChance) {
+      item.append(createMenu(depth-1,maxItems,subMenuChance));
+    }
+    menu.append(item);
+  }
+  return menu.menu();
 }
