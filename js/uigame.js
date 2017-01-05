@@ -10,16 +10,51 @@ function setup() {
   // button.button();
   // $('#ui').append(button);
 
-  radioField = $('<fieldset></fieldset>');
+  var fieldset = $('<fieldset></fieldset>');
+
+  radioField = $('<div></div>');
   addRadio(radioField, "Test", 1, "radiotest", "radio");
   addRadio(radioField, "Best", 2, "radiotest", "radio")
-  $('#ui').append(radioField);
+  fieldset.append(radioField);
 
-  checkField = $('<fieldset></fieldset>');
+  checkField = $('<div></div>');
   addRadio(checkField, "Test", 1, "checktest", "checkbox");
   addRadio(checkField, "Best", 2, "checktest", "checkbox")
-  $('#ui').append(checkField);
+  fieldset.append(checkField);
 
+  buttonField = $('<div></div>');
+  addButton(buttonField, "Test", 1, "button", "button");
+  addButton(buttonField, "Best", 2, "button", "button")
+  fieldset.append(buttonField);
+
+  dateField = $('<div></div>');
+  addDate(dateField);
+  fieldset.append(dateField);
+
+  theDialog = $('<div></div>');
+  theDialog.append(createDialog("Title","Message"));
+  fieldset.append(theDialog);
+
+  accordionContent = [
+    {
+      header: "Heading",
+      content: "Lorem ipsum dolitor est molitor and so on and so forth"
+    },
+    {
+      header: "Heading",
+      content: "Content"
+    },
+    {
+      header: "Heading",
+      content: "Content"
+    },
+  ]
+  accordionDiv = addAccordion(accordionContent);
+  accordionDiv.accordion();
+  fieldset.append(accordionDiv);
+
+  $('#ui').append(fieldset);
+  $('#ui').controlgroup();
 }
 
 function addRadio(field, text, number, name, type) {
@@ -31,18 +66,31 @@ function addRadio(field, text, number, name, type) {
   radio.checkboxradio({
     icon: true
   });
-return;
-  setTimeout(function () {
-    // Trying to work out how to style the dot in the radio button
-    // $('ui-widget').css('border-width','20px');
-    $('.ui-checkboxradio-label').css("border-width","2px")
-    $('.ui-checkboxradio-label').css("background-color","red")
-    $('.ui-checkboxradio-label').css("color","red")
-    // $('.ui-checkboxradio-label').css("margin-right","20px")
+}
 
-    $('.ui-checkboxradio-label.ui-state-active').css("margin-right","20px")
+function addAccordion(content) {
+  var accordionContent = $('<div></div>');
+  for (var i = 0; i < content.length; i++) {
+    accordionContent.append('<h3>' + content[i].header + '</h3>');
+    accordionContent.append('<div><p>' + content[i].content + '</p></div>');
+  }
+  return accordionContent;
+}
 
-    $('.ui-checkboxradio-icon').css("color","red")
-    $('.ui-checkboxradio-icon').css("background-color","red")
-  },10);
+function addButton(field, text, number, name, type) {
+  buttonId = type + number;
+  button = $('<button id="' + buttonId + '" name="' + buttonId + '">'+text+'</button>');
+  button.button();
+  field.append(button);
+}
+
+function addDate(field) {
+  date = $('<input type="text" id="date">').datepicker();
+  field.append(date);
+}
+
+function createDialog(title,message) {
+  var dialog = $('<div id="dialog" title="'+title+'"><p>'+message+'</p></div>');
+  dialog.dialog();
+  return dialog;
 }
