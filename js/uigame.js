@@ -2,73 +2,64 @@ $(document).ready(setup);
 
 function setup() {
 
-  var label = "Label";
 
-  $('body').css('background-color','#333');
+  $('body').css({
+    backgroundColor: '#333',
+    fontSize: '1.2em',
+  });
 
-  // button = $('<button id="button">' + label + '</button>');
-  // button.button();
-  // $('#ui').append(button);
+  $('#container').css({
+    height: $(window).height(),
+  });
 
-  var fieldset = $('<fieldset></fieldset>');
+  $('body').hide();
 
-  radioField = $('<div></div>');
-  addRadio(radioField, "Test", 1, "radiotest", "radio");
-  addRadio(radioField, "Best", 2, "radiotest", "radio")
-  fieldset.append(radioField);
-
-  checkField = $('<div></div>');
-  addRadio(checkField, "Test", 1, "checktest", "checkbox");
-  addRadio(checkField, "Best", 2, "checktest", "checkbox")
-  fieldset.append(checkField);
-
-  buttonField = $('<div></div>');
-  addButton(buttonField, "Test", 1, "button", "button");
-  addButton(buttonField, "Best", 2, "button", "button")
-  fieldset.append(buttonField);
-
-  dateField = $('<div></div>');
-  addDate(dateField);
-  fieldset.append(dateField);
-
-  // theDialog = $('<div></div>');
-  // theDialog.append(createDialog("Title","Message"));
-  // fieldset.append(theDialog);
-
-  menu = createMenu(8,10,0.5);
-  fieldset.append(menu);
-
-  accordionContent = [
-    {
-      header: "Heading",
-      content: "Lorem ipsum dolitor est molitor and so on and so forth"
-    },
-    {
-      header: "Heading",
-      content: "Content"
-    },
-    {
-      header: "Heading",
-      content: "Content"
-    },
-  ]
-  accordionDiv = addAccordion(accordionContent);
-  accordionDiv.accordion();
-  fieldset.append(accordionDiv);
-
-  $('#ui').append(fieldset);
-  $('#ui').controlgroup();
+  newLevel();
 }
 
-function addRadio(field, text, number, name, type) {
-  radioName = type + number;
-  label = $('<label for="' + radioName + '">' + text + '</label>')
-  radio = $('<input id="' + radioName + '" name="' + name + '" type="' + type + '">');
-  field.append(label);
-  field.append(radio);
-  radio.checkboxradio({
-    icon: true
+
+function newLevel() {
+
+  $('#ui').html('');
+  $('#instructionsText').html('');
+
+  var radioOptions = [generateLanguage(5,10),generateLanguage(5,10)];
+  var toSelect = Math.floor(Math.random() * radioOptions.length);
+
+  var radio = createRadio(radioOptions,'radio','radio');
+  $('#ui').append(radio);
+
+  var buttonLabel = generateLanguage(2,5);
+  var button = createButton(buttonLabel,'button','button');
+  button.css('float','right');
+  button.click(function () {
+    if ($('input[name=radio]:checked').prop('id').indexOf(toSelect) != -1) {
+      $('body').fadeOut(1000,levelDelay);
+    }
   });
+  $('#ui').append(button);
+
+  $('#instructionsText').text("Select " + radioOptions[toSelect] + " and then press " + buttonLabel);
+
+  $('body').fadeIn(1000);
+}
+
+function levelDelay() {
+  setTimeout(newLevel,1000);
+}
+
+function createRadio(options, name, type) {
+  var container = $('<div></div>');
+  for (var i = 0; i < options.length; i++) {
+    var label = $('<label for="' + name + i + '">' + options[i] + '</label>')
+    var radio = $('<input id="' + name + i + '" name="' + name + '" type="' + type + '">');
+    container.append(label);
+    container.append(radio);
+    radio.checkboxradio({
+      icon: true
+    });
+  }
+  return container;
 }
 
 function addAccordion(content) {
@@ -80,11 +71,13 @@ function addAccordion(content) {
   return accordionContent;
 }
 
-function addButton(field, text, number, name, type) {
-  buttonId = type + number;
+function createButton(text, name, type) {
+  var container = $('<div></div>');
+  buttonId = type;
   button = $('<button id="' + buttonId + '" name="' + buttonId + '">'+text+'</button>');
   button.button();
-  field.append(button);
+  container.append(button);
+  return container;
 }
 
 function addDate(field) {
@@ -111,4 +104,14 @@ function createMenu(depth,maxItems,subMenuChance) {
     menu.append(item);
   }
   return menu.menu();
+}
+
+function generateLanguage(min,max) {
+  var length = min + (Math.floor(Math.random() * (max - min)));
+  var chars = "█▉▊▋▌▍▎▕▖▗▘▙▚▛▜▝▞▟▔▀▁▂▃▄▅▆▇ ";
+  var text = '';
+  for (var i = 0; i < length; i++) {
+    text += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return text;
 }

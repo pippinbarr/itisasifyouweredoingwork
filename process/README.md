@@ -15,6 +15,38 @@ Add all jQuery UI widgets to a test page to use them and understand/fix styling,
 * Tabs
 * ?Tooltip
 
+## Return of the man, 2017-03-27 14:08
+
+I'm back in the directory containing this game thinking about whatever it is I'm meant to be thinking about when I'm meant to be working on this game. Since the last time I actually though about this I started and finished SNAKISMS, v r 3, and Let's Play: Ancient Greek Punishment: CPU Edition! So it's kind of been a while.
+
+The game still seems like a good idea, but re-reading my notes I feel like I'm still a bit lost in terms of what it actually is, what the idea is, and as usual I think the probably solution to this is to come up with the simplest possible version of what's potentially interesting about the project.
+
+To the extent this is a kind of sequel to *It is as if you were playing chess* then really the message is: clicking on user interface elements is a game. You get told what to do and you do it. 'Select the first checkbox and press ok' kind of tasks. Or possibly even the freedom to set the elements as you wish. Maybe there's always an OKAY button. Maybe there's always a quit option. Maybe there are points that are 'work units'?
+
+But the simplest thing is: one ui element, one action, one set of points, and move on to the next. In some ways there's a purity to that that could conceivably be better than the idea of complicating it with multi-element layouts? But the multi-element layouts do have a kind of appeal.
+
+There's a question of language - interfaces have texts. Could just use emoji or 'censored' unicode block elements.
+
+█▉▊▋▌▍▎▕▖▗▘▙▚▛▜▝▞▟▔▀▁▂▃▄▅▆▇░▒▓
+
+Totally plausible to generate an imagined 'language' out of these elements. Could even be referred to in the instructions? 30 elements there already... if you remove the shaded blocks you get something kind of nice? Like
+
+"▕▔▙▞▚▃▙█▄▜▍▘▁▀▚▕▁▜▜▅▊▝▁▟▖▜▆▁▀▀▛▕▊▃▊▖▂▊▘▌▁▀▊▅▄▘▂▌▃▍▃█▞▊█▞▊▅▀▍▄▋▎▜▘▚▆▅▃▉▚▎▋▙▛▄▄▃█▌▞▃▕▊▀▉▂▋▄▞ ▔▅▁▋▄▜▄▋▎"
+
+That's a 50 character phrase including spaces. I kind of like that as a possibility?
+
+Maybe the language of the game could be this language and thus you can get things right or wrong? Or is that a distraction really from the notion of 'doing work'? It's perhaps a little overly rhetorical. But still plausible to label elements with this 'language' and have instructions be in english - e.g. 'type 140 characters into the text box and press '▃█▞'... though looking at it maybe even the alie... no maybe that will work. I have to mock it up. Fuck.
+
+Okay so here's the minimal case:
+
+Each 'level' is a single element (or as much of an element as one needs for it to make sense - e.g. multiple radio buttons), an instruction (e.g. select '▃█▞' and press '█▃█'), and that's it. You get a work unit each time. Or possibly you don't get a work unit? And there's the question of getting it 'wrong' and whether that's desirable. HMHMHMHMHMHMHM shit. Why is this confusing me so much?
+
+WWwwwweeelllll at the very least let's make the 'single element version' and we can score/no score abstract/no abstract based on that. OH KAY?
+
+...
+
+Alright well I create the barest minimum thing - two radio buttons and a button. It looks very daunting. Next thing is I guess to generate some text with instructions. Which may make it look a little less hideously daunting in terms of what it is.
+
 ## Tuesday, 27 December 2016 11:17
 Candidate naming:
 
