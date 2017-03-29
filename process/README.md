@@ -15,6 +15,16 @@ Add all jQuery UI widgets to a test page to use them and understand/fix styling,
 * Tabs
 * ?Tooltip
 
+## 2017-03-28 14:35
+
+Discussion with DART 450:
+
+* Maybe animate the language to pull away from it feeling like a human language (still a question of whether this would actually pull away or just seem like a more exciting language to try to decipher? The problem there is that it still 'is a language' in the sense that it's still characters that consistently mean, at least, 'this thing' and 'that thing' - they can be distinguished from one another and selected between...)
+* What about the idea of labelling them just with the generic titles of what they are - e.d. 'Radio 1' and 'Radio 2' and 'Button' - the sadness about that is that it ends up missing out on the cool language thing..
+* Connecting it to Facebook or another source of data so that you don't determine the content yourself, but rather it serves as a kind of 're-interfacing' of a pre-existing set of data.
+* The way that the characters are varied and horizontal makes them look like traditional written human languages - could there be a way around that? If they were of uniform height would that help? If they were just variable length censored blocks? (That doesn't really get around it.)
+* ... HMMM.
+
 ## Return of the man, 2017-03-27 14:08
 
 I'm back in the directory containing this game thinking about whatever it is I'm meant to be thinking about when I'm meant to be working on this game. Since the last time I actually though about this I started and finished SNAKISMS, v r 3, and Let's Play: Ancient Greek Punishment: CPU Edition! So it's kind of been a while.

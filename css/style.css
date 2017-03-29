@@ -3,24 +3,31 @@
 }
 
 .ui-menu {
-  /*width: 100px;*/
+  /*width: 50%;*/
+}
+
+#wrapper {
+  margin: 0;
 }
 
 #container {
   /*position: relative;*/
   /*height: 100%;*/
   /*width: 100%;*/
+  user-select: none;
+  word-wrap: break-word;
 }
 
 #ui {
   position: absolute;
+  width: 30%;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
 
 #ui div {
-  padding-top: 2%;
+  /*padding-top: 5%;*/
 }
 
 #instructions {
@@ -33,4 +40,5 @@
   font-size: 1.2em;
   font-weight: lighter;
   color: #fff;
+  user-select: none;
 }
