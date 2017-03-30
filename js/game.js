@@ -9,7 +9,6 @@ var correctButtonLabel;
 
 function setup() {
 
-
   $('body').css({
     backgroundColor: '#333',
     fontSize: '1.2em',
@@ -27,21 +26,12 @@ function setup() {
 
 function newLevel() {
 
+  console.log("New level.");
   $('#ui').html('');
 
-  // $('#ui').append(createRadio(5));
-  $('#ui').append(createAccordion(5));
+  createRadio(5);
+  // createAccordion(5);
   // createDialog();
-
-  // var button = createButton();
-  // button.click(function () {
-  //   // if ($('input[name=radio]:checked').hasClass('correct')) {
-  //   if ($('.ui-state-active').hasClass('correct')) {
-  //     $('body').fadeOut(1000,levelDelay);
-  //   }
-  // });
-  // $('#ui').append(button);
-
 
   $('#wrapper').fadeIn(FADE_TIME);
 }
@@ -51,7 +41,7 @@ function levelDelay() {
 }
 
 function createRadio(numOptions) {
-  var container = $('<div></div>');
+  var radioGroup = $('<div></div>');
   var correct = _.random(0,numOptions-1);
 
   var name = 'radio';
@@ -63,16 +53,27 @@ function createRadio(numOptions) {
     var radio = $('<input id="' + name + i + '" name="' + name + '" type="' + type + '">');
     if (i == correct) {
       label.addClass('correct');
-      correctSelectText = text;
+      correctSelectionText = text;
     }
-    container.append(label);
-    container.append(radio);
+    radioGroup.append(label);
+    radioGroup.append(radio);
     radio.checkboxradio({
       icon: true
     });
   }
 
-  return container;
+  var button = createButton();
+  button.click(function () {
+    // if ($('input[name=radio]:checked').hasClass('correct')) {
+    if ($('.ui-state-active').hasClass('correct')) {
+      $('#wrapper').fadeOut(FADE_TIME,levelDelay);
+    }
+  });
+
+  $('#ui').append(radioGroup);
+  $('#ui').append(button);
+
+  $('#instructionsText').text("Select " + correctSelectionText + " and press " + correctButtonLabel);
 }
 
 
