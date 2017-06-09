@@ -1,3 +1,28 @@
+## Actual To Dos, None of This Tentative Bullshit
+
+* Add other jQuery UI widgets into dialog boxes and display them
+  - ~~Radio buttons~~
+  - ~~Checkboxes~~
+  - ~~Date picker~~
+  - ~~**NOT ACTUALLY NEEDED** Multiple buttons~~
+  - ~~**PART DONE** Spinner~~
+  - ~~Slider~~
+  - ~~Progress bar~~
+  - ~~Select menu~~
+  * ~~**BUT NOTE NO MULTI-SELECT WHICH I THINK IS FINE** Think through integrating icon selection and dragging~~
+
+* Add dropdown menu to top of the screen if that's plausible (at least like File Edit Something)
+* Work out a language for generating and specifying and testing tasks
+* Add ability for dialog to specify its task
+* Research possibilities for business-speak in dialog tasks
+
+* Repair CSS for niggles
+  - Colour of radio button (want black on white eventually, no fucking idea why it ought to be hard though)
+  - ~~**DID IT** Consider whether need more windows-y drop shadow on the buttons?~~
+  - ~~Remove focus outline of focused elements (too usable)~~
+
+* ~~Integrate new Win95esque CSS~~
+
 ## To dos?
 
 Add all jQuery UI widgets to a test page to use them and understand/fix styling, don’t worry too much about brokenness for this round
@@ -12,8 +37,31 @@ Add all jQuery UI widgets to a test page to use them and understand/fix styling,
 * Select menu
 * Slider
 * Spinner
-* Tabs
-* ?Tooltip
+
+
+
+## 2017-05-31 09:52
+
+Just made a Windows-esque version of the UI in response to a key issue I thought about while in NZ, which is that the actual aesthetic approach I was using before (specifically the very minimalist graphical style and the 'alien language') were heavily influencing how I was able to think about the project. And most notably they were hugely detracting from being able to think of it in a humorous or comical way, which was in turn kind of killing the emotional tone and making it hard to work. And not just that, but because it was looking quite mysterious and stylish, it was pulling away from the original idea of a person pretending to work - it didn't look like work so much as the controls for an alien starship or something. Which is itself work, but in a different kind of 'narrative context' or something.
+
+By mimicking an old-school GUI / WIMP thing, it feels much lighter and I think that's a better approach for letting the experience come out.
+
+The other thing I'm thinking about just this instant is the question of how 'gameplay' should flow...
+
+Well, see the ol' notebook for more thoughts on this because I did a bunch of notebookery at Le Melbourne to try to figure out What's Going On with the game. And came to a number of pretty satisfactory conclusions I think. But the basic conclusions were:
+
+- **Gameplay** will revolve around either an increasing number of dialog boxes/UI elements on the screen (Desktop version) or sequential presentation of the dialogs/elements (Mobile version).
+- **Content** in the dialogs will be based on instructions for how to complete the dialog alongside business-y wording and phrases generated through Tracery.
+- **Interactions** will leverage all the jQuery UI possibilities such as progress bar, button, slider, date picker, menu, checkbox, radiobutton, text field, big text field, spinner, (data entry), (dragging icons and windows), (selecting and dragging subsets of icons). It will be possible to get an interaction wrong or write (number of characters, correct selection, etc.)
+- **Feedback** will focus on points gained for correct performance, along with promotions, demotions, getting fired.
+- **Platform** will focus on desktop for now and then I'll look at a mobile version after getting desktop largely working. (There could be some mobile specific interactions like swiping, pinching, etc.)
+
+Key next steps:
+
+- Making sure can get all interactions working
+- Mocking up how it ends up looking and making sure it feels fun
+- Working out how to do a Tracery grammar in this context
+
 
 ## 2017-03-28 14:35
 

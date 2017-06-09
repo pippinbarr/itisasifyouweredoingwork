@@ -1,44 +1,117 @@
-.ui-checkboxradio-radio-label.ui-checkboxradio-checked .ui-checkboxradio-icon {
-  background: white;
+
+body {
+  background-color: #aaa;
+  user-select: none;
+  word-wrap: break-word;
 }
 
-.ui-menu {
-  /*width: 50%;*/
+:focus {
+  outline: none;
 }
 
 #wrapper {
   margin: 0;
 }
 
-#container {
-  /*position: relative;*/
-  /*height: 100%;*/
-  /*width: 100%;*/
-  user-select: none;
-  word-wrap: break-word;
+
+
+
+
+/* DIALOGS
+----------------------------------*/
+
+/* Removing divider between message and buttons */
+.ui-dialog .ui-dialog-buttonpane {
+	border-width: 0px 0 0 0;
 }
 
-#ui {
-  position: absolute;
-  width: 30%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+/* RADIOS
+----------------------------------*/
+
+.ui-checkboxradio-label .ui-icon-background {
+	box-shadow: none;
 }
 
-#ui div {
-  /*padding-top: 5%;*/
+.ui-button.ui-checkboxradio-label {
+  border: 0px;
 }
 
-#instructions {
-  position: fixed;
-  bottom: 0;
-  padding-bottom: 40px;
-  width: 100%;
-  text-align: center;
-  font-family: sans-serif;
-  font-size: 1.2em;
-  font-weight: lighter;
-  color: #fff;
-  user-select: none;
+.ui-checkboxradio-label .ui-checkboxradio-icon {
+  background-color: white;
 }
+.ui-checkboxradio-label.ui-checkboxradio-checked .ui-checkboxradio-icon {
+  background-color: white;
+}
+
+
+
+/* BUTTONS
+----------------------------------*/
+
+/* Adjusting borders to make it more 3D old school */
+
+button.ui-button,
+html button.ui-button.ui-state-disabled:hover,
+html button.ui-button.ui-state-disabled:active {
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+
+	background: #ccc;
+	font-weight: normal;
+	color: #222;
+}
+
+a.ui-button,
+a:link.ui-button,
+a:visited.ui-button,
+button.ui-button {
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+
+	text-decoration: none;
+}
+
+button.ui-button:hover,
+button.ui-button:focus {
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+
+	background: #ccc;
+	font-weight: normal;
+	color: #222;
+}
+
+a.ui-button:hover,
+a.ui-button:focus {
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  border-right: 2px solid #000;
+  border-bottom: 2px solid #000;
+
+	color: #222;
+	text-decoration: none;
+}
+
+a.ui-button:active,
+button.ui-button:active,
+button.ui-button.ui-state-active:hover {
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+
+	background: #eee;
+	font-weight: normal;
+	color: #000;
+}
+
+
+
+/* ICONS
+----------------------------------*/
