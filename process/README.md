@@ -1,5 +1,7 @@
 ## Actual To Dos, None of This Tentative Bullshit
 
+* Test multiple UI elements in a single dialog in list form
+
 * Add other jQuery UI widgets into dialog boxes and display them
   - ~~Radio buttons~~
   - ~~Checkboxes~~
@@ -23,22 +25,65 @@
 
 * ~~Integrate new Win95esque CSS~~
 
-## To dos?
+## Technical plan? (2017-06-09 11:02)
 
-Add all jQuery UI widgets to a test page to use them and understand/fix styling, don’t worry too much about brokenness for this round
+Time to think about about the overall structure of the game (though much of that is taken care of below), and the strategy for actually implementing it specifically, so that I can move forward and eventually get this thing done.
 
-* Radio
-* Checkbox
-* Button
-* Date
-* Menu
-* Accordion
-* Progress
-* Select menu
-* Slider
-* Spinner
+So as we know, the rough idea of the game in standard browser at this point is a kind of desktop simulator with a menu bar at the top, some icons to drag around, and many dialog boxes popping up all the time.
 
+_Question:_ Do we actually want the top level menu and the icon dragging? One advantage is that they create two more layer of interaction and things like the icon dragging can then be obfuscated by the dialogs on the screen, which is a potential positive. Further it might be possible/interesting to allow the user non-game actions like opening an image file, say, or even a folder if I could be bothered (probably not although I guess a folder is just a dialog with no buttons and some number of 'files' inside it? Whoa.).
 
+_Answer:_ I think a key thing here is probably to build the game _without_ the top menu and icon dragging in favour of only dealing with the dialogs popping up and their various requirements. Then depending on enthusiasm I could add in the other stuff too.
+
+_Question:_ How will points/success be indicated?
+
+_Answer:_ Possibly your salary should be listed somewhere on the screen - probably at the top in a menu-bar style space. "Current position: Intern   Salary: $0.00". As salary goes up per dialog handled, your position goes up too (and is announced via another dialog box).
+
+_Question:_ How do we determine what the user has to do for any given dialog box (it will depend on the element represented), and how do we track whether or not they have done it?
+
+_Answer:_ In terms of tracking...
+
+- each dialog should track requirements and success itself
+- update salary based on the result
+- A larger handler can then update
+  - the salary,
+  - position,
+  - issue warnings (when incorrect),
+  - issue promotion notifications, etc.
+
+_Answer:_ In terms of determining what needs to be done in a given dialog, that's more complex. It seems like it can be generated _with_ the dialog, given only the dialog needs to track it (unless we created interdependencies, like only click OK when there are three dialogs on the screen, for example!, some of these would be checkable without creating too much drama). Will need to determine the kinds of parameters that influence correctness, here's a first attempt:
+
+- Clicking the right button (close, one of the button pane buttons)
+- With the right thing selected (radio, checkbox(es), date, spinner, select menu(s), slider)
+  - Possibly with multiple elements (though layout becomes a significant issue? Need to test)
+- At the right time (e.g. progress bar, timer running down)
+- In the right position (e.g. top left)
+- With the right number of other dialogs open (e.g. 3)
+
+_Answer:_ The 'correct action' itself could be obfuscated in language and time and even visually
+
+- Wait for a progress bar to complete before the instructions come up on the screen
+- "Pick the second item from the bottom", "Pick the second option with an 'a' in the third position", ...
+- Blink text, fades, shakes, ...
+
+_Answer:_ In terms of generating a _specific_ requirement for a dialog, that requires an amount of task generation (e.g. radiobuttons+3rd correct+click cancel when done, progressbar+click OK when done, ...) so need a kind of taxonomy of what makes a dialog correct, and what makes subelements correct - and that taxonomy needs to be combined but also needs to translate both into human-readable task text and into code generating the dialog that behaves that way. Each element probably needs a label so that it can be referred to in the text. ('any' and 'none' should be potential options for some of the things... like 'don't select a date, then press OK'). Could conceivably use Tracery to generate a grammar that represents these things as sets of symbols, and then have some engine that translates from the symbols to instructions? This could get really complex... but any approach will be?
+
+- [slider:10] would mean "set the slider to 10"
+- [close:x] would mean "close with the x button"
+- [checkbox:one,two] would mean "select one and two in the checkboxes"
+- [datepicker:17/04/2017] would mean "select that date in the datepicker"
+
+So it's certainly possible to have a little language thing that generates a specific outcome for a specific UI element. The dialog box itself is a separate case that is used to check the requirements on close (e.g. closed with the right button, at the right time, in the right place, with the right sub-conditions)
+
+Then there's the extra question of whether you want more complex presentation language that just "select options one and two for the curry checkbox". One thing is just to hide this stuff in a language text so it's less obvious.
+
+_Question:_ How hard is this meant to be? Is the idea to just be continuously effective and to appear to be working, or is it meant to be like a game with challenges? The former is more in the spirit of Bejewel and Candy Crush, the later more in the spirit of an actual game.
+
+_Answer:_ The former kind of makes more sense? In which case we'd be talking about _not_ overcomplicating the instructions and tasks. Steps in the dialog box could literally just be a list of instructions... "1. Select 'hair'", 2. Click 'close'. It's simpler and probably gets the point across.
+
+Pitched it to Rilla and she agrees. So the language translation problem becomes a lot simpler: you just generate the requirements per step in the dialog box and then literally state them to the player. Okay. In this context it's p... well I was going to say it would make sense to have the desktop stuff too, but perhaps not. Nor the menu at the top. Just dialogs. Or at least, get it working and see how successful it is. And for now not even time pressure (beyond the time pressure of the quantity of dialogs).
+
+_Okay:_ Looks like we're ready to move forward.
 
 ## 2017-05-31 09:52
 
