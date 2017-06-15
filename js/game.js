@@ -1,3 +1,6 @@
+var score;
+var scoreDiv;
+
 
 $(document).ready(setup);
 
@@ -8,18 +11,40 @@ var correctSelectionText;
 var correctButtonLabel;
 
 function setup() {
-  newLevel();
+
+  $('body').css({
+    margin: 0
+  })
+
+  loadSounds();
+  createMenuBar();
+
+  // createInspirationalDialog();
+  // createWorkDialog();
+  createDesktopDialog();
+  // createLoginDialog();
+
+
+}
+
+function startGame () {
+
+  startupSFX.play();
+
+  setTimeout(newDialog,1000);
+
+  // createWorkDialog();
+
 }
 
 
-function newLevel() {
+function newDialog () {
+  if (_.random(0,1)) {
+    createInspirationalDialog();
+  }
+  else {
+    createWorkDialog();
+  }
 
-  console.log("New level.");
-  $('#ui').html('');
-
-  var dialog = createDialog(1);
-}
-
-function levelDelay() {
-  setTimeout(newLevel,DELAY_TIME);
+  setTimeout(newDialog,_.random(1000,5000));
 }

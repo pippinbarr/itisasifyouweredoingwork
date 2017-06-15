@@ -1,29 +1,128 @@
+
 ## Actual To Dos, None of This Tentative Bullshit
 
-* Test multiple UI elements in a single dialog in list form
+* Music (ideally written by an AI/procedure) plays (WolframTones? Something else?)
+* Add position/rank ui + username
+* Add success, failure, warnings, promotions, demotions, bonuses, as dialogs...
+* Add break time
+  * "Time for a break" modal dialog that makes you play Breakout for 20 seconds or so
+  * Consider desktop icons to allow changing music, image, maybe to play breakout? (Maybe breakout is only available when you're on a break - all the dialogs vanish... is that better than modal... probably is...)
+* During the break we should shift to soothing music (maybe cut to no music on announcement of break)
+* Make system re-ask for password sometimes ha ha...
+* Use username somewhere(s)
 
-* Add other jQuery UI widgets into dialog boxes and display them
+### Later on
+* Add more SFX
+* Add more desktop images
+
+---
+
+* ~~Add dialog for setting desktop image~~
+* ~~**NOT QUITE HAPPY WITH SUCCESS** Add SFX for current things (success, fail, log in, new dialog)~~
+* ~~Add random positivity messages to inspirational popups~~
+* ~~Display slider current value on update (probably in text of label)~~
+* ~~**FOR NOW THERE'S ONE PER DIALOG** Avoid situations where dialog could be too big for the screen (avoid datepicker, or just always have single instructions? <-- probably reasonable)~~
+* ~~**WITH COMPROMISE OF overflow: hidden THIS IS OKAY** Randomly position dialogs (and remember the nightmares of You Are Not Here.)~~
+* ~~Random dialogs with inspirational work images (stock) pop up~~
+* ~~Only show desktop on successful login~~
+* ~~Random typical desktop image (maybe let user select on login?)~~
+* ~~Login screen on start (username and password, use username in UI and occasionally ask them to reenter their password)~~
+* ~~Repair CSS for niggles~~
+  - ~~**DOESN'T SEEM TO BE HAPPENING FOR NOW** Refix the highlighting of focused elements~~
+  - ~~**FOR NOW I'M AT PEACE WITH THE NON-JQUERY CHECKBOXES** Colour of radio button (want black on white eventually, no fucking idea why it ought to be hard though)~~
+  - ~~**DID IT** Consider whether need more windows-y drop shadow on the buttons?~~
+  - ~~Remove focus outline of focused elements (too usable)~~
+* ~~Shake the dialog box when it's incorrect~~
+* ~~Implement 'check at the end' version of validation for each type~~
+* ~~Add ability for dialog to specify and evaluate its task~~
+* ~~**NOW SEEMS TO ME IT SHOULD BE LITERAL UI LANGUAGE** Research possibilities for business-speak in dialog tasks~~
+* ~~**NOT DOING THIS** Add dropdown menu to top of the screen if that's plausible (at least like File Edit Something)~~
+* ~~**DECOMPLICATED THIS OUT** Work out a language for generating and specifying and testing tasks~~
+* ~~**BASICALLY WORKS** Test multiple UI elements in a single dialog in list form~~
+* ~~Add other jQuery UI widgets into dialog boxes and display them~~
   - ~~Radio buttons~~
   - ~~Checkboxes~~
   - ~~Date picker~~
   - ~~**NOT ACTUALLY NEEDED** Multiple buttons~~
   - ~~**PART DONE** Spinner~~
+  - ~~**ALL DONE** Spinner~~
   - ~~Slider~~
   - ~~Progress bar~~
   - ~~Select menu~~
   * ~~**BUT NOTE NO MULTI-SELECT WHICH I THINK IS FINE** Think through integrating icon selection and dragging~~
+  * ~~Integrate new Win95esque CSS~~
 
-* Add dropdown menu to top of the screen if that's plausible (at least like File Edit Something)
-* Work out a language for generating and specifying and testing tasks
-* Add ability for dialog to specify its task
-* Research possibilities for business-speak in dialog tasks
 
-* Repair CSS for niggles
-  - Colour of radio button (want black on white eventually, no fucking idea why it ought to be hard though)
-  - ~~**DID IT** Consider whether need more windows-y drop shadow on the buttons?~~
-  - ~~Remove focus outline of focused elements (too usable)~~
+## The bigger picture (2017-06-13 11:22)
 
-* ~~Integrate new Win95esque CSS~~
+Oh my god can I just tell you that I finally disabled autocomplete inside markdown and text files and it is just such a goddamn relief.
+
+Anyway, I had a conversation with Rilla last night about the meta-interface/narrative/aesthetic of this game and she felt like the background needed more life than it currently has. Her thought was to make it look something like my.concordia for example, with a bunch of links to subsections and sub-applications, none of which would actually be functional.
+
+My reaction to that is/was that it's probably true it needs 'something more' than just the stream of dialogs, but that I'm concerned if I have totally non-functional stuff in the back it conflicts with that message of calm and competent work that the game sort of meant to be providing to the player. So with that in mind who/what is that player story in this:
+
+... 2017-06-13 19:47 ...
+
+Later on I actually get around to this (also after a conversation with Jonathan over lunch). So, the player:
+
+_Is a person who lives in the near future of fully automated work and a living wage. They have no obligations day to day, but they remember the concept of working and the idea that having a job and doing work (on a computer) gave them value in society. They want to continue to have that feeling, but there's nothing for them to actually do, so this game "It is as if you were doing work" exists to allow them to have that feeling - the semblance of doing work without the actual productivity._
+
+In my discussion with Jonathan about the issue of the background element and the meta-interface a couple of ideas came up:
+
+* Desktop background (potentially this could be customisable, but otherwise could be a random choice of some image that makes it seem personal - a picture of a cat, a random creative commons happy child, some hills, etc. - maybe you could choose the genre). Maybe the image could be of something business-y like a graph of a thing going up, for example.
+* No listed salary (after all you wouldn't actually be making money), just your current position as an indicator of status
+
+A question arises particularly without salary of how you indicate each individual success (and whether you actually should, given that it's meant to look like work... maybe it should be blank... though I think the shaking box is good for indicating failure.) Should a separate dialog box come up for every completed dialog box with a little assessment like "Good job!" and you click Okay to dismiss that one? Quite funny to have yet more dialog boxes reporting on your success with the dialog boxes...
+
+* Random pop-ups of inspiring work oriented images (all that stock photography stuff of people working happily!!!!! fuck yes. That'll really help.)
+* Random pop-ups of inspiring work quotes? Or even Markov-chain generated ones?
+
+Hehehehe.
+
+* And perhaps either procedural or other computer-generated music in the background
+
+## More actual thoughts (2017-06-12 11:40)
+
+I've now implemented the evaluation mode where the correctness of a dialog box is decided by the accumulation of all possible steps (including clicking the right button to dismiss it). (Actually I haven't quite got the final final decision, but I might as well have, it's easy enough.)
+
+So we now have a thing where it can populate a dialog box with random UI elements (eight different types) and instructions on how to complete the dialog box and the dialog box can tell if you've correctly handled the instruction. It would also be able to tell, if you wanted it to, how you were incorrect (and there's a possibility for Tracery-generated warnings/advisories based on what you messed up).
+
+The next step is the outer structure of generating dialog boxes over time and reflecting your successes/failures in terms of your annual salary and position, promotions/demotions as they occur, possibly bonuses (rather than incremental salary upgrades?), and perhaps warnings and advice offered based on screw-ups. And then also including things like sound and plausibly visual effects like shake on failure so that you know you didn't complete a dialog box properly...
+
+... quickly went away and implemented the shake which I think is nice.
+
+So there's a bunch of larger stuff to do basically. But the basic underpinnings of the project now actually work.
+
+
+## Today's actual thoughts (2017-06-11 13:05)
+
+Yesterday's thoughts were perhaps a little underwhelming. But okay here we are, what do we have now?
+
+- Ability to display different UI elements (spinner, selection menu, etc.)
+- Inside a dialog box
+- Potentially with multiple steps within a single dialog box
+
+Next up we need
+
+- The ability to actually assign correct behaviours and to assess them on dialog close (OR actually I guess potentially they could be assigned points per correct action, might be funner and more action)
+- Later on perhaps somewhat more complex versions of this (notably time-related? Like if you need to wait for a progress bar.) Not necessarily though. May again be better to keep it simple simple simple.
+- Do you fail a dialog box by closing it with the correct button but without having completed the prior steps? No.
+
+So basically I need to work out how to make correct decisions (each element can know itself) and how to indicate that.
+
+---
+
+Later that day.
+
+I've implemented a bunch of stuff to be able to generate correct answers to elements and generally to be able to check them as you change them, but in fact as I get to things like date pickers and sliders it's becoming a bit more obvious that one should really only check the result after the final click of the button, which requires a different structure.
+
+Basically I'll need to collect up all the elements in a single dialog and then check if they're all satisfied on the button click.
+
+
+## Today's thoughts (2017-06-10 12:24)
+
+One, two, three.
+
 
 ## Technical plan? (2017-06-09 11:02)
 
