@@ -21,7 +21,8 @@ function setup() {
 
   // createInspirationalDialog();
   // createWorkDialog();
-  createDesktopDialog();
+  // createDesktopDialog();
+  createMusicDialog();
   // createLoginDialog();
 
 

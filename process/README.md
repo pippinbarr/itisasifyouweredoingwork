@@ -1,8 +1,7 @@
 
 ## Actual To Dos, None of This Tentative Bullshit
 
-* Music (ideally written by an AI/procedure) plays (WolframTones? Something else?)
-* Add position/rank ui + username
+
 * Add success, failure, warnings, promotions, demotions, bonuses, as dialogs...
 * Add break time
   * "Time for a break" modal dialog that makes you play Breakout for 20 seconds or so
@@ -13,10 +12,13 @@
 
 ### Later on
 * Add more SFX
-* Add more desktop images
+* Add more desktop images (or maybe just the four, but nail the tone - the work one is amazing)
 
 ---
 
+* ~~Create music selection and volume dialog~~
+* ~~Music (ideally written by an AI/procedure) plays (WolframTones? Something else?)~~
+* ~~Add position/rank ui + username~~
 * ~~Add dialog for setting desktop image~~
 * ~~**NOT QUITE HAPPY WITH SUCCESS** Add SFX for current things (success, fail, log in, new dialog)~~
 * ~~Add random positivity messages to inspirational popups~~
@@ -51,6 +53,17 @@
   - ~~Select menu~~
   * ~~**BUT NOTE NO MULTI-SELECT WHICH I THINK IS FINE** Think through integrating icon selection and dragging~~
   * ~~Integrate new Win95esque CSS~~
+
+
+## Thursday Thoughts (2017-06-15 11:02)
+
+I'm at a point with the game suddenly where it's looking more and more like a real thing and the code is, simultaneously, becoming more and more unmanageable and gross.
+
+Now have the ability (if not entire implementation) to do a basic sequence of login, desktop comes up, work/inspirational dialogs come up repeatedly.
+
+Big remaining tasks are: implementing breaks (including a little version of breakout I guess in phaser that will target a div inside a dialog box? That might be a little hairy but I think is technically possible), implementing the actual stream of work and timing for breaks, icons for changing the desktop picture and playing breakout, music, the language and ui consequences of evaluation. HMMM.
+
+So those are some pretty big things. The most intimidating is the evaluation stuff I suppose.
 
 
 ## The bigger picture (2017-06-13 11:22)

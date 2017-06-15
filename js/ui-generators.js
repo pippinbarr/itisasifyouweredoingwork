@@ -19,12 +19,18 @@ var newDialogSFX;
 var dialogSuccessSFX;
 var dialogFailureSFX;
 
+var music;
+
 
 function loadSounds () {
   startupSFX = new Audio('assets/sounds/startup.wav');
   newDialogSFX = new Audio('assets/sounds/dialog_new.wav');
   dialogSuccessSFX = new Audio('assets/sounds/dialog_success.wav');
   dialogFailureSFX = new Audio('assets/sounds/dialog_failure.wav');
+
+  music = new Audio();
+  music.loop = true;
+  music.volume = 0.5;
 }
 
 function createMenuBar () {
@@ -34,14 +40,21 @@ function createMenuBar () {
     width: '100%',
     backgroundColor: 'white',
     borderBottom: '2px solid grey',
-    fontFamily: "sans-serif"
+    fontFamily: "sans-serif",
+    lineHeight: "30px",
   });
 
   var menubarUsername = $('<span id="menubar-username">Pippin</span>');
   menubarUsername.css({
-    float: 'right'
+    float: 'right',
+    marginRight: 20,
+    fontWeight: "bold",
   })
-  var menubarRank = $('<span id="menubar-rank">xxx</span>');
+
+  var menubarRank = $('<span id="menubar-rank"><b>Rank:</b> Superior Laborer</span>');
+  menubarRank.css({
+    marginLeft: 20
+  });
 
   menubar.append(menubarUsername);
   menubar.append(menubarRank);
@@ -97,7 +110,7 @@ function createLoginDialog () {
 
         username = usernameValue;
         $('#menubar-username').text(username);
-        
+
         password = passwordValue;
         console.log(username,password);
         $(this).dialog('close');
@@ -115,7 +128,7 @@ function createLoginDialog () {
 
 function createDesktopDialog() {
 
-  var options = ['cat','dog','hills'];
+  var options = ['cat','dog','nature','work'];
 
   var title = "Set desktop picture";
   var dialogDiv = $('<div class="dialog" title="'+title+'"></div>');
@@ -155,6 +168,79 @@ function createDesktopDialog() {
   };
 
   dialogDiv.dialog(dialogOptions);
+}
+
+
+function createMusicDialog () {
+
+  var options = ['none','world','jazz','classical','hiphop'];
+
+  var title = "Choose music";
+  var dialogDiv = $('<div class="dialog" title="'+title+'"></div>');
+  var radioField = $('<fieldset id="music-select-fieldset"></fieldset>');
+
+  for (var i = 0; i < options.length; i++) {
+    var name = "music-select-"+i;
+
+    var radio = $('<input id="' + name +'" class="radio" name="music-select" type="radio">');
+    radio.data('label',options[i]);
+    radio.click(function () {
+      setMusic($(this).data('label'));
+    });
+    var label = $('<label for="' + name + '">' + options[i] + '</label>');
+
+    radioField.append(radio);
+    radioField.append(label);
+    radioField.append('<br />');
+  }
+
+  var volumeSlider = createSlider();
+
+  volumeSlider.slider({
+    value: (music.volume*100),
+    min: 0,
+    max: 100,
+    step: 1,
+    slide: function (event, ui) {
+      music.volume = (ui.value / 100)
+    },
+  });
+
+
+  // radioField.checkboxradio();
+
+  dialogDiv.append("Select music:<p>");
+  dialogDiv.append(radioField);
+  dialogDiv.append("<p>Select volume:<p>");
+  volumeSlider.appendTo(dialogDiv);
+
+
+  var dialogOptions = {
+    resizable: true,
+    height: "auto",
+    width: '400',
+    modal: false,
+    autoOpen: true,
+    buttons: {
+      "Okay": function () {
+        $(this).dialog('close');
+      },
+    }
+  };
+
+  dialogDiv.dialog(dialogOptions);
+}
+
+
+function setMusic(song) {
+  if (song == 'none') {
+    music.pause();
+  }
+  else {
+    music.pause();
+    music.src = 'assets/sounds/music/' + song + '.mp3';
+    music.play();
+  }
 }
 
 
