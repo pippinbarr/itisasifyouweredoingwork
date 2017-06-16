@@ -1,7 +1,6 @@
 
 ## Actual To Dos, None of This Tentative Bullshit
 
-* Add actual cycle of work, inspiration dialogs endlessly (need a state machine)
 * Add success, failure, warnings, promotions, demotions, as dialogs...
   - Add set of hilarious position names (maybe around 20+?)
   - Consider the idea of specific feedback on failures
@@ -16,6 +15,8 @@
 
 ---
 
+* ~~Make the modal background a bit darker~~
+* ~~Add actual cycle of work, inspiration dialogs endlessly (need a state machine)~~
 * ~~Add icons for music, desktop, breakout game (game only available during break)~~
 * ~~Create music selection and volume dialog~~
 * ~~Music (ideally written by an AI/procedure) plays (WolframTones? Something else?)~~

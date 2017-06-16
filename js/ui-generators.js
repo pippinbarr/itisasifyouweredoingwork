@@ -65,7 +65,7 @@ function createMenuBar () {
     lineHeight: "30px",
   });
 
-  var menubarUsername = $('<span id="menubar-username">Pippin</span>');
+  var menubarUsername = $('<span id="menubar-username">'+username+'</span>');
   menubarUsername.css({
     float: 'right',
     marginRight: 20,
@@ -137,13 +137,85 @@ function createLoginDialog () {
         $(this).dialog('close');
         setTimeout(function () {
           setDesktop('cat');
-          startGame();
+          showDesktop();
         },1000);
       }
     },
   };
 
   createDialog(dialogDiv, dialogOptions, false);
+}
+
+
+function createReadyDialog () {
+  var title = "Start Work!";
+  var dialogDiv = $('<div class="dialog" title="'+title+'"></div>');
+  dialogDiv.append("<p>Ready to start work?</p>")
+
+  var dialogOptions = {
+    resizable: false,
+    draggable: false,
+    height: "auto",
+    width: '400',
+    modal: true,
+    autoOpen: true,
+    buttons: {
+      "Let's go!": function () {
+        startWork();
+        $(this).dialog('close');
+      },
+      "Not yet...": function () {
+        startDelayedWork();
+        $(this).dialog('close');
+      }
+    }
+  };
+
+  createDialog(dialogDiv, dialogOptions, false);
+}
+
+
+function createDelayedWorkDialog () {
+  var title = "Get Ready!";
+  var dialogDiv = $('<div class="dialog" title="'+title+'"></div>');
+  dialogDiv.append("<p>Work will start when the progress bar is full!</p>")
+
+  var progressbar = createProgressBar();
+
+  progressbar.appendTo(dialogDiv);
+
+  progressbar.progressbar({
+    value: 0,
+    max: 100,
+  });
+
+  var dialogOptions = {
+    resizable: false,
+    draggable: false,
+    height: "auto",
+    width: '400',
+    modal: true,
+    autoOpen: true,
+    buttons: {},
+    closeOnEscape: false
+  }
+
+  createDialog(dialogDiv, dialogOptions, false);
+
+  dialogDiv.parent().find(".ui-dialog-titlebar-close").hide();
+
+  // Set up increasing progress bar
+  var progressInterval = setInterval(function () {
+    var val = $(this).progressbar('value');
+    val += 1;
+    $(this).progressbar('value',val);
+
+    if (val >= 100) {
+      $(this).parent().dialog('close');
+      clearTimeout(progressInterval);
+      startWork();
+    }
+  }.bind(progressbar),100);
 }
 
 
@@ -326,7 +398,7 @@ function createWorkDialog() {
     var keys = Object.keys(TYPE)
     type = TYPE[keys[ keys.length * Math.random() << 0]];
 
-    var type = TYPE.SLIDER;
+    // var type = TYPE.SLIDER;
 
     switch (type) {
 
@@ -628,8 +700,8 @@ function createWorkDialog() {
         }
 
         if (!dialogCorrect) {
-          dialogFailureSFX();
-          $(this).parent().effect('shake',function () {
+          dialogFailureSFX.play();
+          $(this).parent().effect('shake',{distance:5},1,function () {
             $(this).dialog("close");
           }.bind(this));
         }
@@ -643,7 +715,7 @@ function createWorkDialog() {
       dialogOptions.buttons[buttonLabels[i]] = function () {
         console.log("Incorrect dialog button!");
         dialogFailureSFX.play();
-        $(this).parent().effect('shake', function () {
+        $(this).parent().effect('shake',{distance:5},1,function () {
           $(this).dialog('close');
         }.bind(this));
       }

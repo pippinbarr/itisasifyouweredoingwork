@@ -1303,8 +1303,8 @@ a.ui-button:active,
 /* Overlays */
 .ui-widget-overlay {
 	background: #aaaaaa;
-	opacity: .3;
-	filter: Alpha(Opacity=30); /* support: IE8 */
+	opacity: .7;
+	filter: Alpha(Opacity=70); /* support: IE8 */
 }
 .ui-widget-shadow {
 	-webkit-box-shadow: 0px 0px 0px #666666;

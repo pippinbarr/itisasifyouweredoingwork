@@ -3,6 +3,9 @@ body {
   background-color: #aaa;
   user-select: none;
   word-wrap: break-word;
+  margin: 0;
+  overflow: hidden;
+  font-family: sans-serif;
 }
 
 :focus {
@@ -12,12 +15,6 @@ body {
 #wrapper {
   margin: 0;
 }
-
-body {
-  overflow: hidden;
-  font-family: sans-serif;
-}
-
 
 .icon {
   text-align: center;

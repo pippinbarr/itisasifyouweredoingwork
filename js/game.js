@@ -2,17 +2,20 @@ var score;
 var scoreDiv;
 
 var STATE = {
-  
+  STARTUP: "STARTUP",
+  LOGIN: "LOGIN",
+  READY: "READY",
+  WORKING: "WORKING",
+  BREAK: "BREAK"
 };
+
+var state = STATE.STARTUP;
 
 
 $(document).ready(setup);
 
 const DELAY_TIME = 1500;
 const FADE_TIME = 1500;
-
-var correctSelectionText;
-var correctButtonLabel;
 
 function setup() {
 
@@ -21,36 +24,55 @@ function setup() {
   })
 
   loadSounds();
-  loadIcons();
-  createMenuBar();
 
   // createInspirationalDialog();
   // createWorkDialog();
   // createDesktopDialog();
-  createMusicDialog();
-  // createLoginDialog();
+  // createMusicDialog();
 
-
+  setTimeout(function () {
+    createLoginDialog();
+    state = STATE.LOGIN;
+  },1000);
 }
 
-function startGame () {
+function showDesktop () {
+  state = STATE.READY;
 
   startupSFX.play();
+  loadIcons();
+  createMenuBar();
 
-  setTimeout(newDialog,1000);
+  console.log("About to set timeout Here.");
 
-  // createWorkDialog();
-
+  setTimeout(function () {
+    console.log("Here.");
+    createReadyDialog();
+  },1000);
 }
 
 
-function newDialog () {
-  if (_.random(0,1)) {
+function startWork () {
+  state = STATE.WORK;
+
+  setTimeout(newWorkDialog, 1000);
+}
+
+
+function startDelayedWork () {
+  state = STATE.READY;
+
+  setTimeout(createDelayedWorkDialog,1000);
+}
+
+
+function newWorkDialog () {
+  if (Math.random() < 0.05) {
     createInspirationalDialog();
   }
   else {
     createWorkDialog();
   }
 
-  setTimeout(newDialog,_.random(1000,5000));
+  setTimeout(newWorkDialog,_.random(1000,5000));
 }
