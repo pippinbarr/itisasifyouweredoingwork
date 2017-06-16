@@ -33,6 +33,27 @@ function loadSounds () {
   music.volume = 0.5;
 }
 
+function loadIcons() {
+  createIcon("display", 32, 64*1, createDesktopDialog);
+  createIcon("music", 32, 64*3, createMusicDialog);
+  createIcon("game", 32, 64*5, function () {});
+}
+
+function createIcon(name, x, y, callback) {
+  var div = $('<div class="icon"><img src="assets/images/icons/'+name+'.png"><div class="icon-label">'+name.toUpperCase()+'</div></div>');
+
+  div.css({
+    position: 'absolute'
+  });
+  div.draggable();
+  div.dblclick(callback);
+  div.offset({
+    top: y,
+    left: x
+  });
+  $('#ui').append(div);
+}
+
 function createMenuBar () {
   var menubar = $('<div id="menubar"></div>');
   menubar.css({
@@ -128,10 +149,15 @@ function createLoginDialog () {
 
 function createDesktopDialog() {
 
+  if ($('#desktop-dialog').length != 0) {
+    $('#desktop-dialog').dialog('open');
+    return;
+  }
+
   var options = ['cat','dog','nature','work'];
 
   var title = "Set desktop picture";
-  var dialogDiv = $('<div class="dialog" title="'+title+'"></div>');
+  var dialogDiv = $('<div id="desktop-dialog" class="dialog" title="'+title+'"></div>');
   var radioField = $('<fieldset id="desktop-select-fieldset"></fieldset>');
 
   for (var i = 0; i < options.length; i++) {
@@ -173,10 +199,15 @@ function createDesktopDialog() {
 
 function createMusicDialog () {
 
+  if ($('#music-dialog').length != 0) {
+    $('#music-dialog').dialog('open');
+    return;
+  }
+
   var options = ['none','world','jazz','classical','hiphop'];
 
   var title = "Choose music";
-  var dialogDiv = $('<div class="dialog" title="'+title+'"></div>');
+  var dialogDiv = $('<div id="music-dialog" class="dialog" title="'+title+'"></div>');
   var radioField = $('<fieldset id="music-select-fieldset"></fieldset>');
 
   for (var i = 0; i < options.length; i++) {

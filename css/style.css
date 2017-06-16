@@ -15,10 +15,18 @@ body {
 
 body {
   overflow: hidden;
+  font-family: sans-serif;
 }
 
 
+.icon {
+  text-align: center;
+}
 
+.icon-label {
+  margin-top: 10px;
+  background-color: white;
+}
 
 
 /* DIALOGS

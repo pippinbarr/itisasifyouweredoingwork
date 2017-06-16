@@ -1,14 +1,14 @@
 
 ## Actual To Dos, None of This Tentative Bullshit
 
-
-* Add success, failure, warnings, promotions, demotions, bonuses, as dialogs...
-* Add break time
-  * "Time for a break" modal dialog that makes you play Breakout for 20 seconds or so
-  * Consider desktop icons to allow changing music, image, maybe to play breakout? (Maybe breakout is only available when you're on a break - all the dialogs vanish... is that better than modal... probably is...)
-* During the break we should shift to soothing music (maybe cut to no music on announcement of break)
-* Make system re-ask for password sometimes ha ha...
-* Use username somewhere(s)
+* Add actual cycle of work, inspiration dialogs endlessly (need a state machine)
+* Add success, failure, warnings, promotions, demotions, as dialogs...
+  - Add set of hilarious position names (maybe around 20+?)
+  - Consider the idea of specific feedback on failures
+  - Consider set of inspiring phrases to come up on success (Great work!)
+  - Figure out when and how often you get promoted/warned/demoted
+* Add break time trigger (clears all dialogs, brings up dialog about taking a break with a progress bar no buttons)
+* Make system re-ask for password sometimes ha ha...? Why would this happen?
 
 ### Later on
 * Add more SFX
@@ -16,6 +16,7 @@
 
 ---
 
+* ~~Add icons for music, desktop, breakout game (game only available during break)~~
 * ~~Create music selection and volume dialog~~
 * ~~Music (ideally written by an AI/procedure) plays (WolframTones? Something else?)~~
 * ~~Add position/rank ui + username~~

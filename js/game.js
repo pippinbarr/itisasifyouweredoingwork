@@ -1,6 +1,10 @@
 var score;
 var scoreDiv;
 
+var STATE = {
+  
+};
+
 
 $(document).ready(setup);
 
@@ -17,6 +21,7 @@ function setup() {
   })
 
   loadSounds();
+  loadIcons();
   createMenuBar();
 
   // createInspirationalDialog();
