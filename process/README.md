@@ -1,13 +1,19 @@
 
 ## Actual To Dos, None of This Tentative Bullshit
 
-* Add success, failure, warnings, promotions, demotions, as dialogs...
+* Add in long term tasks options
+  - Document
+  - Email
+  - Data entry
+* Add success, ~~failure~~, warnings, promotions, ~~demotions~~, as dialogs...
   - Add set of hilarious position names (maybe around 20+?)
-  - Consider the idea of specific feedback on failures
+  - Consider the idea of specific feedback on failures (as opposed to failing, more of a kind of pep talk)
   - Consider set of inspiring phrases to come up on success (Great work!)
-  - Figure out when and how often you get promoted/warned/demoted
+  - Figure out when and how often you get promoted ~~/warned/demoted~~
+* Fix the language used in dialogs (e.g. button labels, titles, menu items, etc - e.g. generateLanguage())
 * Add break time trigger (clears all dialogs, brings up dialog about taking a break with a progress bar no buttons)
-* Make system re-ask for password sometimes ha ha...? Why would this happen?
+* Make system re-ask for password sometimes ha ha...? _Why would this happen though_?
+* Slow it dooooown
 
 ### Later on
 * Add more SFX
@@ -55,6 +61,25 @@
   - ~~Select menu~~
   * ~~**BUT NOTE NO MULTI-SELECT WHICH I THINK IS FINE** Think through integrating icon selection and dragging~~
   * ~~Integrate new Win95esque CSS~~
+
+
+## Longer-term tasks (2017-06-18 18:26)
+
+Walking to the OBX BBQ yesterday had the idea of longer-term tasks you could be doing during the game as a way to get out of it 'just' being a relentless stream of dialogs, but also to avoid the situation if/when I slow them down of just kind of sitting there with nothing to do.
+
+So with that in mind thought you could have:
+
+- Documents (like a simple text field you could be filling out to a character limit and then click 'save' I guess)
+- Emails (basically the same thing, maybe with pre-filled email addresses etc.)
+- Spreadsheets/data entry (a set of cells for you to put things into)
+
+The nice thing there is that you have something to do all the time that's not and doesn't feel time sensitive, and it can be interrupted by the other things which you can quickly dismiss (in a pleasantly work-y way) before coming back to it. Partly realised this idea when I was trying to fill in an input-style dialog and realised that every time a new popup came up it would steal focus, making the input one kind of suck to fill in. But if that was a longer term task then it would actually be useful because you'd always have something to do.
+
+Conceivably these could even be further icons on the desktop that you could call up - but suspect it's more likely that you ought to just be assigned them though. Could be funny if, when you save them, they appear on the desktop as little icons of files. The documents and data-entry anyway.
+
+Also while I was thinking about this just now and writing my diary I started wondering whether it even makes sense to bother with having demotions/warnings/being fired if the objective is to keep people happy? Quite possibly it doesn't make sense at all. Rather it should all be positive. Though it's possible it'd be funny to still generate a little message saying why you got a dialog box wrong and how we should all strive to work as hard as we can...
+
+So those are some thoughts.
 
 
 ## Thursday Thoughts (2017-06-15 11:02)
