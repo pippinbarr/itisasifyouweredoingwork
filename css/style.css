@@ -25,6 +25,11 @@ body {
   background-color: white;
 }
 
+.document-input {
+  height: 500px;
+  width: 562px;
+  resize: none;
+}
 
 /* DIALOGS
 ----------------------------------*/

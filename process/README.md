@@ -2,9 +2,10 @@
 ## Actual To Dos, None of This Tentative Bullshit
 
 * Add in long term tasks options
-  - Document
+  - ~~Document~~
   - Email
   - Data entry
+* Make long term tasks come up appropriately
 * Add success, ~~failure~~, warnings, promotions, ~~demotions~~, as dialogs...
   - Add set of hilarious position names (maybe around 20+?)
   - Consider the idea of specific feedback on failures (as opposed to failing, more of a kind of pep talk)
@@ -21,6 +22,9 @@
 
 ---
 
+* ~~Remove ability to get a task wrong~~
+* ~~Markov chain for document/email contents to avoid typing meaningless nonsense? Lorem ipsum?~~
+* ~~**ARRAY OF INSPIRATIONAL/MOTIVATIONAL PHRASES** Lorem Ipsum versus Markov versus Arrays of BusinessWords?~~
 * ~~Make the modal background a bit darker~~
 * ~~Add actual cycle of work, inspiration dialogs endlessly (need a state machine)~~
 * ~~Add icons for music, desktop, breakout game (game only available during break)~~

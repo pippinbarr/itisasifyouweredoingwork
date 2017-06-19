@@ -21,6 +21,8 @@ var dialogFailureSFX;
 
 var music;
 
+var quotes = [];
+
 
 function loadSounds () {
   startupSFX = new Audio('assets/sounds/startup.wav');
@@ -32,6 +34,12 @@ function loadSounds () {
   music.loop = true;
   music.volume = 0.5;
 }
+
+// function loadTexts () {
+//   $.get("assets/texts/quotes.txt", function (text) {
+//     quotes = text.split('\n');
+//   });
+// }
 
 function loadIcons() {
   createIcon("display", 32, 64*1, createDesktopDialog);
@@ -702,7 +710,7 @@ function createWorkDialog() {
         if (!dialogCorrect) {
           dialogFailureSFX.play();
           $(this).parent().effect('shake',{distance:5},1,function () {
-            $(this).dialog("close");
+            // $(this).dialog("close");
           }.bind(this));
         }
         else {
@@ -716,7 +724,7 @@ function createWorkDialog() {
         console.log("Incorrect dialog button!");
         dialogFailureSFX.play();
         $(this).parent().effect('shake',{distance:5},1,function () {
-          $(this).dialog('close');
+          // $(this).dialog('close');
         }.bind(this));
       }
     }
@@ -1047,46 +1055,67 @@ function createIcons() {
 }
 
 
+function createDocumentDialog () {
+  var title = inspirationWorkSlogans[_.random(0,inspirationWorkSlogans.length-1)];
+  var div = $('<div class="dialog" title="'+ title + '"></div>');
+  var requiredParagraphs = _.random(2,7);
+  var instruction1 = $('<span>Write and save a document of at least '+ requiredParagraphs +' paragraphs (currently </span>');
+  var paragraphsSpan = $('<span>0</span>');
+  var instruction2 = $('<span>)</span>');
+  var input = $('<textarea class="document-input"></textarea>');
 
-var inspirationWorkSlogans = [
-  "Be so good they can't ignore you",
-  "Success is no accident",
-  "Love what you do",
-  "Stay positive and happy",
-  "Be happy now",
-  "Sweat, determination, and hard work",
-  "Stay true to yourself",
-  "Never give up",
-  "Keep your dreams alive",
-  "Work like you don't need the money",
-  "Work hard",
-  "Stay positive",
-  "Follow your passion",
-  "Work hard, be kind",
-  "It's commitment",
-  "Strive",
-  "Keep going",
-  "Hard work means working hard",
-  "There is no substitute for hard work",
-  "Teamwork",
-  "We're in this together",
-  "No one ever drowned in sweat",
-  "Let passion drive you",
-  "Hard work helps",
-  "Don't wish it was easier",
-  "Embrace the pain, inherit the gain",
-  "Everything yields to dilligence",
-  "Together everyone achieves more",
-  "There is no elevator to success",
-  "One person can make a difference",
-  "Make the days count",
-  "Nothing worth having comes easy",
-  "Work hard, stay humble",
-  "The harder you work, the luckier you get",
-  "Keep calm and work hard",
-  "Work hard, be patient",
-  "There is joy in work",
-  "Hard work beats talent",
-  "Do it the right way every day",
-  "Let success make the noise"
-];
+  var quoteIndex = Math.floor(Math.random() * inspirationalQuotes.length);
+  var quoteChar = 0;
+  var paragraphs = 0;
+
+  var instruction = $('<p></p>');
+  instruction.append(instruction1, paragraphsSpan, instruction2);
+  div.append(instruction);
+  div.append(input);
+
+  var dialogOptions = {
+    resizable: true,
+    height: "auto",
+    width: '600',
+    modal: false,
+    autoOpen: true,
+    buttons: {
+      "Save": function () {
+        if (paragraphs >= requiredParagraphs) {
+          $(this).dialog('close');
+        }
+        else {
+          $(this).parent().effect('shake',{distance:5});
+        }
+      },
+    },
+  };
+
+  createDialog(div, dialogOptions, false);
+
+  input.on('input', function (e) {
+    e.preventDefault();
+    $(this).append(inspirationalQuotes[quoteIndex].charAt(quoteChar));
+    quoteChar++;
+    if (quoteChar == inspirationalQuotes[quoteIndex].length) {
+      quoteChar = 0;
+      quoteIndex = _.random(0,inspirationalQuotes.length-1);
+      if (Math.random() < 0.5) {
+        paragraphs++;
+        paragraphsSpan.text(paragraphs);
+        input.append('\n\n');
+      }
+      else {
+        input.append(' ');
+      }
+    }
+    // numDocumentCharacters.text($(this).val().length);
+  });
+  input.on('copy paste cut', function (e) {
+    e.preventDefault();
+    console.log("Hi");
+
+    // numDocumentCharacters.text($(this).val().length);
+    return false;
+  });
+}

@@ -24,6 +24,10 @@ function setup() {
   })
 
   loadSounds();
+  // loadTexts();
+
+  createDocumentDialog();
+  return;
 
   // createInspirationalDialog();
   // createWorkDialog();
