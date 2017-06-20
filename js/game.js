@@ -25,8 +25,8 @@ function setup() {
 
   loadSounds();
   // loadTexts();
-
-  createDocumentDialog();
+  createWorkDialog();
+  // createEmailDialog();
   return;
 
   // createInspirationalDialog();
@@ -59,7 +59,8 @@ function showDesktop () {
 function startWork () {
   state = STATE.WORK;
 
-  setTimeout(newWorkDialog, 1000);
+  createDocumentDialog();
+  setTimeout(newWorkDialog, 3000);
 }
 
 
@@ -78,5 +79,5 @@ function newWorkDialog () {
     createWorkDialog();
   }
 
-  setTimeout(newWorkDialog,_.random(1000,5000));
+  setTimeout(newWorkDialog,_.random(8000,12000));
 }

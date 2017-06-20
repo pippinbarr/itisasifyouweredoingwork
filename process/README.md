@@ -1,17 +1,12 @@
 
 ## Actual To Dos, None of This Tentative Bullshit
 
-* Add in long term tasks options
-  - ~~Document~~
-  - Email
-  - Data entry
-* Make long term tasks come up appropriately
-* Add success, ~~failure~~, warnings, promotions, ~~demotions~~, as dialogs...
+* Make long term tasks come up appropriately (only one at a time)
+* Add success, ~~failure~~, warnings?, promotions, ~~demotions~~, as dialogs...
   - Add set of hilarious position names (maybe around 20+?)
   - Consider the idea of specific feedback on failures (as opposed to failing, more of a kind of pep talk)
   - Consider set of inspiring phrases to come up on success (Great work!)
   - Figure out when and how often you get promoted ~~/warned/demoted~~
-* Fix the language used in dialogs (e.g. button labels, titles, menu items, etc - e.g. generateLanguage())
 * Add break time trigger (clears all dialogs, brings up dialog about taking a break with a progress bar no buttons)
 * Make system re-ask for password sometimes ha ha...? _Why would this happen though_?
 * Slow it dooooown
@@ -22,6 +17,11 @@
 
 ---
 
+* ~~Fix the language used in dialogs (e.g. button labels, titles, menu items, etc - e.g. generateLanguage())~~
+* ~~Add in long term tasks options~~
+  - ~~Document~~
+  - ~~Email~~
+  - ~~**NAH** Data entry~~
 * ~~Remove ability to get a task wrong~~
 * ~~Markov chain for document/email contents to avoid typing meaningless nonsense? Lorem ipsum?~~
 * ~~**ARRAY OF INSPIRATIONAL/MOTIVATIONAL PHRASES** Lorem Ipsum versus Markov versus Arrays of BusinessWords?~~

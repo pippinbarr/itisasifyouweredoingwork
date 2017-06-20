@@ -1,3 +1,30 @@
+var buttonLabels = [
+  "Ok",
+  "Okay",
+  "Yes",
+  "Accept",
+  "Activate",
+  "Enable",
+  "Register",
+  "Action",
+  "Correct",
+  "Go",
+  "Start",
+  "Begin",
+  "Enact",
+  "Use",
+  "Process",
+  "Calculate",
+  "Compute",
+  "Button",
+  "Choose",
+  "Launch",
+  "Load",
+  "Reload",
+  "Add",
+  "Join"
+];
+
 var technologies = [
   "3D displays",
   "3D optical data storage",

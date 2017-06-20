@@ -31,6 +31,28 @@ body {
   resize: none;
 }
 
+.email-field-label {
+  min-width: 80px;
+  float: left;
+  clear: left;
+  vertical-align: bottom;
+  /*padding-top: 5px;*/
+  margin-bottom: 10px;
+
+}
+
+.email-field {
+  min-width: 480px;
+  float: left;
+  margin-bottom: 10px;
+}
+
+.email-input {
+  height: 200px;
+  width: 100%;
+  resize: none;
+}
+
 /* DIALOGS
 ----------------------------------*/
 

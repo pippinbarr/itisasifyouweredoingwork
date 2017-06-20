@@ -393,7 +393,7 @@ function createInspirationalDialog() {
 function createWorkDialog() {
   newDialogSFX.play();
 
-  var title = generateLanguage(1,4);
+  var title = technologies[_.random(0,technologies.length-1)];
   var dialogDiv = $('<div class="dialog" title="'+title+'"></div>');
 
   var option = 1;
@@ -558,11 +558,26 @@ function createWorkDialog() {
 
   // Generate buttons
   var numButtons = _.random(1,3);
-  var buttonLabels = []
+  var buttonsArray = []
+
   for (var i = 0; i < numButtons; i++) {
-    buttonLabels.push(generateLanguage(1));
+    var labelDuplicate = true;
+    while (labelDuplicate) {
+
+      var label = buttonLabels[_.random(0,buttonLabels.length)];
+      labelDuplicate = false;
+
+      for (var j = 0; j < buttonsArray.length; j++) {
+        if (buttonsArray[j] == label) {
+          labelDuplicate = true;
+          break;
+        }
+      }
+
+    }
+    buttonsArray.push(label);
   }
-  var correctButton = _.random(0,buttonLabels.length-1);
+  var correctButton = _.random(0,buttonsArray.length-1);
 
   var dialogOptions = {
     resizable: true,
@@ -578,10 +593,10 @@ function createWorkDialog() {
 
   var dialogCorrect = true;
 
-  for (var i = 0; i < buttonLabels.length; i++) {
+  for (var i = 0; i < buttonsArray.length; i++) {
     if (!dialogCorrect) break;
     if (i == correctButton) {
-      dialogOptions.buttons[buttonLabels[i]] = function () {
+      dialogOptions.buttons[buttonsArray[i]] = function () {
         for (var j = 0; j < elements.length; j++) {
           if (!dialogCorrect) break;
           var element = elements[j];
@@ -720,7 +735,7 @@ function createWorkDialog() {
       }
     }
     else {
-      dialogOptions.buttons[buttonLabels[i]] = function () {
+      dialogOptions.buttons[buttonsArray[i]] = function () {
         console.log("Incorrect dialog button!");
         dialogFailureSFX.play();
         $(this).parent().effect('shake',{distance:5},1,function () {
@@ -730,7 +745,7 @@ function createWorkDialog() {
     }
   }
 
-  dialogDiv.append('<p>'+(option)+'. Click ' + buttonLabels[correctButton] + '</p>')
+  dialogDiv.append('<p>'+(option)+'. Click ' + buttonsArray[correctButton] + '</p>')
 
   createDialog(dialogDiv, dialogOptions, true);
 
@@ -785,7 +800,7 @@ function createSelectMenu (_num) {
   var correct = _.random(0,_num-1);
   var correctItem;
   for (var i = 0; i < _num; i++) {
-    var text = generateLanguage(1,2);
+    var text = technologies[_.random(0,technologies.length)];
     var option = $('<option>'+text+'</option>');
     if (i == correct) {
       menu.data('correct',text);
@@ -813,7 +828,7 @@ function createCheckbox(_numOptions,_index) {
 
   var correctElements = [];
   for (var i = 0; i < _numOptions; i++) {
-    var text = generateLanguage(1,3);
+    var text = technologies[_.random(0,technologies.length)];
     var boxName = (name+i);
 
     var label = $('<label for="' + (name+i) + '">' + text + '</label>');
@@ -854,7 +869,7 @@ function createRadio(_numOptions,_index) {
 
   var correctElements = [];
   for (var i = 0; i < _numOptions; i++) {
-    var text = generateLanguage(1,3);
+    var text = technologies[_.random(0,technologies.length)];
     var boxName = name;
     var radio = $('<input id="'+ (name+i) +'" class="'+ type + '" name="' + boxName + '" type="' + type + '">');
 
@@ -957,7 +972,7 @@ INPUT
 function createInput () {
   var input = $('<input></input>');
 
-  input.data('correct',generateLanguage(4,5));
+  input.data('correct',technologies[_.random(0,technologies.length)]);
   input.data('type',TYPE.INPUT);
 
   return input;
@@ -970,15 +985,15 @@ BUTTON
 ********************************************************
 ********************************************************/
 
-function createButton() {
-  var container = $('<div></div>');
-  correctButtonLabel = generateLanguage(1,2);
-  buttonId = 'button';
-  button = $('<button id="' + buttonId + '" name="' + buttonId + '">'+correctButtonLabel+'</button>');
-  button.button();
-  container.append(button);
-  return container;
-}
+// function createButton() {
+//   var container = $('<div></div>');
+//   correctButtonLabel = generateLanguage(1,2);
+//   buttonId = 'button';
+//   button = $('<button id="' + buttonId + '" name="' + buttonId + '">'+correctButtonLabel+'</button>');
+//   button.button();
+//   container.append(button);
+//   return container;
+// }
 
 
 
@@ -998,28 +1013,28 @@ function createButton() {
 //   menu.menu();
 //   return menu;
 // }
-
-var loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum ullamcorper dolor, non pharetra urna mollis vitae. Proin blandit ipsum nec nisi scelerisque cursus. Donec pellentesque malesuada ex, non dignissim mi vestibulum sed. Donec malesuada dignissim leo sit amet sodales. In vel dapibus nulla. Sed mattis tempor velit, eu tincidunt enim feugiat et. Donec dignissim tellus vitae semper commodo. Proin eu gravida nibh, vel facilisis leo. Sed imperdiet dui enim, nec pretium nulla iaculis eget. Donec ac efficitur mi. Etiam volutpat enim odio, eget ornare augue bibendum sit amet. Vestibulum posuere metus id mauris viverra, non hendrerit magna aliquam. Sed viverra, nisi ac maximus elementum, orci nunc mattis ante, id viverra mauris justo in tortor.";
-
-function generateLanguage(numWords) {
-  var loremIpsumArray = loremIpsum.split(" ");
-  var text = "";
-  var startIndex = Math.floor(Math.random() * loremIpsumArray.length);
-  for (var i = 0; i < numWords; i++)
-  {
-    var index = (startIndex + i) % loremIpsumArray.length;
-    text += " " + loremIpsumArray[index];
-  }
-  text = text.trim();
-  if (text.charAt(text.length-1) == ",") {
-    text = text.slice(0,text.length-2);
-  }
-  if (text.charAt(text.length-1) != ".") {
-    text += ".";
-  }
-  text = text.charAt(0).toUpperCase() + text.slice(1);
-  return text;
-}
+//
+// var loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum ullamcorper dolor, non pharetra urna mollis vitae. Proin blandit ipsum nec nisi scelerisque cursus. Donec pellentesque malesuada ex, non dignissim mi vestibulum sed. Donec malesuada dignissim leo sit amet sodales. In vel dapibus nulla. Sed mattis tempor velit, eu tincidunt enim feugiat et. Donec dignissim tellus vitae semper commodo. Proin eu gravida nibh, vel facilisis leo. Sed imperdiet dui enim, nec pretium nulla iaculis eget. Donec ac efficitur mi. Etiam volutpat enim odio, eget ornare augue bibendum sit amet. Vestibulum posuere metus id mauris viverra, non hendrerit magna aliquam. Sed viverra, nisi ac maximus elementum, orci nunc mattis ante, id viverra mauris justo in tortor.";
+//
+// function generateLanguage(numWords) {
+//   var loremIpsumArray = loremIpsum.split(" ");
+//   var text = "";
+//   var startIndex = Math.floor(Math.random() * loremIpsumArray.length);
+//   for (var i = 0; i < numWords; i++)
+//   {
+//     var index = (startIndex + i) % loremIpsumArray.length;
+//     text += " " + loremIpsumArray[index];
+//   }
+//   text = text.trim();
+//   if (text.charAt(text.length-1) == ",") {
+//     text = text.slice(0,text.length-2);
+//   }
+//   if (text.charAt(text.length-1) != ".") {
+//     text += ".";
+//   }
+//   text = text.charAt(0).toUpperCase() + text.slice(1);
+//   return text;
+// }
 
 
 
@@ -1071,6 +1086,59 @@ function createDocumentDialog () {
   var instruction = $('<p></p>');
   instruction.append(instruction1, paragraphsSpan, instruction2);
   div.append(instruction);
+  div.append(input);
+
+  var dialogOptions = {
+    resizable: true,
+    height: "auto",
+    width: '600',
+    modal: false,
+    autoOpen: true,
+    buttons: {
+      "Save": function () {
+        if (paragraphs >= requiredParagraphs) {
+          $(this).dialog('close');
+        }
+        else {
+          $(this).parent().effect('shake',{distance:5});
+        }
+      },
+    },
+  };
+}
+
+
+function createEmailDialog () {
+
+  var title = "Email";
+  var div = $('<div class="dialog" title="'+ title + '"></div>');
+  var requiredParagraphs = _.random(2,4);
+  var instruction1 = $('<span>Write and send an email of at least '+ requiredParagraphs +' paragraphs (currently </span>');
+  var paragraphsSpan = $('<span>0</span>');
+  var instruction2 = $('<span>)</span>');
+
+  var email = technologies[_.random(0,technologies.length-1)].replace(/ /g,".").toLowerCase();
+  email += "@" + technologies[_.random(0,technologies.length-1)].replace(/ /g,"").toLowerCase();
+  email += ".com";
+
+  var to = $('<span name="email-to-field" class="email-field">'+email+'</span>');
+
+  var subjectText = "Re: " + technologies[_.random(0,technologies.length-1)];
+  var subject = $('<span name="email-subject-field" class="email-field">'+subjectText+'</span>')
+  var input = $('<textarea class="email-input"></textarea>');
+
+  var quoteIndex = Math.floor(Math.random() * inspirationalQuotes.length);
+  var quoteChar = 0;
+  var paragraphs = 0;
+
+  var instruction = $('<p></p>');
+  instruction.append(instruction1, paragraphsSpan, instruction2);
+  div.append(instruction);
+  div.append('<p>')
+  div.append('<label for="email-to-field" class="email-field-label">To:</label>',to);
+  // div.append('<p>')
+  div.append('<label for="email-subject-field" class="email-field-label">Subject:</label>',subject);
+  div.append('<p></p>');
   div.append(input);
 
   var dialogOptions = {
