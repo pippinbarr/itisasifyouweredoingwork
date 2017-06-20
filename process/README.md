@@ -7,9 +7,7 @@
   - Consider the idea of specific feedback on failures (as opposed to failing, more of a kind of pep talk)
   - Consider set of inspiring phrases to come up on success (Great work!)
   - Figure out when and how often you get promoted ~~/warned/demoted~~
-* Add break time trigger (clears all dialogs, brings up dialog about taking a break with a progress bar no buttons)
-* Make system re-ask for password sometimes ha ha...? _Why would this happen though_?
-* Slow it dooooown
+* Add break time trigger (clears all dialogs, brings up dialog about taking a break with a progress bar no buttons, can't close, timer that restarts work)
 
 ### Later on
 * Add more SFX
@@ -17,6 +15,9 @@
 
 ---
 
+* ~~**I DON'T THINK THIS WOULD HAPPEN** Make system re-ask for password sometimes ha ha...? _Why would this happen though_?~~
+* ~~Implement breakout that can inject (and resize to) a div. Guess this is in Phaser?~~
+* ~~Slow it dooooown~~
 * ~~Fix the language used in dialogs (e.g. button labels, titles, menu items, etc - e.g. generateLanguage())~~
 * ~~Add in long term tasks options~~
   - ~~Document~~
@@ -65,6 +66,15 @@
   - ~~Select menu~~
   * ~~**BUT NOTE NO MULTI-SELECT WHICH I THINK IS FINE** Think through integrating icon selection and dragging~~
   * ~~Integrate new Win95esque CSS~~
+
+
+## One or two words (2017-06-20 12:27)
+
+The game is really getting there at this point. I've got two longer term tasks - documents and emails - implemented now and they look appropriately funny I think. Then beneath that we have the desktop with three options. And on top of it we have random work dialogs (that now have 'technical language' as their default) and inspirational images. I dropped the data entry one since it requires too much CSS, too much thinking for the user, and strays too far from the textual basis of the whole thing.
+
+I'm kind of wondering now whether the automatically typed text ought to be the inspirational stuff I have now or more technical language like the rest of it? There's something funny about all the inspirational stuff, but maybe it would look and feel more like "work" if you were just typing random tech shit? Or may it's still funnier to read the inspirational stuff while you type, so it kind of cheers you up. Both are viable.
+
+I'm realising as I type this that the horrible megatask of making a game of breakout appear is still needed to be done and that could be quite a task. Other than that the big thing remaining is just the question of promotions and feedback on actions beyond the audio stuff... not a huge deal, but still have to think of something to do for it.
 
 
 ## Longer-term tasks (2017-06-18 18:26)

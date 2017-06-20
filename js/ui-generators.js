@@ -21,6 +21,8 @@ var dialogFailureSFX;
 
 var music;
 
+var breakoutDialog;
+
 var quotes = [];
 
 
@@ -44,7 +46,15 @@ function loadSounds () {
 function loadIcons() {
   createIcon("display", 32, 64*1, createDesktopDialog);
   createIcon("music", 32, 64*3, createMusicDialog);
-  createIcon("game", 32, 64*5, function () {});
+  createIcon("game", 32, 64*5, function () {
+    if (state == STATE.BREAK) {
+      window.dispatchEvent(new Event("start-game"));
+      breakoutDialog.dialog('open');
+    }
+    else {
+      createSimpleDialog("Uh-oh!","You can't play Breakout unless you're on a break!","Okay");
+    }
+  });
 }
 
 function createIcon(name, x, y, callback) {
@@ -60,6 +70,33 @@ function createIcon(name, x, y, callback) {
     left: x
   });
   $('#ui').append(div);
+}
+
+function createBreakoutDialog () {
+  var title = "Take a break!";
+  var dialogDiv = $('<div class="dialog" title="'+title+'"></div>');
+
+  dialogDiv.append($('#gameContainer'));
+
+  var dialogOptions = {
+    resizable: false,
+    draggable: true,
+    height: "auto",
+    width: '480',
+    modal: false,
+    autoOpen: false,
+    buttons: {},
+    close: function () {
+      window.dispatchEvent(new Event("stop-game"));
+    }
+  };
+
+  breakoutDialog = createDialog(dialogDiv, dialogOptions, false);
+
+  breakoutDialog.css({
+    padding: 0,
+    margin: 0
+  })
 }
 
 function createMenuBar () {
@@ -774,8 +811,26 @@ function createWorkDialog() {
   //////// ENDHACK ///////
 }
 
+
+function createSimpleDialog (title, content, closeButtonName) {
+  var div = $('<div title="'+title+'">'+content+'</div>');
+  var options = {
+    resizable: false,
+    height: "auto",
+    width: '400',
+    modal: false,
+    autoOpen: true,
+    buttons: {},
+  };
+  options.buttons[closeButtonName] = function () {
+    $(this).dialog('close');
+  }
+  createDialog(div,options,true);
+}
+
+
 function createDialog(div, options, random) {
-  div.dialog(options);
+  var dialog = div.dialog(options);
 
   if (random) {
     var x = _.random(0,$(window).width() - div.width());
@@ -785,6 +840,8 @@ function createDialog(div, options, random) {
       left: x
     });
   }
+
+  return dialog;
 }
 
 
@@ -1105,6 +1162,34 @@ function createDocumentDialog () {
       },
     },
   };
+
+  createDialog(div,dialogOptions,false);
+
+  input.on('input', function (e) {
+    e.preventDefault();
+    $(this).append(inspirationalQuotes[quoteIndex].charAt(quoteChar));
+    quoteChar++;
+    if (quoteChar == inspirationalQuotes[quoteIndex].length) {
+      quoteChar = 0;
+      quoteIndex = _.random(0,inspirationalQuotes.length-1);
+      if (Math.random() < 0.5) {
+        paragraphs++;
+        paragraphsSpan.text(paragraphs);
+        input.append('\n\n');
+      }
+      else {
+        input.append(' ');
+      }
+    }
+    // numDocumentCharacters.text($(this).val().length);
+  });
+  input.on('copy paste cut', function (e) {
+    e.preventDefault();
+    console.log("Hi");
+
+    // numDocumentCharacters.text($(this).val().length);
+    return false;
+  });
 }
 
 

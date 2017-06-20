@@ -19,20 +19,23 @@ const FADE_TIME = 1500;
 
 function setup() {
 
-  $('body').css({
-    margin: 0
-  })
-
   loadSounds();
-  // loadTexts();
-  createWorkDialog();
+  // createInspirationalDialog();
+  createBreakoutDialog();
+  // setTimeout(function () {
+  //   window.dispatchEvent(new Event("start-game"));
+  //   breakoutDialog.dialog('open');
+  // },1000);
+  // console.log(breakoutPhaserGame);
+
+  // createWorkDialog();
   // createEmailDialog();
-  return;
+  // createDocumentDialog();
 
   // createInspirationalDialog();
-  // createWorkDialog();
   // createDesktopDialog();
   // createMusicDialog();
+  // return;
 
   setTimeout(function () {
     createLoginDialog();

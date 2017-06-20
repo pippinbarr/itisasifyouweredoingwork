@@ -12,6 +12,12 @@ body {
   outline: none;
 }
 
+#gameContainer {
+  max-width: 480px;
+  height: 320px;
+  cursor: none;
+}
+
 #wrapper {
   margin: 0;
 }
