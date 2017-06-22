@@ -11,6 +11,8 @@ var STATE = {
 
 var state = STATE.STARTUP;
 
+var workDialogTimer;
+
 
 $(document).ready(setup);
 
@@ -20,27 +22,30 @@ const FADE_TIME = 1500;
 function setup() {
 
   loadSounds();
-  // createInspirationalDialog();
+
+  // createBreakDialog();
+  createInspirationalDialog();
+
+  setTimeout(startBreak,2000);
   createBreakoutDialog();
   // setTimeout(function () {
-  //   window.dispatchEvent(new Event("start-game"));
   //   breakoutDialog.dialog('open');
+  //   window.dispatchEvent(new Event("start-game"));
   // },1000);
   // console.log(breakoutPhaserGame);
 
   // createWorkDialog();
   // createEmailDialog();
   // createDocumentDialog();
-
   // createInspirationalDialog();
   // createDesktopDialog();
   // createMusicDialog();
-  // return;
+  return;
 
   setTimeout(function () {
     createLoginDialog();
     state = STATE.LOGIN;
-  },1000);
+  },2000);
 }
 
 function showDesktop () {
@@ -62,8 +67,22 @@ function showDesktop () {
 function startWork () {
   state = STATE.WORK;
 
+  breakTimer = setTimeout(startBreak, 10000);
+
   createDocumentDialog();
-  setTimeout(newWorkDialog, 3000);
+  workDialogTimer = setTimeout(newWorkDialog, 3000);
+}
+
+
+function startBreak () {
+  $('.dialog').dialog('close');
+
+  if (workDialogTimer) {
+    clearTimeout(workDialogTimer);
+  }
+
+  state = STATE.BREAK;
+  setTimeout(createBreakDialog,1000);
 }
 
 
@@ -82,5 +101,5 @@ function newWorkDialog () {
     createWorkDialog();
   }
 
-  setTimeout(newWorkDialog,_.random(8000,12000));
+  workDialogTimer = setTimeout(newWorkDialog,_.random(8000,12000));
 }

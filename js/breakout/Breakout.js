@@ -43,10 +43,12 @@ BasicGame.Breakout.prototype = {
   BRICKS: [],
   BRICKS_Y_OFFSET: 60,
 
+  paused: true,
+
   create: function () {
 
     // this.game.cursor.hide();
-    this.game.stage.backgroundColor = '#000000';
+    this.game.stage.backgroundColor = '#cccccc';
     this.physics.startSystem(Phaser.Physics.ARCADE);
 
     // PADDLE
@@ -116,24 +118,25 @@ BasicGame.Breakout.prototype = {
     // BRICKS
 
     this.bricks = this.game.add.group();
-
-    this.resetGame();
-
+    this.resetBricks();
 
     window.addEventListener("stop-game",function () {
-      this.game.paused = true;
+      this.state.start('Breakout');
     }.bind(this));
     window.addEventListener("start-game",function () {
-      this.game.paused = false;
-      // this.resetGame();
+      this.resetBall();
+      this.paused = false;
       console.log("Starting the game...");
     }.bind(this));
-
-    this.game.paused = true;
 
   },
 
   update: function () {
+
+    if (this.paused) {
+      return;
+    }
+
     this.handleInput();
 
     // PHYSICS

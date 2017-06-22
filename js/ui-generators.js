@@ -11,6 +11,7 @@ var TYPE = {
 
 var username = '';
 var password = '';
+var rank = '';
 
 const NUM_STOCK = 17;
 
@@ -74,7 +75,7 @@ function createIcon(name, x, y, callback) {
 
 function createBreakoutDialog () {
   var title = "Take a break!";
-  var dialogDiv = $('<div class="dialog" title="'+title+'"></div>');
+  var dialogDiv = $('<div class="dialog" id="breakout-dialog" title="'+title+'"></div>');
 
   dialogDiv.append($('#gameContainer'));
 
@@ -117,7 +118,8 @@ function createMenuBar () {
     fontWeight: "bold",
   })
 
-  var menubarRank = $('<span id="menubar-rank"><b>Rank:</b> Superior Laborer</span>');
+  rank = getRank();
+  var menubarRank = $('<span id="menubar-rank"><b>Rank:</b> ' + rank + '</span>');
   menubarRank.css({
     marginLeft: 20
   });
@@ -130,7 +132,7 @@ function createMenuBar () {
 
 function createLoginDialog () {
   var title = "Login";
-  var dialogDiv = $('<div class="dialog" title="'+title+'"></div>');
+  var dialogDiv = $('<div class="dialog" id="login-dialog" title="'+title+'"></div>');
   var usernameField = $('<input id="usernameInput" type="text"></input>');
   var passwordField = $('<input id="passwordInput" type="password"></input>');
   usernameField.css('border', '1px solid black')
@@ -194,7 +196,7 @@ function createLoginDialog () {
 
 function createReadyDialog () {
   var title = "Start Work!";
-  var dialogDiv = $('<div class="dialog" title="'+title+'"></div>');
+  var dialogDiv = $('<div class="dialog" id="ready-dialog" title="'+title+'"></div>');
   dialogDiv.append("<p>Ready to start work?</p>")
 
   var dialogOptions = {
@@ -222,7 +224,7 @@ function createReadyDialog () {
 
 function createDelayedWorkDialog () {
   var title = "Get Ready!";
-  var dialogDiv = $('<div class="dialog" title="'+title+'"></div>');
+  var dialogDiv = $('<div class="dialog" id="work-delay-dialog" title="'+title+'"></div>');
   dialogDiv.append("<p>Work will start when the progress bar is full!</p>")
 
   var progressbar = createProgressBar();
@@ -262,6 +264,54 @@ function createDelayedWorkDialog () {
     }
   }.bind(progressbar),100);
 }
+
+
+
+function createBreakDialog () {
+  var title = "Time for a break!";
+  var dialogDiv = $('<div class="dialog" id="break-dialog" title="'+title+'"></div>');
+  dialogDiv.append("<p>It's time for a well-deserved break!</p>");
+  dialogDiv.append("<p>Break time is over when the progress bar is full!</p>");
+
+  var progressbar = createProgressBar();
+
+  progressbar.appendTo(dialogDiv);
+
+  progressbar.progressbar({
+    value: 0,
+    max: 100,
+  });
+
+  var dialogOptions = {
+    resizable: false,
+    draggable: true,
+    height: "auto",
+    width: '400',
+    modal: false,
+    autoOpen: true,
+    buttons: {},
+    closeOnEscape: false
+  }
+
+  createDialog(dialogDiv, dialogOptions, false);
+
+  dialogDiv.parent().find(".ui-dialog-titlebar-close").hide();
+
+  // Set up increasing progress bar
+  var progressInterval = setInterval(function () {
+    var val = $(this).progressbar('value');
+    val += 1;
+    $(this).progressbar('value',val);
+
+    if (val >= 100) {
+      $(this).parent().dialog('close');
+      $('.breakout-dialog').parent().dialog('close');
+      clearTimeout(progressInterval);
+      startWork();
+    }
+  }.bind(progressbar),100);
+}
+
 
 
 function createDesktopDialog() {
@@ -404,7 +454,7 @@ function createInspirationalDialog() {
   newDialogSFX.play();
 
   var title = inspirationWorkSlogans[_.random(0,inspirationWorkSlogans.length-1)];
-  var dialogDiv = $('<div class="dialog" title="'+title+'"></div>');
+  var dialogDiv = $('<div class="dialog inspirational-dialog" title="'+title+'"></div>');
 
   var imgNumber = _.random(1,17);
   var imgFile = 'assets/images/stock/stock_' + imgNumber + '.jpg';
@@ -431,7 +481,7 @@ function createWorkDialog() {
   newDialogSFX.play();
 
   var title = technologies[_.random(0,technologies.length-1)];
-  var dialogDiv = $('<div class="dialog" title="'+title+'"></div>');
+  var dialogDiv = $('<div class="dialog work-dialog" title="'+title+'"></div>');
 
   var option = 1;
   var numSteps = _.random(0,1);
@@ -813,7 +863,7 @@ function createWorkDialog() {
 
 
 function createSimpleDialog (title, content, closeButtonName) {
-  var div = $('<div title="'+title+'">'+content+'</div>');
+  var div = $('<div class="dialog" title="'+title+'">'+content+'</div>');
   var options = {
     resizable: false,
     height: "auto",
@@ -1129,7 +1179,7 @@ function createIcons() {
 
 function createDocumentDialog () {
   var title = inspirationWorkSlogans[_.random(0,inspirationWorkSlogans.length-1)];
-  var div = $('<div class="dialog" title="'+ title + '"></div>');
+  var div = $('<div class="dialog document-dialog" title="'+ title + '"></div>');
   var requiredParagraphs = _.random(2,7);
   var instruction1 = $('<span>Write and save a document of at least '+ requiredParagraphs +' paragraphs (currently </span>');
   var paragraphsSpan = $('<span>0</span>');
@@ -1196,7 +1246,7 @@ function createDocumentDialog () {
 function createEmailDialog () {
 
   var title = "Email";
-  var div = $('<div class="dialog" title="'+ title + '"></div>');
+  var div = $('<div class="dialog email-dialog" title="'+ title + '"></div>');
   var requiredParagraphs = _.random(2,4);
   var instruction1 = $('<span>Write and send an email of at least '+ requiredParagraphs +' paragraphs (currently </span>');
   var paragraphsSpan = $('<span>0</span>');
@@ -1271,4 +1321,11 @@ function createEmailDialog () {
     // numDocumentCharacters.text($(this).val().length);
     return false;
   });
+}
+
+function getRank() {
+  var intensifier = jobTitler.intensifier[_.random(0,jobTitler.intensifier.length-1)]
+  var subject = jobTitler.subject[_.random(0,jobTitler.subject.length-1)]
+  var action = jobTitler.action[_.random(0,jobTitler.action.length-1)]
+  return intensifier + ' ' + subject + ' ' + action;
 }
