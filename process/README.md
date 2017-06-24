@@ -4,22 +4,23 @@
 * Make long term tasks come up appropriately (maximum two at a time)
 * Make mini-dialogs come up not-too-frequently, but maybe in bunches sometimes, and only up to a limit for the screen (like three say)
 * Add event dialogs...
-  - Add pep talk dialog when they get a dialog wrong
+  - Add pep talk dialog when they get a dialog wrong (probably reference the thing you got wrong specifically - "are you sure you got that date right?" or more like "You can do this!"?)
   - Add promotion event dialogs (and promotions) based on work done (chars typed + dialogs dismissed)
 
-  - ~~**REFACTORING THIS** Figure out when and how often you get promoted ~~/warned/demoted~~ < should be related to characters typed in text areas + dialogs closed successfully~~
-  - ~~**THIS IS OVERKILL I THINK** Consider set of inspiring phrases to come up on success (Great work!)~~
-  - ~~Add set of hilarious position names (maybe around 20+?)~~
 
 ### Later on
 * Add more SFX for things that might need it (promotion, ...)
 * Add more desktop images (or maybe just the four, but nail the tone - the work one is amazing)
+
 
 ### Bugs
 * If breakout loads while the window doesn't have focus it won't start
 
 ---
 
+- ~~**REFACTORING THIS** Figure out when and how often you get promoted ~~/warned/demoted~~ < should be related to characters typed in text areas + dialogs closed successfully~~
+- ~~**THIS IS OVERKILL I THINK** Consider set of inspiring phrases to come up on success (Great work!)~~
+- ~~Add set of hilarious position names (maybe around 20+?)~~
 * ~~Add break time trigger (clears all dialogs, brings up dialog about taking a break with a progress bar no buttons, can't close, timer that restarts work at end of progress bar)~~
 * ~~Make breakout colours match dialog~~
 * ~~**I DON'T THINK THIS WOULD HAPPEN** Make system re-ask for password sometimes ha ha...? _Why would this happen though_?~~

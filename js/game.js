@@ -24,9 +24,9 @@ function setup() {
   loadSounds();
 
   // createBreakDialog();
-  createInspirationalDialog();
+  // createInspirationalDialog();
 
-  setTimeout(startBreak,2000);
+  // setTimeout(startBreak,2000);
   createBreakoutDialog();
   // setTimeout(function () {
   //   breakoutDialog.dialog('open');
@@ -40,7 +40,7 @@ function setup() {
   // createInspirationalDialog();
   // createDesktopDialog();
   // createMusicDialog();
-  return;
+  // return;
 
   setTimeout(function () {
     createLoginDialog();
