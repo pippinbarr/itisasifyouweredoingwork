@@ -10,8 +10,8 @@ var STATE = {
 const DELAY_TIME = 1500;
 const FADE_TIME = 1500;
 const WORK_UNITS_FOR_PROMOTION = 100;
-const WORK_TIME = 10000;
-const BREAK_TIME = 10000;
+const WORK_TIME = 90000;
+const BREAK_TIME = 30000;
 const PROGRESS_INTERVAL = 1000;
 
 
@@ -61,9 +61,18 @@ function setup() {
   // createMenuBar();
   // return;
 
+  startGame();
+}
+
+function startGame () {
   setTimeout(function () {
-    createLoginDialog();
-    state = STATE.LOGIN;
+    if (audioLoaded) {
+      createLoginDialog();
+      state = STATE.LOGIN;
+    }
+    else {
+      startGame();
+    }
   },2000);
 }
 
@@ -81,6 +90,7 @@ function checkWindowSize () {
     windowSizeDialog = null;
     if (state == STATE.WINDOW_CHECK) {
       state = STATE.STARTUP;
+
       setup();
     }
   }

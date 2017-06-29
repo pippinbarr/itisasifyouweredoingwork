@@ -19,6 +19,8 @@ var dialogSuccessSFX;
 var dialogFailureSFX;
 var promotionSFX;
 
+var audioLoaded = false;
+
 var music;
 
 var breakoutDialog;
@@ -37,6 +39,10 @@ function loadSounds () {
   music = new Audio();
   music.loop = true;
   music.volume = 0.5;
+
+  breakSFX.addEventListener('loadeddata', function () {
+    audioLoaded = true;
+  });
 }
 
 // function loadTexts () {
