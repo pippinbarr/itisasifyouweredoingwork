@@ -41,6 +41,7 @@ function loadSounds () {
   music.volume = 0.5;
 
   breakSFX.addEventListener('loadeddata', function () {
+    console.log("Loaded audio...");
     audioLoaded = true;
   });
 }
@@ -186,8 +187,8 @@ function createLoginDialog () {
   passwordField.css('border', '1px solid black')
 
 
-  dialogDiv.append('<div><b>It is as if you were doing work v1.0</b></div>')
-  dialogDiv.append('<i>For the love of the labour™</i><p>')
+  dialogDiv.append('<div><h3>It is as if you were doing work v1.0</h3></div>')
+  dialogDiv.append('<div><p>Please login with your work credentials</p></div>')
   dialogDiv.append('<label id="usernameLabel">Username:</label><br />');
   dialogDiv.append(usernameField);
   dialogDiv.append('<p></p>');

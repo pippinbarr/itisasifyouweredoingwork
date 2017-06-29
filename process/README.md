@@ -3,6 +3,7 @@
 
 * Check for sound effects coverage
 * Add more desktop images (or maybe just the four, but nail the tone - the work one is amazing)
+* Reconsider the texts in document and email - could that be more technology oriented somehow? There's a pleasure in being able to _read_ what you type, is one reason to maintain the current thing. What about writing the text of technical manuals?
 
 
 ### Bugs
@@ -10,6 +11,8 @@
 
 ---
 
+* ~~Build testable version and send to J+M~~
+* ~~Hold for audio load~~
 * ~~**THINKING THIS IS ACTUALLY OVERKILL** Add pep talk dialog when they get a dialog wrong - "are you sure you got that right?" and also like "You can do this!", "Don't stop now!" "Don't give up!" if they click the close button on a work dialog?)~~
 * ~~Make the overlay look less like a piece of shit? (Ideally with a dialog above it...)~~
 * ~~Add more SFX for things that need it (promotion, ...)~~
@@ -84,6 +87,23 @@
   - ~~Select menu~~
   * ~~**BUT NOTE NO MULTI-SELECT WHICH I THINK IS FINE** Think through integrating icon selection and dragging~~
   * ~~Integrate new Win95esque CSS~~
+
+
+## Post-sending testable version to J+M (2017-06-29 11:42)
+
+Last night I finally got together a build of the game that I could send to Jim and Mary, so I sent it to them. No word as yet on their reaction, but I'll of course be interested to see. Main things I'm 'worried' about, in the sense that I'm not really sure about them are
+
+- _Timing_. Not clear how to nail down a good sense of productivity without feeling stressed out or like you have to move super fast - but then also wanting the player to be _able_ to appear to be super super productive. The fact that I've limited the number of little work boxes showing up helps with that - if you ignore them you won't end up with more and could focus on your larger work blocks. There's a kind of implication with the 'typing' oriented ones (the document and the email) that you should type as fast as humanly possibly? Which is strenuous... but on the other hand typing super fast is probably another signifier of 'I'm definitely getting work done!', so maybe that's okay as well...
+
+- _Fuck ups_. Obviously there will be plenty of fuck ups around in the code. I need to find and destroy them.
+
+- _Texts_. As I use the thing I'm less and less positive that the text appearing in the document and email ought to be that kind of extreme positivity? I'd kind of like a tracery grammar that leverages Kazemi's technology list so that it looks more like tech speak stuff rather than some of the overly specific inspirational stuff? Maybe somehow a combination? Like positivity about technology? You can X and Y! ... ?
+
+Hmm. So I guess the big thing right now is that I feel much less emotionally connected to the game (kind of sick of it), and also that I'm not totally, totally sure what the emotional trajectory is meant to be for the player either... how are they meant to feel while they play? I mean, it's meant to be a _tool_ for them to use, rather than a totally shaped experience, but obviously when someone encounters it in _this_ universe they're more likely to treat it as a game and thus something to win.
+
+Possibly a 'solution' to this might actually to be to add another icon to the desktop which is an 'about' you can read that is 'in character' and explaining the service provided by the software? And this reminds me I need the login dialog to look a little less bullshit. (Did that... it's not much less bullshit, but it's simple.)
+
+Okay. Well those are my thoughts for now. I think I'll wait until I hear from J+M before I really do much more on the game and in my dreams it's basically done.
 
 
 ## One or two words (2017-06-20 12:27)
