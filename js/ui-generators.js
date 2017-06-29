@@ -9,16 +9,15 @@ var TYPE = {
   INPUT: "input"
 }
 
-var username = '';
-var password = '';
-var rank = '';
-
 const NUM_STOCK = 17;
+const UNITS_PER_CHARACTER = 2;
+const UNITS_PER_DIALOG = 50;
 
 var startupSFX;
 var newDialogSFX;
 var dialogSuccessSFX;
 var dialogFailureSFX;
+var promotionSFX;
 
 var music;
 
@@ -32,6 +31,8 @@ function loadSounds () {
   newDialogSFX = new Audio('assets/sounds/dialog_new.wav');
   dialogSuccessSFX = new Audio('assets/sounds/dialog_success.wav');
   dialogFailureSFX = new Audio('assets/sounds/dialog_failure.wav');
+  promotionSFX = new Audio('assets/sounds/promotion.wav');
+  breakSFX = new Audio('assets/sounds/break.wav');
 
   music = new Audio();
   music.loop = true;
@@ -53,7 +54,7 @@ function loadIcons() {
       breakoutDialog.dialog('open');
     }
     else {
-      createSimpleDialog("Uh-oh!","You can't play Breakout unless you're on a break!","Okay");
+      createSimpleDialog("Uh-oh!","breakout-forbidden","You can't play Breakout unless you're on a break!","Okay",true, '400');
     }
   });
 }
@@ -74,12 +75,17 @@ function createIcon(name, x, y, callback) {
 }
 
 function createBreakoutDialog () {
+
+  console.log("Sending stop-game event");
+  window.dispatchEvent(new Event("stop-game"));
+
   var title = "Take a break!";
   var dialogDiv = $('<div class="dialog" id="breakout-dialog" title="'+title+'"></div>');
 
   dialogDiv.append($('#gameContainer'));
 
   var dialogOptions = {
+    appendTo: '#ui',
     resizable: false,
     draggable: true,
     height: "auto",
@@ -97,13 +103,14 @@ function createBreakoutDialog () {
   breakoutDialog.css({
     padding: 0,
     margin: 0
-  })
+  });
+
 }
 
 function createMenuBar () {
-  var menubar = $('<div id="menubar"></div>');
+  var menubar = $('<div class="menu-bar" id="menubar"></div>');
   menubar.css({
-    height: 30,
+    height: 'auto',
     width: '100%',
     backgroundColor: 'white',
     borderBottom: '2px solid grey',
@@ -111,21 +118,55 @@ function createMenuBar () {
     lineHeight: "30px",
   });
 
-  var menubarUsername = $('<span id="menubar-username">'+username+'</span>');
-  menubarUsername.css({
-    float: 'right',
-    marginRight: 20,
-    fontWeight: "bold",
-  })
 
   rank = getRank();
-  var menubarRank = $('<span id="menubar-rank"><b>Rank:</b> ' + rank + '</span>');
+  var menubarRank = $('<div id="menubar-rank"><b>Rank:</b> <span id="menubar-rank-text">' + rank + '</span></div>');
   menubarRank.css({
-    marginLeft: 20
+    // marginLeft: 20,
+    // left: '0%',
+    // width: '320px',
+    width: '38%',
+    display: 'inline-block',
+    paddingLeft: '2%',
+    // backgroundColor: 'red'
+    // boxSizing: 'border-box',
+    // position: 'relative',
+
   });
 
-  menubar.append(menubarUsername);
+  var menubarUnits = $('<div id="menubar-units"><b>Work Units to Promotion:</b> <span id="menubar-units-text">' + workUnitsToPromotion + '</span></div>');
+  menubarUnits.css({
+    // left: '33%',
+    // width: '320px',
+    width: '38%',
+    // float: 'left',
+    display: 'inline-block',
+    paddingLeft: '2%',
+    // boxSizing: 'border-box',
+    // position: 'relative',
+    // marginLeft: 20
+    // backgroundColor: 'grey'
+  });
+
+  var menubarUsername = $('<div id="menubar-username">'+username+'</div>');
+  menubarUsername.css({
+    // left: '66%',
+    // width: '160px',
+    width: '18%',
+    display: 'inline-block',
+    float: 'right',
+    textAlign: 'right',
+    paddingRight: '2%',
+    // backgroundColor: 'green'
+    // boxSizing: 'border-box',
+    // position: 'relative',
+    // marginRight: 20,
+    // fontWeight: "bold",
+  });
+
   menubar.append(menubarRank);
+  menubar.append(menubarUnits);
+  menubar.append(menubarUsername);
 
   $('#ui').append(menubar);
 }
@@ -133,7 +174,7 @@ function createMenuBar () {
 function createLoginDialog () {
   var title = "Login";
   var dialogDiv = $('<div class="dialog" id="login-dialog" title="'+title+'"></div>');
-  var usernameField = $('<input id="usernameInput" type="text"></input>');
+  var usernameField = $('<input id="usernameInput" type="text" maxlength="10"></input>');
   var passwordField = $('<input id="passwordInput" type="password"></input>');
   usernameField.css('border', '1px solid black')
   passwordField.css('border', '1px solid black')
@@ -148,6 +189,7 @@ function createLoginDialog () {
   dialogDiv.append(passwordField);
 
   var dialogOptions = {
+    appendTo: '#ui',
     resizable: false,
     draggable: false,
     height: "auto",
@@ -180,8 +222,7 @@ function createLoginDialog () {
         $('#menubar-username').text(username);
 
         password = passwordValue;
-        console.log(username,password);
-        $(this).dialog('close');
+        $(this).dialog('destroy');
         setTimeout(function () {
           setDesktop('cat');
           showDesktop();
@@ -190,7 +231,9 @@ function createLoginDialog () {
     },
   };
 
-  createDialog(dialogDiv, dialogOptions, false);
+  createDialog(dialogDiv, dialogOptions, false, true);
+
+  dialogDiv.parent().find(".ui-dialog-titlebar-close").hide();
 }
 
 
@@ -200,6 +243,7 @@ function createReadyDialog () {
   dialogDiv.append("<p>Ready to start work?</p>")
 
   var dialogOptions = {
+    appendTo: '#ui',
     resizable: false,
     draggable: false,
     height: "auto",
@@ -209,16 +253,18 @@ function createReadyDialog () {
     buttons: {
       "Let's go!": function () {
         startWork();
-        $(this).dialog('close');
+        $(this).dialog('destroy');
       },
       "Not yet...": function () {
         startDelayedWork();
-        $(this).dialog('close');
+        $(this).dialog('destroy');
       }
     }
   };
 
   createDialog(dialogDiv, dialogOptions, false);
+
+  dialogDiv.parent().find(".ui-dialog-titlebar-close").hide();
 }
 
 
@@ -237,6 +283,7 @@ function createDelayedWorkDialog () {
   });
 
   var dialogOptions = {
+    appendTo: '#ui',
     resizable: false,
     draggable: false,
     height: "auto",
@@ -258,7 +305,7 @@ function createDelayedWorkDialog () {
     $(this).progressbar('value',val);
 
     if (val >= 100) {
-      $(this).parent().dialog('close');
+      $(this).parent().dialog('destroy');
       clearTimeout(progressInterval);
       startWork();
     }
@@ -283,6 +330,7 @@ function createBreakDialog () {
   });
 
   var dialogOptions = {
+    appendTo: '#ui',
     resizable: false,
     draggable: true,
     height: "auto",
@@ -295,21 +343,22 @@ function createBreakDialog () {
 
   createDialog(dialogDiv, dialogOptions, false);
 
+
   dialogDiv.parent().find(".ui-dialog-titlebar-close").hide();
 
   // Set up increasing progress bar
   var progressInterval = setInterval(function () {
     var val = $(this).progressbar('value');
-    val += 1;
+    val += 100/(BREAK_TIME/PROGRESS_INTERVAL);
     $(this).progressbar('value',val);
 
     if (val >= 100) {
-      $(this).parent().dialog('close');
-      $('.breakout-dialog').parent().dialog('close');
+      $(this).parent().dialog('destroy');
+      $('#breakout-dialog').dialog('close');
       clearTimeout(progressInterval);
       startWork();
     }
-  }.bind(progressbar),100);
+  }.bind(progressbar),PROGRESS_INTERVAL);
 }
 
 
@@ -348,6 +397,7 @@ function createDesktopDialog() {
   dialogDiv.append(radioField);
 
   var dialogOptions = {
+    appendTo: '#ui',
     resizable: true,
     height: "auto",
     width: '400',
@@ -355,12 +405,16 @@ function createDesktopDialog() {
     autoOpen: true,
     buttons: {
       "Okay": function () {
+        playSound(dialogSuccessSFX);
+        updateWorkUnits(UNITS_PER_DIALOG);
         $(this).dialog('close');
       },
     }
   };
 
-  dialogDiv.dialog(dialogOptions);
+  createDialog(dialogDiv, dialogOptions, true);
+
+
 }
 
 
@@ -414,6 +468,7 @@ function createMusicDialog () {
 
 
   var dialogOptions = {
+    appendTo: '#ui',
     resizable: true,
     height: "auto",
     width: '400',
@@ -421,12 +476,14 @@ function createMusicDialog () {
     autoOpen: true,
     buttons: {
       "Okay": function () {
+        playSound(dialogSuccessSFX);
+        updateWorkUnits(UNITS_PER_DIALOG);
         $(this).dialog('close');
       },
     }
   };
 
-  dialogDiv.dialog(dialogOptions);
+  createDialog(dialogDiv, dialogOptions, true);
 }
 
 
@@ -451,7 +508,7 @@ function setDesktop(theme) {
 
 
 function createInspirationalDialog() {
-  newDialogSFX.play();
+  // playSound(newDialogSFX);
 
   var title = inspirationWorkSlogans[_.random(0,inspirationWorkSlogans.length-1)];
   var dialogDiv = $('<div class="dialog inspirational-dialog" title="'+title+'"></div>');
@@ -466,6 +523,7 @@ function createInspirationalDialog() {
   dialogDiv.append(image);
 
   var dialogOptions = {
+    appendTo: '#ui',
     resizable: false,
     height: "auto",
     width: '400',
@@ -477,8 +535,9 @@ function createInspirationalDialog() {
   createDialog(dialogDiv, dialogOptions, true);
 }
 
+
 function createWorkDialog() {
-  newDialogSFX.play();
+  // playSound(newDialogSFX);
 
   var title = technologies[_.random(0,technologies.length-1)];
   var dialogDiv = $('<div class="dialog work-dialog" title="'+title+'"></div>');
@@ -667,12 +726,21 @@ function createWorkDialog() {
   var correctButton = _.random(0,buttonsArray.length-1);
 
   var dialogOptions = {
+    appendTo: '#ui',
     resizable: true,
     height: "auto",
     width: '400',
     modal: false,
     autoOpen: true,
     buttons: {},
+    beforeClose: function () {
+      console.log("Before close");
+      if (!$(this).parent().data('correct')) {
+        playSound(dialogFailureSFX);
+        $(this).parent().effect('shake',{distance:4});
+        return false;
+      }
+    }
   };
 
 
@@ -684,6 +752,8 @@ function createWorkDialog() {
     if (!dialogCorrect) break;
     if (i == correctButton) {
       dialogOptions.buttons[buttonsArray[i]] = function () {
+        dialogCorrect = true;
+
         for (var j = 0; j < elements.length; j++) {
           if (!dialogCorrect) break;
           var element = elements[j];
@@ -810,24 +880,23 @@ function createWorkDialog() {
         }
 
         if (!dialogCorrect) {
-          dialogFailureSFX.play();
-          $(this).parent().effect('shake',{distance:5},1,function () {
-            // $(this).dialog("close");
-          }.bind(this));
+          dialogDiv.parent().data('correct',false);
+          playSound(dialogFailureSFX);
+          $(this).parent().effect('shake',{distance:4});
         }
         else {
-          dialogSuccessSFX.play();
-          $(this).dialog("close");
+          dialogDiv.parent().data('correct',true);
+          playSound(dialogSuccessSFX);
+          updateWorkUnits(UNITS_PER_DIALOG);
+          $(this).dialog("destroy");
         }
       }
     }
     else {
       dialogOptions.buttons[buttonsArray[i]] = function () {
         console.log("Incorrect dialog button!");
-        dialogFailureSFX.play();
-        $(this).parent().effect('shake',{distance:5},1,function () {
-          // $(this).dialog('close');
-        }.bind(this));
+        playSound(dialogFailureSFX);
+        $(this).parent().effect('shake',{distance:4});
       }
     }
   }
@@ -835,6 +904,7 @@ function createWorkDialog() {
   dialogDiv.append('<p>'+(option)+'. Click ' + buttonsArray[correctButton] + '</p>')
 
   createDialog(dialogDiv, dialogOptions, true);
+
 
   ///////// HACK /////////
   // Make select menu expand the dialog box on open...
@@ -861,35 +931,64 @@ function createWorkDialog() {
   //////// ENDHACK ///////
 }
 
+function createWindowSizeDialog () {
+  var d = createSimpleDialog("Window too small!","window-size-dialog","<p>You can't get any work done with a browser width that narrow!</p><p>Make it bigger!</p>",null,false,'80%',true,'#wrapper');
 
-function createSimpleDialog (title, content, closeButtonName) {
-  var div = $('<div class="dialog" title="'+title+'">'+content+'</div>');
+  d.parent().css('z-index',1001);
+
+  return d;
+}
+
+function createSimpleDialog (title, id, content, closeButtonName, random, width, center, appendTo) {
+  var div = $('<div class="dialog simple-dialog" id="'+id+'" title="'+title+'">'+content+'</div>');
+  if (!appendTo) appendTo = '#ui';
   var options = {
+    appendTo: appendTo,
     resizable: false,
     height: "auto",
-    width: '400',
+    width: width,
     modal: false,
     autoOpen: true,
     buttons: {},
   };
-  options.buttons[closeButtonName] = function () {
-    $(this).dialog('close');
+
+  if (closeButtonName) {
+    options.buttons[closeButtonName] = function () {
+      playSound(dialogSuccessSFX);
+      updateWorkUnits(UNITS_PER_DIALOG);
+      $(this).dialog('destroy');
+    }
   }
-  createDialog(div,options,true);
+  var d = createDialog(div,options,random);
+
+  div.parent().find(".ui-dialog-titlebar-close").hide();
+
+  return div;
 }
 
 
-function createDialog(div, options, random) {
+function createDialog(div, options, random, stationary) {
+
+  options.open = function () {
+    playSound(newDialogSFX);
+  }
+
   var dialog = div.dialog(options);
 
   if (random) {
-    var x = _.random(0,$(window).width() - div.width());
-    var y = _.random(0,$(window).height() - div.height());
+    var x = _.random(0,$(window).width() - div.parent().width());
+    var y = _.random($('.menu-bar').height(),$(window).height() - div.parent().height());
     div.parent().offset({
       top: y,
       left: x
     });
   }
+
+  if (stationary) return;
+
+  div.parent().draggable({
+    containment: [0, $('.menu-bar').height(), $(window).width() - div.parent().width() - 10, $(window).height() - div.parent().height()]
+  });
 
   return dialog;
 }
@@ -1086,66 +1185,6 @@ function createInput () {
 }
 
 
-/*******************************************************
-********************************************************
-BUTTON
-********************************************************
-********************************************************/
-
-// function createButton() {
-//   var container = $('<div></div>');
-//   correctButtonLabel = generateLanguage(1,2);
-//   buttonId = 'button';
-//   button = $('<button id="' + buttonId + '" name="' + buttonId + '">'+correctButtonLabel+'</button>');
-//   button.button();
-//   container.append(button);
-//   return container;
-// }
-
-
-
-
-// function createMenu(depth,maxItems,subMenuChance) {
-//   if (depth == 0) return;
-//   var menu = $('<ul></ul>');
-//   var numItems = 1 + Math.floor(Math.random()*maxItems);
-//   for (var i = 0; i < numItems; i++) {
-//     var item = $('<li></li>');
-//     item.append('<div>Item</div>');
-//     if (Math.random() < subMenuChance) {
-//       item.append(createMenu(depth-1,maxItems,subMenuChance));
-//     }
-//     menu.append(item);
-//   }
-//   menu.menu();
-//   return menu;
-// }
-//
-// var loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In fermentum ullamcorper dolor, non pharetra urna mollis vitae. Proin blandit ipsum nec nisi scelerisque cursus. Donec pellentesque malesuada ex, non dignissim mi vestibulum sed. Donec malesuada dignissim leo sit amet sodales. In vel dapibus nulla. Sed mattis tempor velit, eu tincidunt enim feugiat et. Donec dignissim tellus vitae semper commodo. Proin eu gravida nibh, vel facilisis leo. Sed imperdiet dui enim, nec pretium nulla iaculis eget. Donec ac efficitur mi. Etiam volutpat enim odio, eget ornare augue bibendum sit amet. Vestibulum posuere metus id mauris viverra, non hendrerit magna aliquam. Sed viverra, nisi ac maximus elementum, orci nunc mattis ante, id viverra mauris justo in tortor.";
-//
-// function generateLanguage(numWords) {
-//   var loremIpsumArray = loremIpsum.split(" ");
-//   var text = "";
-//   var startIndex = Math.floor(Math.random() * loremIpsumArray.length);
-//   for (var i = 0; i < numWords; i++)
-//   {
-//     var index = (startIndex + i) % loremIpsumArray.length;
-//     text += " " + loremIpsumArray[index];
-//   }
-//   text = text.trim();
-//   if (text.charAt(text.length-1) == ",") {
-//     text = text.slice(0,text.length-2);
-//   }
-//   if (text.charAt(text.length-1) != ".") {
-//     text += ".";
-//   }
-//   text = text.charAt(0).toUpperCase() + text.slice(1);
-//   return text;
-// }
-
-
-
-
 
 
 function createIcons() {
@@ -1180,64 +1219,82 @@ function createIcons() {
 function createDocumentDialog () {
   var title = inspirationWorkSlogans[_.random(0,inspirationWorkSlogans.length-1)];
   var div = $('<div class="dialog document-dialog" title="'+ title + '"></div>');
-  var requiredParagraphs = _.random(2,7);
-  var instruction1 = $('<span>Write and save a document of at least '+ requiredParagraphs +' paragraphs (currently </span>');
-  var paragraphsSpan = $('<span>0</span>');
+  var requiredCharacters = _.random(200,1000);
+  var instruction1 = $('<span>Write and save a document of at least '+ requiredCharacters +' characters (currently </span>');
+  var charactersSpan = $('<span>0</span>');
   var instruction2 = $('<span>)</span>');
   var input = $('<textarea class="document-input"></textarea>');
 
   var quoteIndex = Math.floor(Math.random() * inspirationalQuotes.length);
   var quoteChar = 0;
-  var paragraphs = 0;
+  var characters = 0;
 
   var instruction = $('<p></p>');
-  instruction.append(instruction1, paragraphsSpan, instruction2);
+  instruction.append(instruction1, charactersSpan, instruction2);
   div.append(instruction);
   div.append(input);
 
   var dialogOptions = {
-    resizable: true,
+    appendTo: '#ui',
+    resizable: false,
+    // position: {
+    //   my: 'right center',
+    //   at: 'right center',
+    //   of: window
+    // },
     height: "auto",
     width: '600',
     modal: false,
     autoOpen: true,
     buttons: {
       "Save": function () {
-        if (paragraphs >= requiredParagraphs) {
-          $(this).dialog('close');
+        if (characters >= requiredCharacters) {
+          updateWorkUnits(UNITS_PER_DIALOG);
+          playSound(dialogSuccessSFX);
+          $(this).dialog('destroy');
         }
         else {
-          $(this).parent().effect('shake',{distance:5});
+          playSound(dialogFailureSFX);
+          $(this).parent().effect('shake',{distance:4});
         }
       },
     },
+    beforeClose: function () {
+      console.log("Before close");
+      if (!$(this).parent().data('correct')) {
+        playSound(dialogFailureSFX);
+        $(this).parent().effect('shake',{distance:4});
+        return false;
+      }
+    }
+
   };
 
-  createDialog(div,dialogOptions,false);
+  createDialog(div,dialogOptions,true);
 
-  input.on('input', function (e) {
+  input.on('keypress', function (e) {
     e.preventDefault();
-    $(this).append(inspirationalQuotes[quoteIndex].charAt(quoteChar));
+    var char = inspirationalQuotes[quoteIndex].charAt(quoteChar);
+    input.append(char);
     quoteChar++;
+    characters++;
+    $(this).parent().data('correct',(characters >= requiredCharacters));
+    input.scrollTop(9999999);
+    charactersSpan.text(characters);
+    updateWorkUnits(UNITS_PER_CHARACTER);
     if (quoteChar == inspirationalQuotes[quoteIndex].length) {
       quoteChar = 0;
       quoteIndex = _.random(0,inspirationalQuotes.length-1);
       if (Math.random() < 0.5) {
-        paragraphs++;
-        paragraphsSpan.text(paragraphs);
         input.append('\n\n');
       }
       else {
         input.append(' ');
       }
     }
-    // numDocumentCharacters.text($(this).val().length);
   });
   input.on('copy paste cut', function (e) {
     e.preventDefault();
-    console.log("Hi");
-
-    // numDocumentCharacters.text($(this).val().length);
     return false;
   });
 }
@@ -1247,9 +1304,9 @@ function createEmailDialog () {
 
   var title = "Email";
   var div = $('<div class="dialog email-dialog" title="'+ title + '"></div>');
-  var requiredParagraphs = _.random(2,4);
-  var instruction1 = $('<span>Write and send an email of at least '+ requiredParagraphs +' paragraphs (currently </span>');
-  var paragraphsSpan = $('<span>0</span>');
+  var requiredCharacters = _.random(200,1000);
+  var instruction1 = $('<span>Write and send an email of at least '+ requiredCharacters +' characters (currently </span>');
+  var charactersSpan = $('<span>0</span>');
   var instruction2 = $('<span>)</span>');
 
   var email = technologies[_.random(0,technologies.length-1)].replace(/ /g,".").toLowerCase();
@@ -1264,10 +1321,10 @@ function createEmailDialog () {
 
   var quoteIndex = Math.floor(Math.random() * inspirationalQuotes.length);
   var quoteChar = 0;
-  var paragraphs = 0;
+  var characters = 0;
 
   var instruction = $('<p></p>');
-  instruction.append(instruction1, paragraphsSpan, instruction2);
+  instruction.append(instruction1, charactersSpan, instruction2);
   div.append(instruction);
   div.append('<p>')
   div.append('<label for="email-to-field" class="email-field-label">To:</label>',to);
@@ -1277,6 +1334,7 @@ function createEmailDialog () {
   div.append(input);
 
   var dialogOptions = {
+    appendTo: '#ui',
     resizable: true,
     height: "auto",
     width: '600',
@@ -1284,41 +1342,53 @@ function createEmailDialog () {
     autoOpen: true,
     buttons: {
       "Save": function () {
-        if (paragraphs >= requiredParagraphs) {
-          $(this).dialog('close');
+        if (characters >= requiredCharacters) {
+          updateWorkUnits(UNITS_PER_DIALOG);
+          playSound(dialogSuccessSFX);
+          $(this).dialog('destroy');
         }
         else {
-          $(this).parent().effect('shake',{distance:5});
+          playSound(dialogFailureSFX);
+          $(this).parent().effect('shake',{distance:4});
         }
       },
     },
+    beforeClose: function () {
+      console.log("Before close");
+      if (!$(this).parent().data('correct')) {
+        playSound(dialogFailureSFX);
+        $(this).parent().effect('shake',{distance:4});
+        return false;
+      }
+    }
+
   };
 
-  createDialog(div, dialogOptions, false);
+  createDialog(div, dialogOptions, true);
 
-  input.on('input', function (e) {
+  input.on('keypress', function (e) {
     e.preventDefault();
     $(this).append(inspirationalQuotes[quoteIndex].charAt(quoteChar));
     quoteChar++;
+    characters++;
+    $(this).parent().data('correct',(characters >= requiredCharacters));
+    charactersSpan.text(characters);
+    updateWorkUnits(UNITS_PER_CHARACTER);
+    input.scrollTop(9999999);
+
     if (quoteChar == inspirationalQuotes[quoteIndex].length) {
       quoteChar = 0;
       quoteIndex = _.random(0,inspirationalQuotes.length-1);
       if (Math.random() < 0.5) {
-        paragraphs++;
-        paragraphsSpan.text(paragraphs);
         input.append('\n\n');
       }
       else {
         input.append(' ');
       }
     }
-    // numDocumentCharacters.text($(this).val().length);
   });
   input.on('copy paste cut', function (e) {
     e.preventDefault();
-    console.log("Hi");
-
-    // numDocumentCharacters.text($(this).val().length);
     return false;
   });
 }
@@ -1328,4 +1398,64 @@ function getRank() {
   var subject = jobTitler.subject[_.random(0,jobTitler.subject.length-1)]
   var action = jobTitler.action[_.random(0,jobTitler.action.length-1)]
   return intensifier + ' ' + subject + ' ' + action;
+}
+
+
+function updateWorkUnits(num) {
+  workUnitsToPromotion -= num;
+  $('#menubar-units-text').text(workUnitsToPromotion);
+  if (workUnitsToPromotion <= 0) {
+    givePromotion();
+    resetWorkUnits();
+  }
+}
+
+function givePromotion() {
+  playSound(promotionSFX);
+  rank = getRank();
+  $('#menubar-rank-text').text(rank);
+  createPromotionDialog(rank);
+}
+
+
+function resetWorkUnits () {
+  workUnitsToPromotion = WORK_UNITS_FOR_PROMOTION;
+  $('#menubar-units-text').text(workUnitsToPromotion);
+}
+
+
+function createPromotionDialog (newRank) {
+
+  var dialogDiv = $('<div class="dialog promotion-dialog" title="Promotion!"></div>');
+  dialogDiv.append("<p>You got a promotion!</p>");
+  dialogDiv.append("<p>Now you're a <b>" + newRank + "</b>!<p>");
+  dialogDiv.append("<p>Keep working hard!<p>");
+
+  var dialogOptions = {
+    appendTo: '#ui',
+    resizable: false,
+    draggable: true,
+    height: "auto",
+    width: '400',
+    modal: false,
+    autoOpen: true,
+    buttons: {
+      "Okay": function () {
+        playSound(dialogSuccessSFX);
+        updateWorkUnits(UNITS_PER_DIALOG);
+        $(this).dialog('destroy');
+      }
+    },
+    closeOnEscape: false
+  }
+
+  createDialog(dialogDiv,dialogOptions,true);
+
+  dialogDiv.parent().find(".ui-dialog-titlebar-close").hide();
+}
+
+
+function playSound (sound) {
+  sound.currentTime = 0;
+  sound.play();
 }

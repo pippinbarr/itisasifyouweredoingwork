@@ -19,9 +19,9 @@
   <script src="js/lodash.min.js"></script>
   <script src="js/breakout/phaser.min.js"></script>
 
-	<script src="js/breakout/Boot.js"></script>
-	<script src="js/breakout/Preloader.js"></script>
-	<script src="js/breakout/Breakout.js"></script>
+  <script src="js/breakout/Boot.js"></script>
+  <script src="js/breakout/Preloader.js"></script>
+  <script src="js/breakout/Breakout.js"></script>
 
 
   <script src="js/data.js"></script>
@@ -32,7 +32,8 @@
 </head>
 
 <body>
-
+  <div id="window-size-overlay">
+  </div>
 
   <div id="wrapper">
     <div id="container">
@@ -49,18 +50,18 @@
 
   window.onload = function() {
 
-  	//	Create your Phaser game and inject it into the gameContainer div.
-  	//	We did it in a window.onload event, but you can do it anywhere (requireJS load, anonymous function, jQuery dom ready, - whatever floats your boat)
-  	breakoutPhaserGame = new Phaser.Game(480, 320, Phaser.AUTO, 'gameContainer');
+    //	Create your Phaser game and inject it into the gameContainer div.
+    //	We did it in a window.onload event, but you can do it anywhere (requireJS load, anonymous function, jQuery dom ready, - whatever floats your boat)
+    breakoutPhaserGame = new Phaser.Game(480, 320, Phaser.AUTO, 'gameContainer');
 
-  	//	Add the States your game has.
-  	//	You don't have to do this in the html, it could be done in your Boot state too, but for simplicity I'll keep it here.
-  	breakoutPhaserGame.state.add('Boot', BasicGame.Boot);
-  	breakoutPhaserGame.state.add('Preloader', BasicGame.Preloader);
-  	breakoutPhaserGame.state.add('Breakout', BasicGame.Breakout);
+    //	Add the States your game has.
+    //	You don't have to do this in the html, it could be done in your Boot state too, but for simplicity I'll keep it here.
+    breakoutPhaserGame.state.add('Boot', BasicGame.Boot);
+    breakoutPhaserGame.state.add('Preloader', BasicGame.Preloader);
+    breakoutPhaserGame.state.add('Breakout', BasicGame.Breakout);
 
-  	//	Now start the Boot state.
-  	breakoutPhaserGame.state.start('Boot');
+    //	Now start the Boot state.
+    breakoutPhaserGame.state.start('Boot');
 
   };
 

@@ -47,6 +47,8 @@ BasicGame.Breakout.prototype = {
 
   create: function () {
 
+    console.log("Breakout.create");
+
     // this.game.cursor.hide();
     this.game.stage.backgroundColor = '#cccccc';
     this.physics.startSystem(Phaser.Physics.ARCADE);
@@ -118,15 +120,19 @@ BasicGame.Breakout.prototype = {
     // BRICKS
 
     this.bricks = this.game.add.group();
-    this.resetBricks();
+    // this.resetBricks();
+    // this.resetBall();
 
     window.addEventListener("stop-game",function () {
-      this.state.start('Breakout');
+      console.log("Stopping the game...");
+      this.paused = true;
     }.bind(this));
     window.addEventListener("start-game",function () {
-      this.resetBall();
-      this.paused = false;
       console.log("Starting the game...");
+      this.resetBricks();
+      this.resetBall();
+      // this.resetBall();
+      this.paused = false;
     }.bind(this));
 
   },
@@ -342,8 +348,8 @@ BasicGame.Breakout.prototype = {
     this.ball.destroy();
     this.walls.destroy();
     this.bricks.destroy();
-    this.scoreText.destroy();
-    this.paddlesText.destroy();
+    // this.scoreText.destroy();
+    // this.paddlesText.destroy();
 
     this.game.sound.remove(this.launch_wall_sfx);
     this.game.sound.remove(this.paddle_sfx);
@@ -352,10 +358,10 @@ BasicGame.Breakout.prototype = {
       this.game.sound.remove(sfx);
     }
 
-    this.gameOverBG.destroy();
-    this.gameOverText.destroy();
-    this.gameOverScoreText.destroy();
-    this.gameOverScoreNumberText.destroy();
+    // this.gameOverBG.destroy();
+    // this.gameOverText.destroy();
+    // this.gameOverScoreText.destroy();
+    // this.gameOverScoreNumberText.destroy();
 
   }
 

@@ -59,6 +59,23 @@ body {
   resize: none;
 }
 
+#window-size-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: grey;
+  z-index: 1000;
+}
+
+#window-size-message {
+  font-size: 3em;
+  font-weight: bold;
+  padding: 10%;
+  margin: 0 auto;
+}
+
 /* DIALOGS
 ----------------------------------*/
 

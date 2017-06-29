@@ -1,15 +1,7 @@
 
 ## Actual To Dos, None of This Tentative Bullshit
 
-* Make long term tasks come up appropriately (maximum two at a time)
-* Make mini-dialogs come up not-too-frequently, but maybe in bunches sometimes, and only up to a limit for the screen (like three say)
-* Add event dialogs...
-  - Add pep talk dialog when they get a dialog wrong (probably reference the thing you got wrong specifically - "are you sure you got that date right?" or more like "You can do this!"?)
-  - Add promotion event dialogs (and promotions) based on work done (chars typed + dialogs dismissed)
-
-
-### Later on
-* Add more SFX for things that might need it (promotion, ...)
+* Check for sound effects coverage
 * Add more desktop images (or maybe just the four, but nail the tone - the work one is amazing)
 
 
@@ -18,6 +10,24 @@
 
 ---
 
+* ~~**THINKING THIS IS ACTUALLY OVERKILL** Add pep talk dialog when they get a dialog wrong - "are you sure you got that right?" and also like "You can do this!", "Don't stop now!" "Don't give up!" if they click the close button on a work dialog?)~~
+* ~~Make the overlay look less like a piece of shit? (Ideally with a dialog above it...)~~
+* ~~Add more SFX for things that need it (promotion, ...)~~
+* ~~Add a rule that sets a minimum width of 800px for the window and brings up an overlay if too small (so I don't have to worry about responsive design on the menu bar especially) - fucking responsive design~~
+* ~~Improve the timing (more delays on startup, then possibly just better timing of workDialogs)~~
+* ~~Get breakout to behave itself in terms of stopping and starting before/after breaks~~
+* ~~Add promotion event dialogs (and promotions) based on work done (chars typed + dialogs dismissed)~~
+* ~~Possible to just close work dialogs with X without dealing with them~~
+* ~~Fix reactions to incorrect dialog presses~~
+* ~~Problem with textareas not scrolling down with typing~~
+* ~~Add actual work unit calculations and update the stat in the menubar~~
+* ~~Limit username to some set number of characters so it can't fuck the menubar~~
+* ~~Add work units performed statistic (maybe even an indicator of next promotion?)~~
+* ~~Tweak CSS for menu bar so that it's responsive to size, and works to a minimum of 800px width of the window~~
+~~* Make mini-dialogs come up not-too-frequently, but maybe in bunches sometimes, and only up to a limit for the screen (like three say)~~
+* ~~Fix some of the positioning bullshit and limit the draggable area to exclude the menu bar~~
+* ~~Make long term tasks come up appropriately (maximum two at a time)~~
+* ~~**REPLACED WITH KEYPRESS** 'input' doesn't prevent default for some reason~~
 - ~~**REFACTORING THIS** Figure out when and how often you get promoted ~~/warned/demoted~~ < should be related to characters typed in text areas + dialogs closed successfully~~
 - ~~**THIS IS OVERKILL I THINK** Consider set of inspiring phrases to come up on success (Great work!)~~
 - ~~Add set of hilarious position names (maybe around 20+?)~~
