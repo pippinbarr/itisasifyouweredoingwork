@@ -1,6 +1,15 @@
 
 ## Actual To Dos, None of This Tentative Bullshit
 
+* Rework promotion system so that
+  - Getting promoted is less easy (and gets more challenging)
+  - You earn more work units as you get promoted (but need more for a promotion)
+  - The game becomes more frenetic as you go (but starts less frenetic than it is now)
+  - The promotion titles are more serious (and perhaps have an actual observable hierarchy)
+* Add an 'about' icon to the desktop that has a text-file explaining the software and its use
+* Fix the case issues with the technology corpus
+* Increase work time (and possibly break time), maybe more like 3 minutes and 1 minute, or even 5 minutes and 2 minutes... (the risk here is that people stop playing before they see the break...)
+* Close dialogs on break instead of destroy and reopen them afterwards so that you resume work rather than starting fresh each round
 * Check for sound effects coverage
 * Add more desktop images (or maybe just the four, but nail the tone - the work one is amazing)
 * Reconsider the texts in document and email - could that be more technology oriented somehow? There's a pleasure in being able to _read_ what you type, is one reason to maintain the current thing. What about writing the text of technical manuals?
@@ -8,6 +17,7 @@
 
 ### Bugs
 * If breakout loads while the window doesn't have focus it won't start
+* Mary says she found a bug where you keep getting promoted even if totally inactive
 
 ---
 
@@ -87,6 +97,27 @@
   - ~~Select menu~~
   * ~~**BUT NOTE NO MULTI-SELECT WHICH I THINK IS FINE** Think through integrating icon selection and dragging~~
   * ~~Integrate new Win95esque CSS~~
+
+
+## Notes on J+M's feedback (2017-07-01 11:43)
+
+Jim and Mary sent feedback on the game a couple of days ago and I've got enough headspace to look at them this weekend. I'll make some notes of what seem to be the key issues - as well as what I might do to address them.
+
+0. _Game generates a sense of panic_. This is a bit problematic given that my vision for this was that it was to be an experience of efficacy. But on the other hand nothing bad happens, so perhaps a heightened sense of _work_ is not actually the end of the world here. Essentially Jim said it was too fast - not a sense that you could enjoy what was happening as it happened. A little unclear how I can adjust this successfully? Can certainly make dialogs come up less often? Maybe make the larger documents easier to complete and have actual down time? Mary suggested it was a representation of present day work conditions of constant interruption and multi-tasking... which I guess is fair to the extent it's meant to make you feel like you're working, so that's not a bad thing - in that sense a slight feeling of being harried would actually be the feeling you _wanted_ to evoke, because that's what gives you a sense of being needed...
+
+0. _Should be able to resume work_. Jim noticed that when you go to break and come back your in-progress work isn't there, so I need to fix that for sure. I'd actually thought of this in bed one night, so it's good to have it re-raised.
+
+0. _Did have a feeling of accomplishment_. Being promoted registered as an actual feeling. I could probably make it slightly less frequent though? Unsure about that.
+
+0. _Work time too short_. Interesting that this came up given I was very concerned about them being too long. I guess I've been in a hurry to have people at least _see_ the break time thing, but really they'll see that that can happen if they try to play the game pre-break, so I could afford to have work time be longer.
+
+0. _Ranks maybe too satirical_. Mary felt the ranking system seemed too obviously a joke and thus maybe condescending. How can they seem more serious? I guess lessen the superlatives and focus in maybe on a kind of progression after all. Probably don't need such frequent promotions either if it's being serious - something to strive towards. Could also raise the distance between promotions - but could also increase the 'value' of work you do at the same time?
+
+0. _Possible promotion bug_. Mary suggested she was getting promoted even if she did nothing! Will have to look into it.
+
+I'll write back to them with responses to their feedback, but that's definitely helped me clarify a couple of important elements on the game in my mind now I think? Especially the idea of embracing the idea that the game is at least a _bit_ stressful - it's also possible to return to the idea that it increased in intensity with promotions to reflect the idea that you're getting better and taking on more responsibility so that the promotions actually mean something? CEO, Input Division as the ultimate title or something? Input Executive? Heh.
+
+Okay, well I think the feedback has helped to crystalise a couple of things.
 
 
 ## Post-sending testable version to J+M (2017-06-29 11:42)
