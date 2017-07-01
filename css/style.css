@@ -24,11 +24,15 @@ body {
 
 .icon {
   text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .icon-label {
   margin-top: 10px;
   background-color: white;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .document-input {

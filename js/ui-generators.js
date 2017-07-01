@@ -64,10 +64,13 @@ function loadIcons() {
       createSimpleDialog("Uh-oh!","breakout-forbidden","You can't play Breakout unless you're on a break!","Okay",true, '400');
     }
   });
+  createIcon("about", 32, 64*7, createAboutDialog);
+
 }
 
 function createIcon(name, x, y, callback) {
-  var div = $('<div class="icon"><img src="assets/images/icons/'+name+'.png"><div class="icon-label">'+name.toUpperCase()+'</div></div>');
+  var label = name.charAt(0).toUpperCase() + name.slice(1);
+  var div = $('<div class="icon"><img src="assets/images/icons/'+name+'.png"><div class="icon-label">'+label+'</div></div>');
 
   div.css({
     position: 'absolute'
@@ -79,6 +82,12 @@ function createIcon(name, x, y, callback) {
     left: x
   });
   $('#ui').append(div);
+}
+
+function createAboutDialog () {
+  aboutText = "<p>Welcome to <i>It is as if you were doing work</i>!</p>";
+  aboutText += "<p>Dolitor McMolitor.</p>";
+  createSimpleDialog ("About", "about-dialog", aboutText, "Okay", true, 600, null, null);
 }
 
 function createBreakoutDialog () {
@@ -231,7 +240,7 @@ function createLoginDialog () {
         password = passwordValue;
         $(this).dialog('destroy');
         setTimeout(function () {
-          setDesktop('cat');
+          setDesktop('grass');
           showDesktop();
         },1000);
       }
@@ -377,7 +386,7 @@ function createDesktopDialog() {
     return;
   }
 
-  var options = ['cat','dog','nature','work'];
+  var options = ['grass','lake','cat','work'];
 
   var title = "Set desktop picture";
   var dialogDiv = $('<div id="desktop-dialog" class="dialog" title="'+title+'"></div>');
@@ -742,6 +751,9 @@ function createWorkDialog() {
     buttons: {},
     beforeClose: function () {
       console.log("Before close");
+      if (state == STATE.BREAK) {
+        return true;
+      }
       if (!$(this).parent().data('correct')) {
         playSound(dialogFailureSFX);
         $(this).parent().effect('shake',{distance:4});
@@ -978,6 +990,13 @@ function createDialog(div, options, random, stationary) {
 
   options.open = function () {
     playSound(newDialogSFX);
+    var pos = div.data('position');
+    if (pos) {
+      div.parent().offset({
+        top: pos.y,
+        left: pos.x
+      });
+    }
   }
 
   var dialog = div.dialog(options);
@@ -985,6 +1004,7 @@ function createDialog(div, options, random, stationary) {
   if (random) {
     var x = _.random(0,$(window).width() - div.parent().width());
     var y = _.random($('.menu-bar').height(),$(window).height() - div.parent().height());
+    div.data('position',{x: x, y: y});
     div.parent().offset({
       top: y,
       left: x
@@ -1192,35 +1212,35 @@ function createInput () {
 }
 
 
-
-
-function createIcons() {
-  var toDrag = $('<img src="assets/images/icon.png">');
-  toDrag.offset({
-    left: Math.floor(_.random(0,$(window).width())),
-    top: Math.floor(_.random(0,$(window).height()))
-  });
-  toDrag.draggable();
-  toDrag.selectable();
-
-  var toDrop = $('<img src="assets/images/trash.png">');
-  toDrop.css('position','absolute');
-  toDrop.offset({
-    left: Math.floor(_.random(0,$(window).width())),
-    top: Math.floor(_.random(0,$(window).height()))
-  });
-  toDrop.droppable({
-    drop: function( event, ui ) {
-      ui.draggable.remove();
-    }
-  });
-
-
-  $('#ui').append(toDrop);
-  $('#ui').append(toDrag);
-
-
-}
+//
+//
+// function createIcons() {
+//   var toDrag = $('<img src="assets/images/icon.png">');
+//   toDrag.offset({
+//     left: Math.floor(_.random(0,$(window).width())),
+//     top: Math.floor(_.random(0,$(window).height()))
+//   });
+//   toDrag.draggable();
+//   toDrag.selectable();
+//
+//   var toDrop = $('<img src="assets/images/trash.png">');
+//   toDrop.css('position','absolute');
+//   toDrop.offset({
+//     left: Math.floor(_.random(0,$(window).width())),
+//     top: Math.floor(_.random(0,$(window).height()))
+//   });
+//   toDrop.droppable({
+//     drop: function( event, ui ) {
+//       ui.draggable.remove();
+//     }
+//   });
+//
+//
+//   $('#ui').append(toDrop);
+//   $('#ui').append(toDrag);
+//
+//
+// }
 
 
 function createDocumentDialog () {
@@ -1268,6 +1288,9 @@ function createDocumentDialog () {
     },
     beforeClose: function () {
       console.log("Before close");
+      if (state == STATE.BREAK) {
+        return true;
+      }
       if (!$(this).parent().data('correct')) {
         playSound(dialogFailureSFX);
         $(this).parent().effect('shake',{distance:4});
@@ -1362,6 +1385,10 @@ function createEmailDialog () {
     },
     beforeClose: function () {
       console.log("Before close");
+      if (state == STATE.BREAK) {
+        return true;
+      }
+
       if (!$(this).parent().data('correct')) {
         playSound(dialogFailureSFX);
         $(this).parent().effect('shake',{distance:4});

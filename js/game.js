@@ -10,8 +10,8 @@ var STATE = {
 const DELAY_TIME = 1500;
 const FADE_TIME = 1500;
 const WORK_UNITS_FOR_PROMOTION = 1000;
-const WORK_TIME = 90000;
-const BREAK_TIME = 30000;
+const WORK_TIME = 100000;
+const BREAK_TIME = 10000;
 const PROGRESS_INTERVAL = 1000;
 
 
@@ -58,6 +58,7 @@ function setup() {
   // createInspirationalDialog();
   // createDesktopDialog();
   // createMusicDialog();
+  // createAboutDialog();
   // createMenuBar();
   // return;
 
@@ -118,11 +119,17 @@ function startWork () {
 
   maxiWorkDialogTimer = setTimeout(newMaxiWorkDialog, 1000);
   miniWorkDialogTimer = setTimeout(newMiniWorkDialog, _.random(3000,7000));
+
+  // Re-open any closed dialogs
+  $('.work-dialog, .document-dialog, .email-dialog, .promotion-dialog, .simple-dialog').dialog('open');
 }
 
 
 function startBreak () {
-  $('.work-dialog, .document-dialog, .email-dialog, .promotion-dialog, .simple-dialog').dialog('destroy');
+  state = STATE.BREAK;
+
+  // $('.work-dialog, .document-dialog, .email-dialog, .promotion-dialog, .simple-dialog').dialog('destroy');
+  $('.work-dialog, .document-dialog, .email-dialog, .promotion-dialog, .simple-dialog').dialog('close');
 
   if (miniWorkDialogTimer) {
     clearTimeout(miniWorkDialogTimer);
@@ -136,7 +143,6 @@ function startBreak () {
     clearTimeout(inspirationalDialogTimer);
   }
 
-  state = STATE.BREAK;
   playSound(breakSFX);
 
   setTimeout(createBreakDialog,5000);
