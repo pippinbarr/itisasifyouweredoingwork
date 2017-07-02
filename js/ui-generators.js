@@ -83,9 +83,7 @@ function createIcon(name, x, y, callback) {
 }
 
 function createAboutDialog () {
-  aboutText = "<p>Welcome to <i>It is as if you were doing work</i>!</p>";
-  aboutText += "<p>Dolitor McMolitor.</p>";
-  createSimpleDialog ("About", "about-dialog", aboutText, "Okay", true, 600, null, null);
+  createSimpleDialog ("About", "about-dialog", aboutText, "Got it", true, 600, null, null);
 }
 
 function createBreakoutDialog () {
@@ -624,7 +622,7 @@ function createWorkDialog() {
       spinner.appendTo(dialogDiv);
 
       spinner.spinner({
-        value: _.random(0,100)
+        value: _.random(-10,10)
       });
       spinner.bind("keydown", function (event) {
         event.preventDefault();
@@ -1134,7 +1132,7 @@ SPINNER
 
 function createSpinner () {
   var spinner = $('<input id="spinner" name="value">');
-  var correct = _.random(-50,50);
+  var correct = _.random(-15,15);
 
   spinner.data('correct',correct);
   spinner.data('type',TYPE.SPINNER);
@@ -1187,7 +1185,8 @@ function createDatepicker () {
   day = day < 10 ? '0'+day : day;
   var month = _.random(1,12);
   month = month < 10 ? '0'+month : month;
-  var year = _.random(2016,2018);
+  var thisYear = new Date().getFullYear();
+  var year = _.random(thisYear-1,thisYear+1);
   var correctDate = month + '/' + day + '/' + year;
   datepicker.data('correct',correctDate);
   return datepicker;

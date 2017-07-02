@@ -1,9 +1,6 @@
 
 ## Actual To Dos, None of This Tentative Bullshit
 
-* Check for sound effects coverage
-* Write the about text for the about icon
-
 
 ### Bugs
 
@@ -11,6 +8,9 @@
 
 ---
 
+* ~~Write the about text for the about icon~~
+* ~~Check for sound effects coverage~~
+* ~~Adjust range for date picker and spinner~~
 * ~~Rework promotion system so that~~
   - ~~Make getting promoted less easy (and gets more challenging)~~
   - ~~Earn more work units as you get promoted (but need more for a promotion)~~
