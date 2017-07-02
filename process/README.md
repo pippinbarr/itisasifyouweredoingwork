@@ -6,18 +6,19 @@
   - You earn more work units as you get promoted (but need more for a promotion)
   - The game becomes more frenetic as you go (but starts less frenetic than it is now)
   - The promotion titles are more serious (and perhaps have an actual observable hierarchy)
-* Fix the case issues with the technology corpus
 * Increase work time (and possibly break time), maybe more like 3 minutes and 1 minute, or even 5 minutes and 2 minutes... (the risk here is that people stop playing before they see the break...)
 * Check for sound effects coverage
 * Write the about text for the about icon
-* Throw some technology names into the inspirationals here and there at random?
+
 
 ### Bugs
 
-* Still possible to get [undefined] as a button label on WorkDialog (happened on one with 3 buttons that I saw)
 
 ---
 
+* ~~**ADDED THEM AS HEADINGS ALONG THE WAY TO HELP MAKE IT FEEL LIKE THE INSPIRATIONALS ARE ABOUT SOMETHING** Throw some technology names into the inspirationals here and there at random?~~
+* ~~Fix the case issues with the technology corpus~~
+* ~~**FOUND IT. LO-DASH RANDOM VERSUS MATH.RANDOM** Still possible to get [undefined] as a button label on WorkDialog (happened on one with 3 buttons that I saw)~~
 * ~~**ALSO DID MY BEST TO GENDER NEUTRALISE IT** Edit the list of inspirational stuff and remove over-specific elements~~
 * ~~**I'LL GO THROUGH AND DO AN EDIT TO REMOVE SOME OF THE INSPIRATIONALS THAT ARE TOO SPECIFIC** Reconsider the texts in document and email - could that be more technology oriented somehow? There's a pleasure in being able to _read_ what you type, is one reason to maintain the current thing. What about writing the text of technical manuals?~~
 

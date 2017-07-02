@@ -720,13 +720,13 @@ function createWorkDialog() {
 
   // Generate buttons
   var numButtons = _.random(1,3);
-  var buttonsArray = []
+  var buttonsArray = [];
 
   for (var i = 0; i < numButtons; i++) {
     var labelDuplicate = true;
     while (labelDuplicate) {
 
-      var label = buttonLabels[_.random(0,buttonLabels.length)];
+      var label = buttonLabels[_.random(0,buttonLabels.length-1)];
       labelDuplicate = false;
 
       for (var j = 0; j < buttonsArray.length; j++) {
@@ -1252,9 +1252,10 @@ function createDocumentDialog () {
   var instruction2 = $('<span>)</span>');
   var input = $('<textarea class="document-input"></textarea>');
 
-  var quoteIndex = Math.floor(Math.random() * inspirationalQuotes.length);
+  var quoteIndex = Math.floor(Math.random() * technologies.length);
   var quoteChar = 0;
   var characters = 0;
+  var quoteArray = technologies;
 
   var instruction = $('<p></p>');
   instruction.append(instruction1, charactersSpan, instruction2);
@@ -1304,7 +1305,12 @@ function createDocumentDialog () {
 
   input.on('keypress', function (e) {
     e.preventDefault();
-    var char = inspirationalQuotes[quoteIndex].charAt(quoteChar);
+
+    if (quoteArray == technologies && quoteChar == 0) {
+      input.append("* ");
+    }
+
+    var char = quoteArray[quoteIndex].charAt(quoteChar);
     input.append(char);
     quoteChar++;
     characters++;
@@ -1312,15 +1318,24 @@ function createDocumentDialog () {
     input.scrollTop(9999999);
     charactersSpan.text(characters);
     updateWorkUnits(UNITS_PER_CHARACTER);
-    if (quoteChar == inspirationalQuotes[quoteIndex].length) {
+
+    if (quoteChar == quoteArray[quoteIndex].length) {
       quoteChar = 0;
-      quoteIndex = _.random(0,inspirationalQuotes.length-1);
-      if (Math.random() < 0.5) {
+      if (quoteArray == technologies) {
+        input.append(':\n\n');
+        quoteArray = inspirationalQuotes;
+      }
+      else if (Math.random() < 0.4) {
         input.append('\n\n');
+        if (Math.random() < 0.5) {
+          quoteArray = technologies;
+        }
       }
       else {
         input.append(' ');
       }
+
+      quoteIndex = _.random(0,quoteArray.length-1);
     }
   });
   input.on('copy paste cut', function (e) {
@@ -1351,6 +1366,7 @@ function createEmailDialog () {
 
   var quoteIndex = Math.floor(Math.random() * inspirationalQuotes.length);
   var quoteChar = 0;
+  var quoteArray = technologies;
   var characters = 0;
 
   var instruction = $('<p></p>');
@@ -1402,23 +1418,37 @@ function createEmailDialog () {
 
   input.on('keypress', function (e) {
     e.preventDefault();
-    $(this).append(inspirationalQuotes[quoteIndex].charAt(quoteChar));
+
+    if (quoteArray == technologies && quoteChar == 0) {
+      input.append("* ");
+    }
+
+    var char = quoteArray[quoteIndex].charAt(quoteChar);
+    input.append(char);
     quoteChar++;
     characters++;
     $(this).parent().data('correct',(characters >= requiredCharacters));
+    input.scrollTop(9999999);
     charactersSpan.text(characters);
     updateWorkUnits(UNITS_PER_CHARACTER);
-    input.scrollTop(9999999);
 
-    if (quoteChar == inspirationalQuotes[quoteIndex].length) {
+    if (quoteChar == quoteArray[quoteIndex].length) {
       quoteChar = 0;
-      quoteIndex = _.random(0,inspirationalQuotes.length-1);
-      if (Math.random() < 0.5) {
+      if (quoteArray == technologies) {
+        input.append(':\n\n');
+        quoteArray = inspirationalQuotes;
+      }
+      else if (Math.random() < 0.4) {
         input.append('\n\n');
+        if (Math.random() < 0.5) {
+          quoteArray = technologies;
+        }
       }
       else {
         input.append(' ');
       }
+
+      quoteIndex = _.random(0,quoteArray.length-1);
     }
   });
   input.on('copy paste cut', function (e) {

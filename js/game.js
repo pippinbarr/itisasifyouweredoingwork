@@ -55,12 +55,12 @@ function setup() {
   // createWorkDialog();
   // createEmailDialog();
   // createDocumentDialog();
-  // createInspirationalDialog();
+  createInspirationalDialog();
   // createDesktopDialog();
   // createMusicDialog();
   // createAboutDialog();
   // createMenuBar();
-  // return;
+  return;
 
   startGame();
 }
@@ -119,9 +119,10 @@ function startWork () {
 
   maxiWorkDialogTimer = setTimeout(newMaxiWorkDialog, 1000);
   miniWorkDialogTimer = setTimeout(newMiniWorkDialog, _.random(3000,7000));
+  inspirationalDialogTimer = setTimeout(newInspirationalDialog, _.random(10000,20000));
 
   // Re-open any closed dialogs
-  $('.work-dialog, .document-dialog, .email-dialog, .promotion-dialog, .simple-dialog').dialog('open');
+  $('.work-dialog, .document-dialog, .email-dialog, .promotion-dialog, .simple-dialog, .inspirational-dialog').dialog('open');
 }
 
 
@@ -129,7 +130,7 @@ function startBreak () {
   state = STATE.BREAK;
 
   // $('.work-dialog, .document-dialog, .email-dialog, .promotion-dialog, .simple-dialog').dialog('destroy');
-  $('.work-dialog, .document-dialog, .email-dialog, .promotion-dialog, .simple-dialog').dialog('close');
+  $('.work-dialog, .document-dialog, .email-dialog, .promotion-dialog, .simple-dialog, .inspirational-dialog').dialog('close');
 
   if (miniWorkDialogTimer) {
     clearTimeout(miniWorkDialogTimer);
@@ -170,7 +171,7 @@ function newInspirationalDialog () {
     createInspirationalDialog();
   }
 
-  inspirationalDialogTimer = setTimeout(newInspirationalDialog,_.random(5000,20000));
+  inspirationalDialogTimer = setTimeout(newInspirationalDialog,_.random(10000,20000));
 }
 
 
