@@ -1,12 +1,6 @@
 
 ## Actual To Dos, None of This Tentative Bullshit
 
-* Rework promotion system so that
-  - Getting promoted is less easy (and gets more challenging)
-  - You earn more work units as you get promoted (but need more for a promotion)
-  - The game becomes more frenetic as you go (but starts less frenetic than it is now)
-  - The promotion titles are more serious (and perhaps have an actual observable hierarchy)
-* Increase work time (and possibly break time), maybe more like 3 minutes and 1 minute, or even 5 minutes and 2 minutes... (the risk here is that people stop playing before they see the break...)
 * Check for sound effects coverage
 * Write the about text for the about icon
 
@@ -14,8 +8,15 @@
 ### Bugs
 
 
+
 ---
 
+* ~~Rework promotion system so that~~
+  - ~~Make getting promoted less easy (and gets more challenging)~~
+  - ~~Earn more work units as you get promoted (but need more for a promotion)~~
+  - ~~Make the game become more frenetic as you go (but starts less frenetic than it is now)~~
+  - ~~Make the promotion titles more serious (and perhaps have an actual observable hierarchy)~~
+* ~~Increase work time (and possibly break time), maybe more like 3 minutes and 1 minute, or even 5 minutes and 2 minutes... (the risk here is that people stop playing before they see the break...)~~
 * ~~**ADDED THEM AS HEADINGS ALONG THE WAY TO HELP MAKE IT FEEL LIKE THE INSPIRATIONALS ARE ABOUT SOMETHING** Throw some technology names into the inspirationals here and there at random?~~
 * ~~Fix the case issues with the technology corpus~~
 * ~~**FOUND IT. LO-DASH RANDOM VERSUS MATH.RANDOM** Still possible to get [undefined] as a button label on WorkDialog (happened on one with 3 buttons that I saw)~~

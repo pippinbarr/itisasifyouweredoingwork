@@ -10,8 +10,6 @@ var TYPE = {
 }
 
 const NUM_STOCK = 17;
-const UNITS_PER_CHARACTER = 2;
-const UNITS_PER_DIALOG = 50;
 
 var startupSFX;
 var newDialogSFX;
@@ -135,9 +133,9 @@ function createMenuBar () {
   });
 
 
-  rank = getRank();
-  var menubarRank = $('<div id="menubar-rank"><b>Rank:</b> <span id="menubar-rank-text">' + rank + '</span></div>');
-  menubarRank.css({
+  // rank = getNextRank();
+  var menubarJobTitle = $('<div id="menubar-job-title"><b>Job Title:</b> <span id="menubar-job-title-text">' + jobTitle + '</span></div>');
+  menubarJobTitle.css({
     // marginLeft: 20,
     // left: '0%',
     // width: '320px',
@@ -180,7 +178,7 @@ function createMenuBar () {
     // fontWeight: "bold",
   });
 
-  menubar.append(menubarRank);
+  menubar.append(menubarJobTitle);
   menubar.append(menubarUnits);
   menubar.append(menubarUsername);
 
@@ -422,7 +420,7 @@ function createDesktopDialog() {
     buttons: {
       "Okay": function () {
         playSound(dialogSuccessSFX);
-        updateWorkUnits(UNITS_PER_DIALOG);
+        updateWorkUnits(WORK_UNITS_PER_DIALOG);
         $(this).dialog('close');
       },
     }
@@ -493,7 +491,7 @@ function createMusicDialog () {
     buttons: {
       "Okay": function () {
         playSound(dialogSuccessSFX);
-        updateWorkUnits(UNITS_PER_DIALOG);
+        updateWorkUnits(WORK_UNITS_PER_DIALOG);
         $(this).dialog('close');
       },
     }
@@ -906,7 +904,7 @@ function createWorkDialog() {
         else {
           dialogDiv.parent().data('correct',true);
           playSound(dialogSuccessSFX);
-          updateWorkUnits(UNITS_PER_DIALOG);
+          updateWorkUnits(WORK_UNITS_PER_DIALOG);
           $(this).dialog("destroy");
         }
       }
@@ -974,7 +972,7 @@ function createSimpleDialog (title, id, content, closeButtonName, random, width,
   if (closeButtonName) {
     options.buttons[closeButtonName] = function () {
       playSound(dialogSuccessSFX);
-      updateWorkUnits(UNITS_PER_DIALOG);
+      updateWorkUnits(WORK_UNITS_PER_DIALOG);
       $(this).dialog('destroy');
     }
   }
@@ -1277,7 +1275,7 @@ function createDocumentDialog () {
     buttons: {
       "Save": function () {
         if (characters >= requiredCharacters) {
-          updateWorkUnits(UNITS_PER_DIALOG);
+          updateWorkUnits(WORK_UNITS_PER_DIALOG);
           playSound(dialogSuccessSFX);
           $(this).dialog('destroy');
         }
@@ -1317,7 +1315,7 @@ function createDocumentDialog () {
     $(this).parent().data('correct',(characters >= requiredCharacters));
     input.scrollTop(9999999);
     charactersSpan.text(characters);
-    updateWorkUnits(UNITS_PER_CHARACTER);
+    updateWorkUnits(WORK_UNITS_PER_CHARACTER);
 
     if (quoteChar == quoteArray[quoteIndex].length) {
       quoteChar = 0;
@@ -1389,7 +1387,7 @@ function createEmailDialog () {
     buttons: {
       "Save": function () {
         if (characters >= requiredCharacters) {
-          updateWorkUnits(UNITS_PER_DIALOG);
+          updateWorkUnits(WORK_UNITS_PER_DIALOG);
           playSound(dialogSuccessSFX);
           $(this).dialog('destroy');
         }
@@ -1430,7 +1428,7 @@ function createEmailDialog () {
     $(this).parent().data('correct',(characters >= requiredCharacters));
     input.scrollTop(9999999);
     charactersSpan.text(characters);
-    updateWorkUnits(UNITS_PER_CHARACTER);
+    updateWorkUnits(WORK_UNITS_PER_CHARACTER);
 
     if (quoteChar == quoteArray[quoteIndex].length) {
       quoteChar = 0;
@@ -1457,16 +1455,12 @@ function createEmailDialog () {
   });
 }
 
-function getRank() {
-  var intensifier = jobTitler.intensifier[_.random(0,jobTitler.intensifier.length-1)]
-  var subject = jobTitler.subject[_.random(0,jobTitler.subject.length-1)]
-  var action = jobTitler.action[_.random(0,jobTitler.action.length-1)]
-  return intensifier + ' ' + subject + ' ' + action;
-}
-
-
 function updateWorkUnits(num) {
+  console.log("updateWorkUnits",workUnitsToPromotion,num);
+  if (!workUnitsToPromotion) return;
+
   workUnitsToPromotion -= num;
+
   $('#menubar-units-text').text(workUnitsToPromotion);
   if (workUnitsToPromotion <= 0) {
     givePromotion();
@@ -1475,24 +1469,59 @@ function updateWorkUnits(num) {
 }
 
 function givePromotion() {
+  if (jobTitle == "Chief Technology Officer") return;
+
+  jobTitle = null;
+  jobTitleSubjectIndex++;
+  if (jobTitleSubjectIndex >= jobTitler.subject.length) {
+    jobTitleSubjectIndex = 0;
+    jobTitlePositionIndex++;
+    if (jobTitlePositionIndex >= jobTitle.position.length) {
+      jobTitlePositionIndex = 0;
+      jobTitle = "Chief Technology Officer";
+    }
+  }
   playSound(promotionSFX);
-  rank = getRank();
-  $('#menubar-rank-text').text(rank);
-  createPromotionDialog(rank);
+  console.log(jobTitleSubjectIndex,jobTitlePositionIndex);
+  if (!jobTitle) jobTitle = getJobTitle(jobTitleSubjectIndex,jobTitlePositionIndex);
+  console.log(jobTitle);
+
+  $('#menubar-job-title-text').text(jobTitle);
+  createPromotionDialog(jobTitle);
 }
+
+function getJobTitle(subjectIndex,positionIndex) {
+  var subject = jobTitler.subject[subjectIndex]
+  var position = jobTitler.position[positionIndex]
+  return subject + ' ' + position;
+}
+
 
 
 function resetWorkUnits () {
+  if (jobTitle == "Chief Technology Officer") {
+    WORK_UNITS_FOR_PROMOTION = undefined;
+  }
+  else {
+    console.log(jobTitleSubjectIndex,jobTitlePositionIndex);
+    WORK_UNITS_FOR_PROMOTION = ((jobTitleSubjectIndex+1) * 1500) + (jobTitlePositionIndex * 10000);
+    WORK_UNITS_PER_DIALOG = ((jobTitleSubjectIndex+1) * 50) + (jobTitlePositionIndex * 450);
+    WORK_UNITS_PER_CHARACTER = ((jobTitleSubjectIndex+1) * 2) + (jobTitlePositionIndex * 15);
+  }
   workUnitsToPromotion = WORK_UNITS_FOR_PROMOTION;
-  $('#menubar-units-text').text(workUnitsToPromotion);
+  if (workUnitsToPromotion) {
+    $('#menubar-units-text').text(workUnitsToPromotion);
+  }
+  else {
+    $('#menubar-units-text').text("N/A");
+  }
 }
 
 
-function createPromotionDialog (newRank) {
+function createPromotionDialog (newJobTitle) {
 
   var dialogDiv = $('<div class="dialog promotion-dialog" title="Promotion!"></div>');
-  dialogDiv.append("<p>You got a promotion!</p>");
-  dialogDiv.append("<p>Now you're a <b>" + newRank + "</b>!<p>");
+  dialogDiv.append("<p>You have been promoted to <b>" + newJobTitle + "</b></p>");
   dialogDiv.append("<p>Keep working hard!<p>");
 
   var dialogOptions = {
@@ -1506,7 +1535,7 @@ function createPromotionDialog (newRank) {
     buttons: {
       "Okay": function () {
         playSound(dialogSuccessSFX);
-        updateWorkUnits(UNITS_PER_DIALOG);
+        updateWorkUnits(WORK_UNITS_PER_DIALOG);
         $(this).dialog('destroy');
       }
     },

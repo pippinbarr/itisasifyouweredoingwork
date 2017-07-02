@@ -1,78 +1,24 @@
 var jobTitler = {
-  intensifier: [
-    "Elite",
-    "Exemplary",
-    "Specialist",
-    "Exclusive",
-    "Inspirational",
-    "Top",
-    "Super",
-    "World-class",
-    "Apex",
-    "Alpha",
-    "Champion",
-    "Principal",
-    "Leading",
-    "Ace",
-    "Chief",
-    "Premium",
-    "Prime",
-    "A-1",
-    "First-class",
-    "Number-one",
-    "Paramount",
-    "Supreme",
-    "Premier",
-    "Power",
-  ],
   subject: [
-    "Technology",
-    "Network",
-    "Computation",
-    "Intelligence",
-    "Interface",
-    "Interaction",
-    "Input",
-    "Data",
-    "Information",
-    "Machine",
-    "Screen",
-    "Device",
-    "Browser",
-    "Dialog",
-    "Progress",
-    "Choice",
-    "Flow",
-    "Command",
-    "Action",
-    "Reaction",
-    "Selection",
-  ],
-  action: [
-    "Officer",
-    "Evangelist",
-    "Technologist",
-    "Leader",
-    "Chief",
-    "Engineer",
-    "Processor",
-    "User",
-    "Worker",
-    "Expert",
-    "Master",
-    "Authority",
-    "Professional",
-    "Connoisseur",
-    "Guru",
-    "Virtuoso",
-    "Wizard",
-    "Artist",
-    "Specialist",
-    "Actuator",
-    "Navigator",
-    "Simulator",
-  ]
-};
+    "Screen", //100
+    "Input", //400
+    "Dialog", //900
+    "Interface", //1600
+    "Data", //2500
+    "Big Data", //3600
+    "Choice", //4900
+    "System", //6400
+    "Computation", //8100
+  ], // 9
+  position: [
+    "Administrator", //1000
+    "Technician", //4000
+    "Engineer", //9000
+    "Specialist", //16000
+    "Architect", //25000
+    "Executive", //36000
+  ] 
+}
 
 
 var buttonLabels = [

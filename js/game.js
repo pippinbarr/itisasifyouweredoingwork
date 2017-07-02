@@ -9,9 +9,12 @@ var STATE = {
 
 const DELAY_TIME = 1500;
 const FADE_TIME = 1500;
-const WORK_UNITS_FOR_PROMOTION = 1000;
-const WORK_TIME = 100000;
-const BREAK_TIME = 10000;
+var WORK_UNITS_FOR_PROMOTION = 500;
+var WORK_UNITS_PER_CHARACTER = 2;
+var WORK_UNITS_PER_DIALOG = 50;
+
+const WORK_TIME = 3*60*1000;
+const BREAK_TIME = 1*60*1000;
 const PROGRESS_INTERVAL = 1000;
 
 
@@ -23,7 +26,9 @@ var inspirationalDialogTimer;
 
 var username = 'Unknown';
 var password = '';
-var rank = "Unknown";
+var jobTitleSubjectIndex = -1;
+var jobTitlePositionIndex = 0;
+var jobTitle = 'Intern';
 var workUnitsToPromotion = WORK_UNITS_FOR_PROMOTION;
 var windowSizeDialog = null;
 
@@ -55,12 +60,12 @@ function setup() {
   // createWorkDialog();
   // createEmailDialog();
   // createDocumentDialog();
-  createInspirationalDialog();
+  // createInspirationalDialog();
   // createDesktopDialog();
   // createMusicDialog();
   // createAboutDialog();
   // createMenuBar();
-  return;
+  // return;
 
   startGame();
 }
@@ -118,8 +123,8 @@ function startWork () {
   breakTimer = setTimeout(startBreak, WORK_TIME);
 
   maxiWorkDialogTimer = setTimeout(newMaxiWorkDialog, 1000);
-  miniWorkDialogTimer = setTimeout(newMiniWorkDialog, _.random(3000,7000));
-  inspirationalDialogTimer = setTimeout(newInspirationalDialog, _.random(10000,20000));
+  miniWorkDialogTimer = setTimeout(newMiniWorkDialog, _.random(10000,15000));
+  inspirationalDialogTimer = setTimeout(newInspirationalDialog, _.random(15000,20000));
 
   // Re-open any closed dialogs
   $('.work-dialog, .document-dialog, .email-dialog, .promotion-dialog, .simple-dialog, .inspirational-dialog').dialog('open');
@@ -162,28 +167,32 @@ function newMiniWorkDialog () {
     createWorkDialog();
   }
 
-  miniWorkDialogTimer = setTimeout(newMiniWorkDialog,_.random(5000,10000));
+  miniWorkDialogTimer = setTimeout(newMiniWorkDialog,_.random(10000,20000));
 }
 
 
 function newInspirationalDialog () {
-  if ($('.inspirational-dialog').length < 3) {
+  if ($('.inspirational-dialog').length < 2) {
     createInspirationalDialog();
   }
 
-  inspirationalDialogTimer = setTimeout(newInspirationalDialog,_.random(10000,20000));
+  inspirationalDialogTimer = setTimeout(newInspirationalDialog,_.random(20000,60000));
 }
 
 
 function newMaxiWorkDialog () {
-  if ($('.document-dialog').length == 0) {
-    createDocumentDialog();
+  var numMaxiWork = $('.document-dialog, .email-dialog').length;
+  if (numMaxiWork == 1 && Math.random() < 0.65) {
+
   }
-  else if ($('.document-dialog, .email-dialog').length < 2) {
+  else if (numMaxiWork < 2) {
     if (Math.random() < 0.5) {
       createEmailDialog();
     }
+    else {
+      createDocumentDialog();
+    }
   }
 
-  maxiWorkDialogTimer = setTimeout(newMaxiWorkDialog, _.random(3000,6000));
+  maxiWorkDialogTimer = setTimeout(newMaxiWorkDialog, _.random(10000,25000));
 }
