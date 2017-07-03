@@ -1,7 +1,7 @@
 var aboutText = "" +
 "<p>Welcome to <i>It is as if you were doing work</i>!</p>" +
-"<p>As you are no doubt very aware, the new machine-learning economy has significantly reduced the necessity of human-produced labour, leading to unemployment rates of over 95%.</p>" +
-"<p>Although many humans find themselves able to adapt to this post-work era, chiefly by playing videogames, some among you struggle with a sense of ineffectiveness and a lack of productivity. We take this very seriously.</p>" +
+"<p>As you are no doubt very aware, the new machine-learning economy has significantly reduced the demand for human-produced labour, leading to unemployment rates of over 95%.</p>" +
+"<p>Although many humans find themselves able to adapt to this post-work era some among you struggle with a sense of ineffectiveness and a lack of productivity. We take this very seriously.</p>" +
 "<p><i>It is as if you were doing work</i> is an application created especially for those humans who feel a need to recapture an appearance of usefulness through traditional human-computer interaction.</p>" +
 "<p>Please feel free to launch <i>It is as if you were doing work</i> whenever existential concerns about contributing to a larger framework of industry assail you. Consider organising with groups of friends to 'work' with <i>It is as if you were doing work</i> in a larger office setting.</p>" +
 "<p>And remember: you are human, you are important.<p>";

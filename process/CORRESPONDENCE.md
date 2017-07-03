@@ -63,3 +63,60 @@ Thanks a bunch for this feedback - it's really helped crystalise a couple of asp
 - Will increase the period of work... currently it's at 90 seconds, maybe I'll make it more like 3 minutes or so...?
 
 Good things to think about - thank you!
+
+## Pippin > Jim and Mary (2017-07-02)
+
+  The work game is updated based on your feedback and other stuff I was planning on:
+
+- There's now an 'about' icon on the desktop that has information about the game's narrative setting (in character)
+- The dialogs show up at a less frenetic pace
+- Job titles are more serious
+- The texts you type in emails/documents have been edited to avoid overly specific things like Steve Jobs and first person statement, and now also include headers which are weird technology names
+- Changed the available desktop background
+- More work time before the break kicks in (3 minutes work, 1 minute break)
+
+I think that's it. Interested to hear whether you think it's an improvement?
+
+## Jim > Pippin (2017-07-02)
+
+Bloody hell I’m exhausted. Think this works really well. I would cut back the rest time, it feels longer than it was last time (true?).
+
+Love the aspirational messages - I would like more of those to keep me going!
+
+## Pippin > Jim (2017-07-02)
+
+Huh... yeah, I think the break is a minute now, I guess it could drop down to 30 seconds? I guess there's not much to do in the break except play the game (did you play the game? "Break"-out, get it?)
+
+Anyway, glad that it's feeling more tuned. I'll let the inspirational images run a little hotter...
+
+## Mary > Pippin (2017-07-02)
+
+Yes, I found the pace far better to feel I am actually ‘working’
+also like the vocabulary much more and the titles are great
+plus i think the inspirational tone and the graphics are perfect.
+the tasks themselves are legible although I wondered if the one where you set the calendar could be connected with a task rather than only itself as an action. Does that distinction make sense. seems ok with the emails etc but this one felt like i was doing it just to do it.
+
+And some thoughts on the ‘About’ text which I think is v helpful but some tonal input. There seems some slippage between ‘effectiveness’ and ‘purpose’ you might like to look at
+
+
+Welcome to It is as if you were doing work!
+
+As you are no doubt very aware, the new machine-learning economy has significantly reduced the necessity of [demand for/ need for] human-produced labour, leading to unemployment rates of over 95%.
+
+Although many humans find themselves able to adapt to this post-work era, chiefly[often - disjunction here as you are calling your ‘game’ an app but here seem to align your app with games - I think you could drop the game comment or expand to include hobbies, social activities so it’s not so bald]  by playing videogames, some among you struggle with a sense of ineffectiveness and a lack of productivity. We take this very seriously.
+
+It is as if you were doing work is an application created especially for those humans who feel the need to continue to experience a sense of usefulness through traditional human-computer interaction.
+
+Please feel free to launch It is as if you were doing work whenever concerns about the meaningfulness of your life and its purpose overwhelm you. Consider organising friends and former colleagues  to join you and 'work' with It is as if you were doing work in a communal environment that mirrors the social context of the office.
+
+And remember: you are human, you are important.
+
+## Pippin > Mary (2017-07-02)
+
+Excellent - glad it's tuned up better now.
+
+It's interesting that it's the date pickers that feel the most arbitrary... none of the little dialogs have any real meaning ("select this number", "type these words", "click this button"), but it's true that dates have a weird kind of solidity...
+
+In the end, though, it is kind of the intention for the things you're doing to be done 'just because', so perhaps it's not so bad...?
+
+I've edited the text. Good point about 'videogames' - I just removed it, not necessary.
