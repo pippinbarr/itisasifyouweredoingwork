@@ -1,6 +1,8 @@
 
 ## Actual To Dos, None of This Tentative Bullshit
 
+* Email press contacts with the game
+* Release the game
 
 ### Bugs
 
@@ -8,6 +10,9 @@
 
 ---
 
+* ~~Make a trailer~~
+* ~~Write the text of the press kit~~
+* ~~Take screenshots~~
 * ~~Write the about text for the about icon~~
 * ~~Check for sound effects coverage~~
 * ~~Adjust range for date picker and spinner~~
@@ -104,6 +109,14 @@
   - ~~Select menu~~
   * ~~**BUT NOTE NO MULTI-SELECT WHICH I THINK IS FINE** Think through integrating icon selection and dragging~~
   * ~~Integrate new Win95esque CSS~~
+
+
+
+## Notes now that it seems releaseable (2017-07-02 19:23)
+
+Made changes as per J+M's feedback and sent it back to them and Jim felt like it was 'there'. I also tweeted an image of the About dialog and that got almost 200 favourites in about 4 hours, which I read as an endorsement of the sentiment and tone. I'm so eager for this project to be done at this point that those two things have me pretty convinced that I'll just release the project on Wednesday and try to send it to press tomorrow. As such I'll probably whip up my press kit this evening and tomorrow morning and that will be that.
+
+It's entirely possible I could do more and better with it, but it's gone on long enough and I have other plans and thoughts for games based around user interfaces (in fact I'm thinking of basing a funding application on it this funding season to see what happens). Better to make and release and make something else that continue to try to perfect this specific idea. I think it does its job at this point.
 
 
 ## Notes on J+M's feedback (2017-07-01 11:43)

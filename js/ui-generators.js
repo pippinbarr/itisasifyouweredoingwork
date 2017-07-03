@@ -1243,7 +1243,7 @@ function createInput () {
 function createDocumentDialog () {
   var title = inspirationWorkSlogans[_.random(0,inspirationWorkSlogans.length-1)];
   var div = $('<div class="dialog document-dialog" title="'+ title + '"></div>');
-  var requiredCharacters = _.random(200,1000);
+  var requiredCharacters = _.random(250,750);
   var instruction1 = $('<span>Write and save a document of at least '+ requiredCharacters +' characters (currently </span>');
   var charactersSpan = $('<span>0</span>');
   var instruction2 = $('<span>)</span>');
@@ -1346,7 +1346,7 @@ function createEmailDialog () {
 
   var title = "Email";
   var div = $('<div class="dialog email-dialog" title="'+ title + '"></div>');
-  var requiredCharacters = _.random(200,1000);
+  var requiredCharacters = _.random(200,500);
   var instruction1 = $('<span>Write and send an email of at least '+ requiredCharacters +' characters (currently </span>');
   var charactersSpan = $('<span>0</span>');
   var instruction2 = $('<span>)</span>');
