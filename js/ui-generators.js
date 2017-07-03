@@ -232,8 +232,9 @@ function createLoginDialog () {
 
         username = usernameValue;
         $('#menubar-username').text(username);
-
         password = passwordValue;
+
+        playSound(dialogSuccessSFX);
         $(this).dialog('destroy');
         setTimeout(function () {
           setDesktop('grass');
@@ -264,10 +265,12 @@ function createReadyDialog () {
     autoOpen: true,
     buttons: {
       "Let's go!": function () {
+        playSound(dialogSuccessSFX);
         startWork();
         $(this).dialog('destroy');
       },
       "Not yet...": function () {
+        playSound(dialogSuccessSFX);
         startDelayedWork();
         $(this).dialog('destroy');
       }
