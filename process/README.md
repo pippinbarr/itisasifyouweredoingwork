@@ -1,8 +1,7 @@
 
 ## Actual To Dos, None of This Tentative Bullshit
 
-* Email press contacts with the game
-* Release the game
+* On Wednesday: Release the game
 
 ### Bugs
 
@@ -10,6 +9,7 @@
 
 ---
 
+* ~~Email press contacts with the game~~
 * ~~Make a trailer~~
 * ~~Write the text of the press kit~~
 * ~~Take screenshots~~
