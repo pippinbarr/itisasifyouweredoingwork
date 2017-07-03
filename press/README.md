@@ -30,11 +30,11 @@ With the look settled, the content started being decided by the fact I was think
 
 And that's how the game came together.
 
-(You can see the game's [process documentation](https://github.com/pippinbarr/itisasifyouweredoingwork/tree/master/press) for far more information about its development than you could possibly want.)
+(You can see the game's [process documentation](https://github.com/pippinbarr/itisasifyouweredoingwork/tree/master/process) for far more information about its development than you could possibly want.)
 
 ## Technology
 
-_It is as if you were doing work_ is written in JavaScript using [jQuery](http://www.jquery.com/) and [jQuery UI](http://www.jqueryui.com/), two of the quintessential libraries for web development. The sound effects for _It is as if you were doing work_ are pulled from Windows 95 and Windows 98 system sounds, while the music was generated using [Wolfram Tones](http://tones.wolfram.com/). The desktop icons in the game are from Windows 95, the desktop pictures are all creative-commons zero-attribution or public domain, and the inspirational images are all stock images of work. The theming of the dialog boxes was created in jQuery UI's [ThemeRoller](https://jqueryui.com/themeroller/).
+_It is as if you were doing work_ is written in JavaScript using [jQuery](http://www.jquery.com/) and [jQuery UI](http://www.jqueryui.com/), two of the quintessential libraries for web development. The sound effects for _It is as if you were doing work_ are pulled from Windows 95 and Windows 98 system sounds, while the music was generated using [Wolfram Tones](http://tones.wolfram.com/). The desktop icons in the game are from Windows 95, the desktop pictures are all creative-commons zero-attribution or public domain, and the inspirational images are all watermarked stock images of work. The theming of the dialog boxes was created in jQuery UI's [ThemeRoller](https://jqueryui.com/themeroller/).
 
 _It is as if you were doing work_ is an open source game licensed under a [Creative Commons Attribution-NonCommercial 3.0 Unported License](http://creativecommons.org/licenses/by-nc/3.0/). You are looking at the code (and process and press) repository right now.
 
