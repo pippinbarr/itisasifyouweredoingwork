@@ -62,11 +62,16 @@ _It is as if you were doing work_ is an open source game licensed under a [Creat
 
 ## Press
 
-* Coming soon?
+* O'Connor, Alice. [_It is as if you were doing work really is_](https://www.rockpapershotgun.com/2017/07/04/free-desktop-work-simulator/). 4 July 2017. Rock, Paper, Shotgun.
+* Beschizza, Rob. [_It Is As If You Were Doing Work is a browser game celebrating Windows 3-era cubicle drudgery_](http://boingboing.net/2017/07/04/it-is-as-if-you-were-doing-wor.html). 4 July 2017. Boing Boing.
+* [_Канадец создал симулятор офисного работника. Сыграйте в него на работе_](https://meduza.io/shapito/2017/07/04/kanadets-sozdal-simulyator-ofisnogo-rabotnika-sygrayte-v-nego-na-rabote). 4 July 2017. Meduza.
 
 ## Additional Links
 
 * [Developer blog posts about _It is as if you were doing work_](http://www.pippinbarr.com/search.html?q=%22it%20is%20as%20if%20you%20were%20doing%20work%22)
+
+* [E-tray Exercise](https://www.wikijob.co.uk/content/aptitude-tests/test-types/e-tray-exercise) - Real world dystopian interface to train people to work with email
+* [In Europe, Fake Jobs Can Have Real Benefits](https://www.nytimes.com/2015/05/31/business/international/in-europe-fake-jobs-can-have-real-benefits.html) - New York Times article about fake businesses used for training
 
 ## Credits
 

@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!-- saved from url=(0175)http://widgets.outbrain.com/nanoWidget/externals/obFrame/obFrame.htm#pid=7499&dmpenabled=true&csenabled=true&d=dgTmjNFwNjMcwWR0V8Im3k7AXEFB_k477G2bvwlSFCaho5XaGe1aFdaEwn9gtrRa -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <script async="" src="./beacon.js"></script><script type="text/javascript">
+    var  LS_KEY = "OB-SYNC"
+        ,LS_ROTATE_PIXELS = "OB-RTAT" //pixel radiation
+        ,EXPIRATION = 30 // in days
+        ,DAY = 86400000
+        ,PIXELS = [
+          "$HTTP://idsync.rlcdn.com/420046.gif?partner_uid=$D",
+          "$HTTP://tags.bluekai.com/site/29859?id=$D",
+          "$HTTP://b1sync.zemanta.com/usersync/outbrain/?puid=$D",
+          "$HTTP://ib.adnxs.com/getuid?$HTTP://sync.outbrain.com/appnexus/pixel?user_id=$UID&referrer=$HTTP://odb.outbrain.com",
+          "$HTTP://dpm.demdex.net/ibs:dpid=133726&dpuuid=$D",
+          "$HTTP://sync-jp.im-apps.net/imid/set?cid=1000047&tid=obid&uid=$D"
+        ];
+
+    /**
+     * Get params from url
+     */
+    var getQueryParam = function (key, defaultVal) {
+      key = key.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+      var regexS, regex, results;
+      try {
+        regexS = "[\\?#&]" + key + "=([^&#]*)";
+        regex = new RegExp(regexS, "i");
+        results = regex.exec(window.location.href);
+        if (results === null) {
+          return defaultVal;
+        }
+        return results[1];
+      } catch (ex) {
+        return defaultVal;
+      }
+    };
+
+    /* For now error is doiing a lot of noise
+    var sendError = function (pixel) {
+      var i, d = document;
+      if (d.getElementById("obMntor")) {
+        return;
+      }
+      var inject = function () {
+        i = d.createElement("iframe");
+        i.setAttribute("id", "obMntor");
+        i.style.display = "none";
+        d.body.appendChild(i);
+      };
+      if (d.body) {
+        inject();
+      } else {
+        setTimeout(function () {
+          d.body || inject();
+        }, 10000);
+      }
+      i.src = "https://widgets.outbrain.com/widgetMonitor/monitor.html?name=" + encodeURIComponent("obm-SyncPixelError")
+          + "&message=" + encodeURIComponent(pixel);
+    };
+    */
+
+
+    /**
+     * The difference of 2 dates (in milliseconds). result is difference in days.
+     * @param timestamp - date in milli
+     * @returns {number} represent the difference in days
+     */
+    var compareTime = function (timestamp) {
+      var now =  new Date().getTime();
+      return Math.round( (now - timestamp) / DAY); // divide by one day
+    };
+
+    /**
+     * Set timestamp in local storage
+     */
+    var resetLocalStorage = function () {
+      util.setLS(LS_KEY, new Date().getTime().toString());
+      util.setLS(LS_ROTATE_PIXELS, 0);
+    };
+
+
+    var injectSinglePixel = function (pixelUrl,d) {
+      var protocol = (document.location.protocol == "https:" ? "https" : "http");
+      pixelUrl = pixelUrl
+                      .replace(/\$HTTP/g, protocol)
+                      .replace("$D", d);
+
+      var pixel = document.createElement("img");
+      pixel.setAttribute("src", pixelUrl);
+      pixel.setAttribute("height", "1");
+      pixel.setAttribute("width", "1");
+      //pixel.onerror = function(){sendError(protocol);};
+      document.body.appendChild(pixel);
+    };
+
+
+    /**
+     * Fire all pixels at once.
+     */
+    var sendPixels = function (uuid) {
+      for (var i = 0; i < PIXELS.length; i++) {
+        injectSinglePixel(PIXELS[i],uuid);
+      }
+      return true;
+    };
+
+    /**
+     * Do a rotation between pixeles.
+     */
+    var sendPixelsRotate = function (uuid) {
+      var currentToggle = util.getLS(LS_ROTATE_PIXELS,0);
+      var togglePixArr = util.createBoolArrayFromInt(parseInt(currentToggle,10),10); //get a Boolean array from the LS stored number that hold last pixels position
+      var pixelToStartFrom = Math.ceil(Math.random() * PIXELS.length);
+
+      for (var i = 0; i < PIXELS.length; i++) {
+        var currentPixel = ((pixelToStartFrom + i) % PIXELS.length);
+        if (togglePixArr[currentPixel] === false){ //this pixel was never fired since reset
+          injectSinglePixel(PIXELS[currentPixel],uuid);
+          togglePixArr[currentPixel] = true;//change pixel state
+          util.setLS(LS_ROTATE_PIXELS,util.createBitMask(togglePixArr));
+          return false; // mission is not over yet, might not all pixels were fired
+        }
+      }
+
+      return true;
+    };
+
+
+    /**
+     * Comscore init function
+     */
+    var comScoreInit = function () {
+      if (getQueryParam("csenabled", "") === "false") {
+        return;
+      }
+
+      var pid = getQueryParam("pid", "");
+      window._comscore = window._comscore || [];
+      _comscore.push({c1: "7", c2: "14320224", c3: ((pid.length > 0) ? pid : "000")});
+      (function () {
+
+        var s = document.createElement("script"),
+            el = document.getElementsByTagName("script")[0];
+        s.async = true;
+        s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b")
+            + ".scorecardresearch.com/beacon.js";
+        el.parentNode.insertBefore(s, el);
+      })();
+    };
+
+    var util = {
+      createBitMask : function(booleanArray){
+      var binaryString = "";
+      for(var i=0; i< booleanArray.length; i++){
+        binaryString = binaryString.concat(booleanArray[i] ? "1" : "0");
+      }
+      return parseInt(binaryString, 2);
+    },
+      createBoolArrayFromInt : function(num, base){
+        var bits = [];
+        for (var i = base - 1; i >= 0; i--) {
+          bits[i] = (num & (1 << i)) !== 0;
+        }
+        return bits.reverse();
+      },
+      isBrowserSupportsLocalStorage : function(){
+        return (typeof(Storage) !== "undefined" && window.localStorage);
+      },
+      getLS : function(att,defaultVal){
+        return (window.localStorage.getItem(att)) ?  window.localStorage.getItem(att) : defaultVal;
+      },
+      setLS : function(att,val){
+        window.localStorage.setItem(att,val);
+      }
+    };
+
+    /**
+     * DMP init function
+     */
+    var dmpInit = function () {
+      var timeStamp, useCookie = false, shouldSendPixelsNow = true;
+
+      if (getQueryParam("dmpenabled", "") === "false") {
+        return;
+      }
+      var uuid = getQueryParam("d", "");
+      if (uuid.length === 0) {
+        return false;
+      }
+
+
+      try {
+        if (util.isBrowserSupportsLocalStorage()) {
+          timeStamp = util.getLS(LS_KEY);
+        } else {
+          useCookie = true;
+          timeStamp = readCookie(LS_KEY);
+        }
+
+
+        if (timeStamp) { // if there is timestamp in local storage / cookie
+          if (!useCookie) { // LC
+            var diff = compareTime(timeStamp);
+            if (diff < EXPIRATION) {
+              shouldSendPixelsNow = false;
+            }
+          }
+          else { // cookie exist -we have the cookie timestamp
+            shouldSendPixelsNow = false;
+          }
+        }
+
+        if (shouldSendPixelsNow && //if we need to send them, we will fire and reset the Ls/cookie
+            (useCookie  && sendPixels() ||
+            !useCookie  && sendPixelsRotate(uuid) )
+        ){
+          (useCookie) ?
+              resetCookie() :
+              resetLocalStorage(); // creates new timestamp
+        }
+      }
+      catch (ex) { // private browsing
+      }
+    };
+
+    /**
+     * Cookie setter
+     */
+    var resetCookie = function () {
+      var date = new Date();
+      date.setTime(date.getTime() + (EXPIRATION * DAY));
+      var expires = "; expires=" + date.toGMTString();
+      document.cookie = LS_KEY + "=" + date.getTime() + expires + "; path=/";
+    };
+
+    /**
+     * Cookie getter
+     * @param name
+     * @returns {*}
+     */
+    var readCookie = function (name) {
+      var nameEQ = name + "=";
+      var ca = document.cookie.split(';');
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1, c.length);
+        }
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+      }
+      return null;
+    };
+  </script>
+</head>
+<body onload="comScoreInit();dmpInit();">
+
+</body></html>
