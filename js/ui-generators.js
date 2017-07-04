@@ -1250,7 +1250,7 @@ function createDocumentDialog () {
   var instruction1 = $('<span>Write and save a document of at least '+ requiredCharacters +' characters (currently </span>');
   var charactersSpan = $('<span>0</span>');
   var instruction2 = $('<span>)</span>');
-  var input = $('<textarea class="document-input"></textarea>');
+  var input = $('<textarea class="document-input" style="user-select: none" readonly="readonly"></textarea>');
 
   var quoteIndex = Math.floor(Math.random() * technologies.length);
   var quoteChar = 0;
@@ -1362,7 +1362,7 @@ function createEmailDialog () {
 
   var subjectText = "Re: " + technologies[_.random(0,technologies.length-1)];
   var subject = $('<span name="email-subject-field" class="email-field">'+subjectText+'</span>')
-  var input = $('<textarea class="email-input"></textarea>');
+  var input = $('<textarea class="email-input" style="user-select: none" readonly="readonly"></textarea>');
 
   var quoteIndex = Math.floor(Math.random() * inspirationalQuotes.length);
   var quoteChar = 0;
