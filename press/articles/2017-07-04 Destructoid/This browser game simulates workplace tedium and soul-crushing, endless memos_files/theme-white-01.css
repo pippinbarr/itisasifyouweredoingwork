@@ -1,0 +1,2452 @@
+/* WHITE THEME */ 
+
+body {
+	background-color: #000;	
+}
+
+ 
+
+/* ------ MIDDLE CONTENT STYLES ------ */
+
+#middle_content-wrapper {
+ 
+	background-color: #f7f7f7 !important;
+}
+
+
+
+blockquote {
+}
+
+blockquote p {
+
+}
+ 
+a {
+	color:#cc0000;
+}
+
+a:hover {
+	opacity:0.7;
+}
+
+hr {
+	color:#cccccc;
+	} 
+
+ 
+.info-link {	
+	color: #CC1F1F;
+	background-image: url('https://www.destructoid.com/sites/_default/img/body/jumplinks_red-arrow-light.png');
+}
+ 
+
+h2 {
+	color: #47484D;
+}
+
+h2 a {
+	color: #CC1F1F;
+}
+ 
+
+h3 {
+	color: #F15218;
+	border-top: 3px solid #F15218;
+}
+
+h3 span {
+	
+	color: #47484D;
+ 
+	
+}
+
+h3 span a {
+	color: #CC1F1F;
+	
+}
+
+h4 {
+	
+	color: #767780;
+	
+}
+
+h5 {
+	color: #767780;
+	
+}
+
+h5 a {
+	color: #767780;
+}
+
+h6 {
+
+	color: #47484d;
+}
+
+h6 a {
+	color: #47484d;
+	
+}
+
+/* ------ HEADER & MAIN NAV STYLES ------ */
+
+#bannerad_top {
+ 
+	background-color: #f7f7f7;
+	
+}
+
+#bannerad_top a {
+	color: #CC1F1F;
+}
+
+#bannerad_topmobile {
+ 
+	background-color: #f7f7f7;
+	
+}
+
+#bannerad_topmobile a {
+	color: #CC1F1F;
+}
+
+ 
+
+#dtoid_siteheader {
+	background-color:#000;
+	clear:both:	
+}
+ 
+
+#top_blogroll ul {
+ 
+	
+	color: #AAACB3;
+}
+
+#top_blogroll ul li {
+	
+	border-right: 1px solid #AAACB3;
+	
+}
+
+#top_blogroll ul li a {
+	color: #AAACB3;
+	
+}
+
+#top_blogroll .blogroll-active {
+	color: #fff;
+	
+}
+ 
+
+ 
+#uonline {
+ 
+	background: url('https://www.destructoid.com/sites/_default/img/top-nav/vertical-separator.png') repeat-y right top transparent;
+	color: #fff;
+
+}
+
+#uonline a {
+	color: #fff;
+	
+}
+
+ 
+
+/* LOGOBAR, SITE STATS & LOGIN */
+
+ 
+
+#logobar_block #block_logotext span {
+	color: #FF0000;
+	
+	
+	
+	
+	
+}
+
+#logobar_infologin {
+	color: #fff;
+ 
+}
+
+#logobar_infologin a {
+	color: #fff;
+	
+}
+
+ 
+
+ 
+#infologin_col1 #login_uname {
+	
+ 
+	color: #dbdde6;
+	 
+}
+
+
+
+#infologin_col1 #login_ustatus {
+	
+	color: #9dee5d;
+	
+ 
+}
+
+ 
+
+#infologin_col2 #uaccount_photo {
+	
+ 
+	background-color: transparent;
+	 
+}
+
+.uaccount-loggedin {
+	border: 1px solid #767780;
+}
+
+#infologin_umenu {
+	border:1px #ccc solid; 
+	background-color: #000;
+ 
+}
+
+ 
+#infologin_umenu .umenu-blink {
+	color: #9dee5d;
+}
+ 
+#infologin_umenu #umenu_admin {
+	border-bottom: 1px solid #47484d;
+}
+
+/* MAIN SITE NAV */
+ 
+#top_mainnav #mainnav_contentfilter li a {
+	color: #DBDDE6;
+ 
+}
+
+#top_mainnav #mainnav_contentfilter li a:hover {
+	color: #cc0000;
+	background-color:transparent;
+ 
+}
+
+
+
+
+
+#top_mainnav #mainnav_contentfilter li ul {
+ 
+	background: url('https://www.destructoid.com/sites/_default/img/top-nav/sub-menu_BG.png') no-repeat #CC1F1F;
+	 }
+
+#top_mainnav #mainnav_contentfilter li ul li {
+	border-bottom: 1px solid #A61A1A;
+	 
+}
+
+#top_mainnav #mainnav_contentfilter li ul li a {
+	color: #fff;
+}
+
+
+#top_mainnav #mainnav_platformfilter li a {
+	color: #DBDDE6;
+ 
+}
+
+
+#top_mainnav #mainnav_platformfilter li a:hover {
+	color: #cc0000;
+	background-color:transparent;
+ 
+}
+
+
+#top_mainnav #mainnav_platformfilter li ul {
+	position: absolute;
+	background: url('https://www.destructoid.com/sites/_default/img/top-nav/sub-menu_BG.png') no-repeat #CC1F1F;
+ 
+}
+
+#top_mainnav #mainnav_platformfilter li ul li {
+	border-bottom: 1px solid #A61A1A;
+}
+
+ 
+
+#top_mainnav #mainnav_platformfilter li ul li a {
+	color: #fff;
+	background: url('https://www.destructoid.com/sites/_default/img/top-nav/sub-menu_ec-BG.png') no-repeat transparent;
+}
+
+ 
+
+#top_mainnav #mainnav_platformfilter li ul li ul {
+ 
+	background-image: none;
+	background-color: #A61A1A;
+ 
+}
+
+ 
+#top_mainnav #mainnav_platformfilter li ul li ul li a {
+ 
+	background-image: none;
+ 
+}
+
+ 
+ 
+ 
+ 
+ 
+ 
+.navbar-toggle {
+ 
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+ 
+} 
+
+
+.navbar-toggle .icon-bar {
+  
+ 
+	background-color: #ccc;
+}
+ 
+ 
+
+/* END BOOTSTRAP MINIMALS */
+
+
+/* SITE SEARCH */
+
+#top_sitesearch {
+	
+		height: 45px;
+		padding-bottom:25px;
+		clear:both;
+}
+ 
+
+#top_sitesearch #sitesearch_searchfield {
+ 
+	background: url('https://www.destructoid.com/sites/_default/img/top-nav/search_icon.png') no-repeat left center transparent;
+	background: url('https://www.destructoid.com/sites/_default/img/top-nav/search_icon.png') no-repeat left center transparent;
+	background-size: 20px;
+ 	background-position-x:5px;
+ 	color:#000;
+
+ 	
+}
+
+#top_sitesearch input {
+ 	
+ 	background: url('https://www.destructoid.com/sites/_default/img/top-nav/header-bg.gif') repeat left top #0D0C0C;
+	background-color: #909c13;
+    border: 1px #333 solid;
+    color: #000;
+
+ 
+}
+
+#dtoid_siteheader input {
+ 
+	/* background: url('https://www.destructoid.com/sites/_default/img/top-nav/header-bg.gif') repeat left top #0D0C0C; */
+	/* background-size: 5px; */
+	
+	/* actual search box */
+	
+ 	background-color:#fff !important;
+ 	background:none;
+	
+	
+}
+
+
+/* ------ HOME PAGE STYLES ------ */
+
+#home-featured {
+	
+ 
+	/* background-color: #000; */
+}
+
+#home-featured div {
+ 
+	background-color: transparent;
+ 
+	
+}
+
+#home-featured div h1 {
+
+	color: #fff;
+	border-bottom: 1px solid #fff;
+
+}
+
+#home-featured div h1 a {
+	color: #fff;
+}
+
+#home-featured div h1::before {
+ 
+	background: url("https://www.destructoid.com/sites/_default/img/body/reviews/review-label.png") no-repeat left center transparent;
+ 
+}
+
+ 
+
+#home-featured span::before {
+	background-color: rgba(0,0,0,0.5);
+}
+
+#home-featured .post-author {
+	color: #fff;
+	
+	
+	
+}
+
+ 
+
+ 
+
+/* ------ MIDDLE CONTENT STYLES ------ */
+
+#support-page div {
+ 
+	background-color: #f7f7f7;
+ 
+	
+ 
+}
+
+/* ------ LEFT COLUMN STYLES ------ */
+
+
+#content-wrapper_sitebody-social-left i {
+	color:#888;
+}
+
+
+#content-wrapper_sitebody-social-left a {
+	color:#888;
+}
+ 
+ 
+.home-wrapper #sitebody-left_comvaluenav .comfilter {
+	border-bottom: 3px solid #767780;
+}
+
+
+#sitebody-left_comvaluenav .comfilter {
+ 
+	color: #767780;
+	background: no-repeat center 5px transparent;
+ 
+}
+
+#sitebody-left_comvaluenav .comfilter:hover {
+	color: #47484D;
+	border-color: #47484D;
+}
+
+#sitebody-left_comvaluenav .comfilter:active {
+	color: #47484D;
+}
+
+#sitebody-left_comvaluenav #comvaluenav_su {
+	background-image: url('https://www.destructoid.com/sites/_default/img/body/comvaluenav_su-bg.png');
+}
+
+#sitebody-left_comvaluenav #comvaluenav_cr {
+	background-image: url('https://www.destructoid.com/sites/_default/img/body/comvaluenav_cr-bg.png');
+}
+
+#sitebody-left_comvaluenav #comvaluenav_af {
+	background-image: url('https://www.destructoid.com/sites/_default/img/body/comvaluenav_af-bg.png');
+}
+
+#sitebody-left_comvaluenav #comvaluenav_ut {
+	background-image: url('https://www.destructoid.com/sites/_default/img/body/comvaluenav_ut-bg.png');
+ 
+}
+
+ 
+
+.post-comments {
+	background-color: transparent;
+	color:#a6d05b; 
+}
+
+
+.cmts1 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/light-comment-1.png");
+
+}
+
+.cmts2 {
+	/* all comments made green - intentionally duped */
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/light-comment-1.png");
+}
+
+ 
+
+.disclaimy a {
+	color:#cc0000;
+}
+
+
+.cntfilter-box {
+	background-color: #e6e6e6;
+	border: 1px solid #ccc;
+}
+
+.cntfilter-box div a {
+	color: #CC1F1F;
+}
+
+.cntfilter-box em {
+	color: #47484d;
+}
+
+.cntfilter-box select,button,input {
+
+}
+
+.cntfilter-box input {
+	background-color: #fff;
+	border: 1px solid #aaacb3;
+ 
+	color: #47484d;
+ 
+	
+}
+
+.cntfilter-box .cntfilter-link {
+	 
+	background-color: #999;
+	display: inline-block;
+	
+	color: #fff;
+	font-style: italic;
+ 
+}
+
+ 
+ 
+.cntfilter-box select.cntfilter-select {
+ 
+	color: #47484d;
+ 
+	
+}
+
+/* SITE ALERT BOXES */
+
+.alert-soft {
+	
+	border: 1px solid #ccc;
+	 
+	background-color: #f2f2f2;
+	 
+}
+
+.alert-soft span {
+	
+	font-style: italic;
+	color: #47484d;
+	display: inline-block;
+	 
+}
+ 
+ 
+
+.alert-soft p a {
+	color: #cc1f1f;
+}
+
+.alert-soft span a {
+	color: #cc1f1f;
+}
+
+.alert-medium {
+	
+	border: 1px solid #ccc;
+ 
+	background-color: #e5dba1;
+ 
+}
+
+.alert-medium span {
+ 
+	color: #0d0c0c;
+}
+
+.alert-medium span a {
+	color: #cc1f1f;
+}
+
+
+.alert-success {
+	
+	border: 1px solid #ccc;
+	background-color: #ffff99
+	 
+}
+
+.alert-success span {
+	 
+	color: #0d0c0c;
+}
+
+.alert-success span a {
+	color: #cc1f1f;
+}
+
+
+/* when someone gets added to ignore authors list */
+
+.ignore-box {
+	opacity: 0.5;
+	
+	border: 1px solid #ccc;
+ 
+	background-color: #f2f2f2;
+ 
+}
+
+.ignore-box span {
+	opacity: 0.5;
+ 
+	color: #47484d;
+ 
+
+}
+
+.ignore-box .fleft {
+	opacity: 0.5;
+}
+
+
+
+.ignore-box p a {
+	opacity: 0.5;
+	color: #cc1f1f;
+}
+
+.ignore-box span a {
+	opacity: 0.5;
+	color: #cc1f1f;
+}
+
+
+
+
+/* SITE CTA BUTTONS */
+
+.editcta {
+	color: #a6d05b;
+	
+}
+
+.gencta {
+	 
+	color: #fff;
+}
+
+/* SMALL POST STYLES */
+
+.smlpost {
+	border-bottom: 1px solid #ccc;
+}
+
+ 
+
+.smlpost .smlpost-img img {
+	
+	border: 1px solid rgba(0,0,0,0.5);
+}
+
+.smlpost .smlpost-img figcaption {
+
+	background-color: #CC1F1F;
+ 
+}
+
+.smlpost .smlpost-img figcaption a {
+	color: #fff;
+	
+}
+
+.smlpost .smlpost-img figcaption::after {
+	content: url('https://www.destructoid.com/sites/_default/img/body/postdesc_red-corner-light.png');
+}
+
+
+
+.smlpost .smlpost-content h2 a {
+	color: #CC1F1F;
+	
+}
+ 
+
+.smlpost .smlpost-content .smlpost-datetime {
+	color: #47484D;
+ 
+}
+
+.smlpost .post-author {
+	color: #47484D;
+}
+
+
+
+
+.smlpost .smlpost-content .smlpost-story {
+	 
+	color: #0D0C0C;
+	
+	text-align: justify;
+
+}
+
+.smlpost .smlpost-content .smlpost-story p {
+	text-align: justify;
+}
+
+/* BIG POST STYLES */
+
+ 
+ 
+ 
+.bigpost .bigpost-click {
+	
+	cursor: pointer;
+	position: absolute;
+	left: 0;
+	top: 0;
+	
+ 
+	z-index: 0;
+}
+
+.bigpost .bigpost-img {
+	
+	
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-color: transparent;
+	background-size: cover;
+ 
+}
+
+.bigpost .bigpost-img figcaption {
+	
+ 
+	background-color: #CC1F1F;
+ 
+}
+
+.bigpost .bigpost-img figcaption a {
+	color: #fff;
+	
+}
+
+.bigpost .bigpost-img figcaption::after {
+	content: url('https://www.destructoid.com/sites/_default/img/body/postdesc_red-corner-light.png');
+	position: absolute;
+ 
+	
+}
+
+.bigpost .bigpost-content {
+	position: absolute;
+	
+	background-color: rgba(0,0,0,0.5);
+ 
+}
+
+.bigpost .bigpost-content h2 a {
+	color: #fff;
+	
+}
+
+.bigpost .bigpost-content .bigpost-byline {
+ 
+	
+}
+
+.bigpost .bigpost-content .bigpost-datetime {
+	color: #fff;
+ 
+}
+
+.bigpost .post-author {
+	color: #fff;
+}
+
+.bigpost .bigpost-content .post-comments {
+ 
+}
+
+.bigpost .bigpost-content .bigpost-story {
+ 
+	color: #fff;
+	
+	text-align: justify;
+ 
+}
+
+/* TOP 25 STYLES */
+
+#sitebody-left_top25 {
+	
+	 
+	background-color: #fff;
+	 
+	
+	-webkit-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.15);
+	-moz-box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.15);
+	box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.15);
+}
+
+#sitebody-left_top25 h2 {
+ 
+	margin: 0px auto 25px auto;
+}
+
+ 
+
+.top25-article {
+  
+	border-bottom: 1px dashed #AAACB3;
+	
+}
+
+.top25-article h1 {
+ 
+}
+
+.top25-article h1 a {
+	color: #CC1F1F;
+	
+}
+
+.top25-article .top25-byline {
+ 
+}
+
+.top25-article .post-comments {
+	
+	
+	padding-right: 10px;
+}
+
+.top25-article .top25-datetime {
+	color: #47484D;
+	
+	padding-top: 2px;
+}
+
+.top25-article .post-author {
+	color: #47484D;
+}
+
+
+/* ARTICLE LEFT COL STYLES */
+
+#sitebody-left_morenews {
+	
+	border-bottom: 1px solid #b3b3b3;
+ 
+}
+
+#sitebody-left_morenews h2 {
+ 
+ 
+}
+
+#sitebody-left_morenews .morenews-article {
+ 
+}
+
+#sitebody-left_morenews .morenews-article .morenews-img {
+	
+}
+
+#sitebody-left_morenews .morenews-article .morenews-img img {
+	border: 1px solid rgba(0,0,0,0.5);
+	
+}
+
+#sitebody-left_morenews .morenews-article .morenews-img figcaption {
+	
+	position: absolute;
+	bottom: -4px;
+	right: -2px;
+	background-color: #CC1F1F;
+	font-style: italic;
+ 
+	
+	padding: 8px;
+	z-index: 90;
+}
+
+#sitebody-left_morenews .morenews-article .morenews-img figcaption a {
+	color: #fff;
+	
+	
+}
+
+#sitebody-left_morenews .morenews-article .morenews-img figcaption::after {
+	content: url('https://www.destructoid.com/sites/_default/img/body/morenews_red-corner-light.png');
+	position: absolute;
+	bottom: 8px;
+	left: -3px;
+	z-index: 100;
+	height: 3px;
+	
+}
+
+#sitebody-left_morenews .morenews-article h1 {
+	 
+	margin-top: 20px;
+}
+
+#sitebody-left_morenews .morenews-article h1 a {
+	
+	color: #47484d;
+}
+
+#sitebody-left_morenews .info-link {
+	
+}
+
+
+
+/* ------ RIGHT COLUMN STYLES ------ */
+
+#content-wrapper_sitebody-right {
+	
+	width: 300px;
+}
+
+#sitebody-right_newsletter {
+	
+	margin-bottom: 20px;
+}
+
+#sitebody-right_newsletter form label {
+	
+	margin-bottom: 10px;
+}
+
+#sitebody-right_newsletter #newsletter_copy-left {
+	
+}
+
+#sitebody-right_newsletter #newsletter_copy-left #mce-EMAIL {
+	 
+ 
+	border-color: #AAACB3;
+	background: url('https://www.destructoid.com/sites/_default/img/body/newsletter-email_icon.png') no-repeat 5px center #fff;
+	 
+	color: #47484D;
+}
+
+#sitebody-right_newsletter #newsletter_copy-left #mce-EMAIL_submit {
+	background: url('https://www.destructoid.com/sites/_default/img/body/newsletter-email_signup.png') no-repeat left top transparent;
+	background-size: 45px;
+ 
+	
+	cursor: pointer;
+	
+	
+	
+	
+}
+
+#bannerad_siderail {
+ 
+	
+	
+}
+
+/* LATEST REVIEWS */
+
+#sitebody-right_latest-reviews {
+	
+}
+
+#sitebody-right_latest-reviews .info-link {
+ 
+}
+
+.lr-item {
+ 
+	border-bottom: 1px solid #ccc;
+ 
+	
+}
+
+.lr-item h1 {
+ 
+	color: #47484D;
+ 
+}
+
+.lr-item h1 a {
+	color: #47484D;
+	
+}
+
+ 
+
+.lr-item .lr-review .gscore {
+ 
+	background-size: 60px;
+	padding: 0
+	
+	position: absolute;
+	top: -5px;
+	right: 0;
+}
+
+ 
+
+.lr-item .lr-good {
+	background-color: #96CF3E;
+}
+
+.lr-item .lr-okay {
+	background-color: #CFBE3E;
+}
+
+.lr-item .lr-poor {
+	background-color: #CF763E;
+}
+
+ 
+
+.sr-bigpost h1 {
+	 
+	color: #47484D;
+	 
+}
+
+.sr-bigpost h1 a {
+	color: #47484D;
+	
+}
+
+ 
+
+.sr-bigpost .sr-bigpost-img img {
+	border: 1px solid rgba(0,0,0,0.5);
+	
+}
+
+.sr-bigpost .sr-bigpost-img figcaption {
+	
+	position: absolute;
+	bottom: -4px;
+	right: -2px;
+	background-color: #F15218;
+	font-style: italic;
+ 
+	
+	padding: 8px;
+	z-index: 90;
+}
+
+ 
+
+.sr-bigpost .sr-bigpost-img figcaption::after {
+	content: url('https://www.destructoid.com/sites/_default/img/body/sideraildesc_orange-corner.png');
+	position: absolute;
+ 
+	
+}
+
+.sr-bigpost .post-author {
+	color: #47484D;
+ 
+	display: inline-block;
+}
+
+.sr-bigpost .post-comments {
+	
+ 
+}
+
+.sr-smlpost {
+	
+ 
+	border-bottom: 1px solid #ccc;
+ 
+}
+
+.sr-smlpost h4 {
+	 
+	color: #CC1F1F;
+	
+ 
+}
+
+.sr-smlpost h4 a {
+	color: #CC1F1F;
+	
+}
+
+ 
+
+.sr-smlpost .sr-smlpost-img img {
+	border: 1px solid rgba(0,0,0,0.5);
+	
+}
+
+.sr-smlpost h4 .sr-smlpost-stats {
+ 
+	color: #767780;
+	
+ 
+}
+
+/* COMMUNITY BLOG STYLES */
+
+ 
+
+#sitebody-right_community #cb-tags h5 {
+	border-bottom: 1px solid #767780;
+}
+
+ 
+
+#sitebody-right_community .sr-tips {
+	font-style: italic;
+ 
+}
+
+ 
+
+.cb-item .cb-img img {
+	
+	border: 1px solid rgba(0,0,0,0.5);
+}
+
+ 
+
+.cb-item .cb-body h4 a {
+	color:  #CC1F1F;
+	
+}
+
+.cb-item .post-author {
+ 
+	
+	color: #47484D;
+}
+
+ 
+
+.cb-item .cb-break {
+ 
+	border-bottom: 1px solid #ccc;
+}
+
+ 
+
+/* SIDE-RAIL QUICKPOST STYLES */
+
+ 
+
+ 
+#sitebody-right_quickp .upv-post .upv-vtsection {
+ 
+}
+
+.post-wrapper #sitebody-right_quickp {
+	margin-top: 0px;
+}
+
+/* SIDE-RAIL CONTEST STYLES */
+
+#sitebody-right_contest {
+	
+ 
+}
+
+/* SIDE-RAIL ADDITIONAL CONTENT */
+
+.sr-tips {
+	color: #555;
+ 
+	
+}
+
+.sr-tips p {
+	 
+	padding: 3px 0;
+}
+
+.sr-tips h6 {
+	margin-top: 15px;
+}
+
+.sr-tips a {
+	color: #cc1f1f;
+	
+}
+
+.sr-notification {
+	 
+	border: 1px solid #ccc;
+	background-color: #f2f2f2;
+	
+	margin-bottom: 20px;
+}
+
+.sr-notification p {
+ 
+	color: #47484d;
+
+}
+
+.sr-notification p a {
+	color: #cc1f1f;
+	
+}
+
+/* PAGINATION, AROUND THE WEB & SOCIAL BUTTONS */
+
+ 
+
+#content-wrapper_pagination a {
+	
+	color: #47484D;
+	letter-spacing: 0.03em;
+	 
+	background: url('https://www.destructoid.com/sites/_default/img/body/pagination_arrows-light.png') no-repeat transparent;
+	background-size: 8px;
+}
+
+ 
+ 
+
+#bottom_aroundweb #aroundweb_container .aw_article-block h1 {
+	
+ 
+	color: #47484D;
+ 
+}
+
+#bottom_aroundweb #aroundweb_container .aw_article-block h1 a {
+	color: #CC1F1F;
+	
+}
+
+#bottom_aroundweb #aroundweb_container .aw_article-block img {
+	border: 1px solid rgba(0,0,0,0.5);
+	
+}
+
+#bottom_socialcta {
+
+	background: url('https://www.destructoid.com/sites/_default/img/body/horizontal-separator-light.png') repeat-x left 20px transparent;
+	background-size: 2px;
+	
+}
+
+/* ------ FOOTER STYLES ------ */
+
+#bottom_site-footer {
+	
+	background: url('https://www.destructoid.com/sites/_default/img/footer-nav/bottom_site-footer_bg.png') repeat-x left bottom #151313;
+}
+
+#site-footer_links {
+ 
+}
+
+#site-footer_links ul li {
+	
+	display: inline;
+	 
+	
+}
+
+#site-footer_links ul li a {
+	color: #DBDDE6;
+	
+}
+
+ 
+
+#site-footer_closing p {
+ 
+	color: #DBDDE6;
+}
+
+#site-footer_closing p a {
+	color: #CC1F1F;
+	
+}
+
+#site-footer_closing p em {
+	 
+}
+
+#closing_mmlogo {
+ 
+}
+
+ 
+
+/* ------ POST STYLES ------ */
+
+.article-hr {
+	 
+	
+	 
+	border-bottom: 1px solid #ccc;
+	border-right: 5px solid #ccc;
+ 
+	
+}
+
+#content-wrapper_breadcrumbs {
+ 
+	
+	color: #767780;
+	 
+	
+	
+}
+
+#content-wrapper_breadcrumbs span {
+	margin-left: 10px;
+}
+
+#content-wrapper_breadcrumbs span a {
+	
+	color: #767780;
+}
+
+
+
+#article_posttop h1 {
+	 
+}
+
+#article_posttop h1 a {
+	color: #cc1f1f;
+	
+}
+
+#article_posttop h1 span {
+	
+	color: #767780;
+	font-style: italic;
+	 
+	margin-top: 1%;
+}
+
+#posttop_byline {
+	
+	border-top: 1px solid #ccc;
+	border-left: 5px solid #ccc;
+	color: #767780;
+}
+ 
+#posttop_byline #byline_author a {
+	color: #767780;
+}
+
+#posttop_byline #byline_authorhandle a {
+	color: #767780;
+}
+
+ 
+#posttop_byline .post-comments {
+	
+ 
+ 
+}
+
+ 
+
+#article_postcontent #postcontent_heroimg img {
+	
+	 
+	border: 1px solid rgba(0,0,0,0.5);
+}
+
+#article_postcontent #postcontent_heroimg figcaption {
+ 
+	background-color: #CC1F1F;
+ 
+}
+
+#article_postcontent #postcontent_heroimg figcaption a {
+	color: #fff;
+ 
+}
+
+#article_postcontent #postcontent_heroimg figcaption::after {
+	content: url('https://www.destructoid.com/sites/_default/img/body/postdesc_red-corner-light.png');	
+}
+
+#article_postcontent #postcontent_post {
+ 
+	color: #47484d;
+}
+
+#article_postcontent #postcontent_post p img {
+ 
+	border: 1px solid rgba(0,0,0,0.5);
+ 
+}
+
+#article_postcontent #postcontent_post p {
+ 
+}
+
+#article_postcontent #postcontent_post p a {
+	
+	color: #cc1f1f;
+}
+
+#article_postcontent #postcontent_post p a:hover {
+	text-decoration: underline;
+}
+
+#article_postcontent #postcontent_post #post_adunit {
+	
+ 
+	
+	border: 1px solid rgba(0,0,0,0.5);
+}
+
+ 
+
+#article_postcontent #postcontent_post #post_sharethis img {
+	width: 41px;
+	margin: 0 10px;
+	
+	vertical-align: middle;
+}
+
+#article_postcontent #postcontent_post #post_sharethis span {
+	font-style: italic;
+ 
+}
+
+#article_postcontent #postcontent_post #post_tags {
+ 
+}
+
+#article_postcontent #postcontent_post #post_tags a {
+	color: #cc1f1f;
+ 
+	
+	
+}
+
+ 
+ 
+
+.post-pullquote {
+ 
+	
+	color: #f15218;
+ 
+	border-top: 1px solid #f15218;
+	border-bottom: 4px solid #f15218;
+	
+	
+}
+
+.pullleft {
+	
+	margin-left: 0 !important;
+}
+
+.pullright {
+	
+	margin-right: 0 !important;
+}
+
+#postcontent_post .p2pcta {
+	
+ 
+}
+
+#review-final {
+	
+	
+	background-color: #000;
+	color: white;
+ 
+}
+
+#review-final::before {
+ 
+	background-color: #000;
+ 
+	
+	color: #000;
+ 
+}
+
+#review-final::after {
+ 
+	background-color: #000;
+ 
+	
+	color: #000;
+	 
+}
+
+/* AUTHOR BIO */
+
+  
+
+#article_postauthor #postauthor_photo #photo_author a img {
+ 
+	border: 1px solid rgba(0,0,0,0.5);
+}
+
+#article_postauthor #postauthor_photo #photo_authorbio {
+	
+	
+	border: 0px solid #5293cc;
+}
+
+#article_postauthor #postauthor_photo #photo_authorbio a {
+ 
+	color: #fff;
+	
+	background-color: #cc0000;
+ 
+	border:0px !important;
+	 
+}
+
+ 
+
+#postauthor_bio h5 {
+	
+	color: #47484d;
+}
+
+#postauthor_bio h5 span {
+ 
+	color: #767780;
+	 
+	
+}
+
+#postauthor_bio h5 span::before {
+	/* content: "/"; */
+	margin-right: 10px;
+}
+
+ 
+
+#bio_stats span {
+	
+ 
+	color: #767780;
+ 
+}
+
+#bio_stats span a {
+	
+	color: #cc1f1f;
+ 
+}
+
+ 
+
+#bio_stats #stats_followme a {
+ 
+	background: url("https://www.destructoid.com/sites/_default/img/body/follow-me_img.png") no-repeat left top transparent;
+ 
+}
+
+#postauthor_bio #bio_content {
+	
+	color: #47484d;
+	font-style: italic;
+ 
+}
+
+ 
+
+#postauthor_bio #bio_footer span {
+	
+	
+	margin-right: 10%;
+}
+
+#postauthor_bio #bio_footer span a {
+	
+	height: 20px;
+	color: #767780;
+ 
+	
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-color: transparent;
+	background-size: 20px;
+}
+
+#postauthor_bio #bio_footer #footer_athrblog a {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/author_blog-img.png");
+	background-size: 18px;
+	padding-left: 23px;
+}
+
+#postauthor_bio #bio_footer #footer_athrtwitter a {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/author_twitter-img.png");
+}
+
+#postauthor_bio #bio_footer #footer_athremail a {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/author_email-img.png");
+}
+
+/* STORY POST STYLES */
+
+#storypost_article {
+ 
+	background-color: transparent
+}
+
+ 
+
+#storypost_article #post_gverdict #gverdict_imgclip {
+    background-color: rgba(0,0,0,0.7);
+    background-image: none;
+
+}
+ 
+
+ 
+
+/* QUICK POSTS */
+
+.qpmain-wrapper h1 {
+	color: #cc1f1f; 
+	background: url("https://www.destructoid.com/sites/_default/img/body/qp-icon.png") no-repeat left 8px transparent;
+ 
+}
+
+.qpmain-wrapper h1 span {
+	color: #000;
+ 
+}
+
+.qpmain-wrapper h1 span a {
+	color: #cc1f1f;
+}
+
+.qp-post {
+	border-width: 0px !important;
+	width:97%;
+}
+
+.qp-post .upv-vtsection {
+	background: url("https://www.destructoid.com/sites/_default/img/body/qp-arrow.png") no-repeat 102% -22px transparent;
+ 
+}
+
+.qp-post .upv-cntsection {
+	background-color: #e0e0e0;
+ 
+}
+
+ 
+ 
+
+/* CBLOGS */
+
+.cbmain-wrapper h1 {
+	color: #cc1f1f;
+ 
+	background: url("https://www.destructoid.com/sites/_default/img/body/cb-icon.png") no-repeat left 5px transparent;
+ 
+}
+
+.cbmain-wrapper h1 span {
+	color: #000;
+ 
+}
+
+.cbmain-wrapper h1 span a {
+	color: #cc1f1f;
+}
+
+.promotedcb::after {
+ 
+	background: url("https://www.destructoid.com/sites/_default/img/body/cb-promoted.png") no-repeat left bottom transparent;
+ 
+	content: "Promoted";
+	color: #fff;
+ 
+}
+
+.rss-button {
+	
+	border: 1px solid #767780;
+ 
+	color: #0d0c0c;
+ 
+	background: url("https://www.destructoid.com/sites/_default/img/body/cb-rss-icon.png") no-repeat 40px center #f7f7f7;
+ 
+}
+
+.p2pcta {
+ 
+	color: #fff;
+ 
+	background-color: #cc1f1f;
+	border:1px #888 solid;
+	}
+	
+ 
+
+.p2psettings .p2psettings-menu {
+ 
+	border: 1px solid #ccc;
+	background-color: #fff;
+	box-shadow: 0 0 1em #ccc;
+}
+
+ 
+
+.p2psettings .p2psettings-menu li a {
+	
+	
+	color: #767780;
+}
+
+ 
+
+.p2psettings .p2psettings-menu .p2psm-hr {
+	border-bottom: 1px dashed #ccc;
+ 
+}
+
+.upvcta {
+ 
+	color: #fff;
+	
+	background: url("https://www.destructoid.com/sites/_default/img/body/qp-upvote.png") no-repeat 10% center #cc1f1f;
+ 
+	
+	border: 1px solid #cc1f1f;
+}
+ 
+
+.followcta {
+ 
+	color: #cc1f1f;
+	border: 1px solid #cc1f1f;
+	
+	background: url("https://www.destructoid.com/sites/_default/img/body/follow-me_img.png") no-repeat 10% center transparent;
+ 
+	
+}
+
+.morepostscta {
+ 
+	color: #47484d;
+	border: 1px solid #47484d;
+ 
+	
+}
+
+ 
+ 
+#cbheader_cbuser #cbuser_cover img {
+}
+
+ 
+
+#cbuser_userinfo #userinfo_photo img {
+	width: 88%;
+	border: 1px solid rgba(0,0,0,0.5);
+ 	
+}
+
+ 
+
+#cbuser_userinfo #userinfo_stats h1 a {
+ 
+	
+	color: #767780;
+}
+
+ 
+ 
+#cbuser_bio img {
+	
+	
+	margin: 10px 0;
+}
+
+#cbuser_bio a {
+	color: #cc1f1f;
+}
+ 
+
+#cbfooter #cbfooter_fappers {
+	font-style: italic;
+	color: #47484d;
+	margin-bottom: 20px;
+}
+
+#cbfooter #cbfooter_fappers a {
+	color: #cc1f1f;
+}
+ 
+ 
+
+.cbuser-wrapper #article_postcontent #postcontent_post p img {
+ 
+	border: 1px solid rgba(0,0,0,0.5);
+}
+
+/*.cbuser-wrapper #article_postcontent #postcontent_post iframe  {
+	margin: 2% auto;
+	
+	
+	
+}*/
+
+.promotedcbpost::after {
+	
+	 
+	color: #fff;
+	 	background: url("https://www.destructoid.com/sites/_default/img/body/cb-promoted-post.png") no-repeat left bottom transparent;
+ 
+}
+
+/* UPVOTING MODULE */
+
+.upv-post {
+	
+	 
+	border-bottom: 1px solid #ccc;
+ 
+	
+}
+ 
+.upv-post .upv-vtsection .upv-imgcell figure img {
+	
+	border: 1px solid rgba(0,0,0,0.5);
+}
+
+ 
+
+.upv-post .upv-vtsection .upv-votecell .upv-upvote {
+ 
+	color: #fff;
+	
+	background: url("https://www.destructoid.com/sites/_default/img/body/qp-upvote.png") no-repeat 18% center #cc1f1f;
+ 
+}
+
+.upv-post .upv-vtsection .upv-votecell a:hover {
+
+	color:#fff !important;
+	background-color:#cd121d;
+	background: url("https://www.destructoid.com/sites/_default/img/upvote2.gif") no-repeat 18% center #8c0108;
+	background-size: 22%;
+		
+	
+}
+
+
+.upv-post .upv-vtsection .upv-votecell_login .upv-upvote {
+ 
+	color: #fff;
+	
+	background: url("https://www.destructoid.com/sites/_default/img/body/qp-upvote.png") no-repeat 18% center #cc1f1f;
+ 
+}
+
+.upv-post .upv-vtsection .upv-votecell_login a:hover {
+
+	color:#fff !important;
+	background-color:#cd121d;
+	background: url("https://www.destructoid.com/sites/_default/img/upvote2.gif") no-repeat 18% center #8c0108;
+	background-size: 22%;
+		
+	
+}
+
+
+
+
+
+.upv-post .upv-vtsection .upv-votecell .upv-faprs {
+ 
+	color: #767780;
+ 
+	margin-top: 5px;
+}
+ 
+
+.upv-post .upv-cntsection .upv-content {
+	color: #47484d;
+ 
+}
+
+.upv-post .upv-cntsection .upv-content h1 {
+ 
+	background-image: none;
+ 
+}
+
+.upv-post .upv-cntsection .upv-content h1 a {
+	color: #CC1F1F;
+	
+}
+
+.upv-post .upv-cntsection .upv-content p a {
+	color: #cc1f1f;
+}
+
+ 
+ 
+
+
+/* USER FOLLOWING PROFILE CARDS */
+
+#usercard_medium {
+
+ 
+	background-color:#fff;
+	border:1px #ccc solid;
+}
+
+#usercard_header_container {
+	background-color:#000;
+ 
+}
+
+
+/* GAME REVIEWS STYLES */
+
+#reviews_rfilter {
+	
+	
+	color: #767780;
+}
+
+#reviews_rfilter .rfilter {
+
+	border-bottom: 2px solid #aaacb3;	
+	color: #767780;
+	background: url("https://www.destructoid.com/sites/_default/img/body/reviews/sort-arrows.png") no-repeat 70px center transparent;
+	 }
+ 
+ 
+ 
+ #header_greview h1 a {
+ 
+	color: #cc1f1f;
+ 
+}
+
+#greview_gcontent {
+ 
+	font-size: 100%;
+}
+
+#greview_gcontent a {
+	
+	
+	color: #999;
+	border-bottom: 4px solid #999;
+ 
+}
+
+#greview_gcontent a:hover {
+	color: #0D0C0C;
+	border-bottom: 4px solid #0D0C0C;
+}
+
+ 
+
+#greview_gphoto {
+ 
+	background-color: transparent;
+}
+
+#greview_gphoto:before {
+	background-color: rgba(0,0,0,0.5);
+ 
+}
+
+ 
+
+#greview_gvideo #gvideo_close {
+	
+ 
+	background: url("https://www.destructoid.com/sites/_default/img/body/reviews/close-button.png") no-repeat left top transparent;
+	background-size: 22px;
+}
+
+ 
+
+#posttop_watchvideo {
+ 
+	background: url("https://www.destructoid.com/sites/_default/img/body/reviews/video-play.png") no-repeat left top transparent;
+ 
+ 
+}
+
+ 
+
+#posttop_watchvideo:hover {
+	background-position: left bottom;
+}
+
+ 
+
+#post_intro h2 {
+	color: #cc1f1f;
+ 
+}
+
+ 
+
+#post_ginfo {
+ 
+	border: 1px solid #aaacb3;
+}
+
+ 
+#post_ginfo #ginfo_cover a {
+ 
+	color: #fff;
+ 
+}
+
+#post_ginfo #ginfo_cover a span {
+	
+ 
+	background-color: rgba(0,0,0,0.8);
+
+	
+}
+
+#post_ginfo #ginfo_cover a span span {
+ 
+	background-color: transparent;
+ 
+}
+
+ 
+
+ 
+
+ 
+  
+
+#post_gverdict #gverdict_imgclip {
+ 
+	background: url("https://www.destructoid.com/sites/_default/img/body/reviews/img-clip.png") no-repeat left top transparent;
+ 
+}
+  
+  
+#post_gverdict #gverdict_closing h4 {
+ 
+	border-bottom: 1px solid #fff;
+ 
+}
+
+#post_gverdict #gverdict_closing p {
+ 
+	color: #fff;
+}
+
+ 
+
+#post_gverdict .gscore span {
+ 
+	color: #fff;
+	
+	
+	
+}
+
+  
+.reviews-postwrapper #article_postcontent {
+	background-color: #f7f7f7 !important;
+	 
+}
+
+ 
+ 
+ 
+
+.reviews-postwrapper #article_posttop h1 a {
+	color: #fff;
+	 
+}
+
+
+
+.reviews-postwrapper #article_posttop #posttop_byline {
+	color: #fff;
+ 
+}
+
+.reviews-postwrapper #posttop_byline #byline_author a {
+	
+	color: #fff;
+}
+
+.reviews-postwrapper #posttop_byline #byline_authorhandle a {
+	
+	color: #ff0000;
+}
+
+ 
+
+.reviews-postwrapper #greview_gcontent {
+	background-color: rgba(0,0,0,0.5);
+ 
+}
+
+
+
+.reviews-postwrapper #greview_gcontent a {
+	 
+	
+	color: #fff;
+	
+	 
+}
+
+.reviews-postwrapper #greview_gcontent a:hover  {
+	color: #ff0000;
+}
+
+ 
+
+.reviews-postwrapper #sitebody-left_morenews h2 em {
+
+	color: #cc1f1f;
+	
+}
+ 
+
+.gplatforms em {
+	color: #767780;
+}
+
+.gplatforms a {
+ 
+	background-color: #ccc;
+	color: #fff;
+}
+
+.gplatforms .android {
+	background-color: #00a896;
+}
+
+.gplatforms .mac {
+	background-color: #d8418b;
+}
+
+.gplatforms .iphone {
+	background-color: #d8418b;
+}
+
+.gplatforms .ipad {
+	background-color: #ca556c;
+}
+
+.gplatforms .pc {
+	background-color: #0076bf;
+}
+
+.gplatforms .ps4 {
+	background-color: #ec5a4f;
+}
+
+.gplatforms .ps3 {
+	background-color: #f68b7f;
+}
+
+.gplatforms .vita {
+	background-color: #a55a4d;
+}
+
+.gplatforms .wiiu {
+	background-color: #af60bf;
+}
+
+.gplatforms .n3ds {
+	background-color: #d08ac2;
+}
+
+.gplatforms .wii {
+	background-color: #a3527a;
+}
+
+.gplatforms .xboxone {
+	background-color: #6ec829;
+}
+
+.gplatforms .xbox360 {
+	background-color: #718f40;
+}
+
+.rpricecheck {
+ 
+	color: #767780;
+	background: url("https://www.destructoid.com/sites/_default/img/body/amazon-logo_light.png") no-repeat right 4px transparent;
+}
+
+.rdate {
+ 
+	color: #767780;
+}
+
+.gscore {
+ 
+	background-color: transparent;
+	 
+	
+}
+
+.gscore a {
+ 
+	color: #fff;
+	
+	
+}
+
+.gscore span {
+ 
+	color: #fff;
+	
+	
+}
+
+
+
+.scr10-0 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-10.0.png");
+}
+
+.scr9-5 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-9.5.png");
+}
+
+.scr9-0 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-9.0.png");
+}
+
+.scr8-5 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-8.5.png");
+}
+
+.scr8-0 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-8.0.png");
+}
+
+.scr7-5 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-7.5.png");
+}
+
+.scr7-0 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-7.0.png");
+}
+
+.scr6-5 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-6.5.png");
+}
+
+.scr6-0 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-6.0.png");
+}
+
+.scr5-5 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-5.5.png");
+}
+
+.scr5-0 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-5.0.png");
+}
+
+.scr4-5 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-4.5.png");
+}
+
+.scr4-0 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-4.0.png");
+}
+
+.scr3-5 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-3.5.png");
+}
+
+.scr3-0 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-3.0.png");
+}
+
+.scr2-5 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-2.5.png");
+}
+
+.scr2-0 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-2.0.png");
+}
+
+.scr1-5 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-1.5.png");
+}
+
+.scr1-0 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-1.0.png");
+}
+
+.scr0-5 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-0.5.png");
+}
+
+.scr0-0 {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-0.5.png");
+}
+
+.scrNA {
+	background-image: url("https://www.destructoid.com/sites/_default/img/body/reviews/score-na.png");
+}
+
+
+
+
+
+/* 4 COLUMN MODULE */
+
+.mod-4col {
+	
+	border-bottom: 1px solid #aaacb3;
+	 
+}
+
+ 
+
+.mod-4col .mod-col1 figure img {
+	
+	border: 1px solid rgba(0,0,0,0.5);
+}
+
+ 
+
+.mod-col2 h1 a {
+	color: #d20200;
+	
+	
+	
+}
+
+ 
+/* TEMP - TO OPTIMIZE/ORGANIZE LATER - MOVE THEME-RELATED STYLES TO COLOR CSS FILES */
+
+#vidBtn {
+ 	background-color: #f7f7f7 !important;
+} 
+
+#videoLink {
+	border:2px #22d2d2 solid; 
+}
+
+
+.fp__btn {
+	background:transparent !important;
+	background-image: none !important;
+	color:#000 !important;
+ 
+}
+
+#quickpost_editor_box {
+	background-color:none;  
+ 
+}
+
+#quickpost_limiter {
+ 
+}
+
+#quickpost_limiter a {
+	color:#eee; 
+
+}
+
+
+
+#quickpost_textbox {
+	 
+	border:1px #97ec5c solid; 
+ 
+}
+
+.quickpost-modal textarea { 
+ 
+	background-color:#fff; 
+	color:#000 !important; 
+	
+}
+	
+
+#green_button {
+  
+	background-color:#97ec5c; 
+	color:#000 !important; 
+	 }
+
+#gray_button {
+	background-color:gray; 
+	 
+	color:#fff !important;
+}
+
+#gray_button a {
+	color:#fff !important;
+}
+
+#spoilers {
+	background-color:#000;
+	color:#000 !important;
+}
+
+#spoilers :hover{
+	background-color:#fff;
+	color:#cc000 !important;
+}

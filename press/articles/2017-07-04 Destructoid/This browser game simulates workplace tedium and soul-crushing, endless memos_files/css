@@ -1,0 +1,96 @@
+/* latin-ext */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Titillium Web Regular'), local('TitilliumWeb-Regular'), url(https://fonts.gstatic.com/s/titilliumweb/v5/7XUFZ5tgS-tD6QamInJTcSGR3J8a2Jm30YJvJ3tIMOY.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Titillium Web Regular'), local('TitilliumWeb-Regular'), url(https://fonts.gstatic.com/s/titilliumweb/v5/7XUFZ5tgS-tD6QamInJTceHuglUR2dhBxWD-q_ehMME.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Titillium Web SemiBold'), local('TitilliumWeb-SemiBold'), url(https://fonts.gstatic.com/s/titilliumweb/v5/anMUvcNT0H1YN4FII8wpr1Tcxd1fGlbIJMCb5Y260Wk.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Titillium Web SemiBold'), local('TitilliumWeb-SemiBold'), url(https://fonts.gstatic.com/s/titilliumweb/v5/anMUvcNT0H1YN4FII8wpr6d1JQt-lS5nD-1TJX2NNl0.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Titillium Web Bold'), local('TitilliumWeb-Bold'), url(https://fonts.gstatic.com/s/titilliumweb/v5/anMUvcNT0H1YN4FII8wpr6nZAMwsGZpiGJKtVINElMQ.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Titillium Web Bold'), local('TitilliumWeb-Bold'), url(https://fonts.gstatic.com/s/titilliumweb/v5/anMUvcNT0H1YN4FII8wpr8hG3LOB74UqS1hPmWaAxzQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Titillium Web Italic'), local('TitilliumWeb-Italic'), url(https://fonts.gstatic.com/s/titilliumweb/v5/r9OmwyQxrgzUAhaLET_KOyohs_GVCV93aZwGb7eT-mc.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Titillium Web Italic'), local('TitilliumWeb-Italic'), url(https://fonts.gstatic.com/s/titilliumweb/v5/r9OmwyQxrgzUAhaLET_KO04Sq3N3sm-tF9FpL8sHob4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Titillium Web SemiBold Italic'), local('TitilliumWeb-SemiBoldItalic'), url(https://fonts.gstatic.com/s/titilliumweb/v5/RZunN20OBmkvrU7sA4GPPgHWXvJEMqz2JvmyFwzXZKX3rGVtsTkPsbDajuO5ueQw.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Titillium Web SemiBold Italic'), local('TitilliumWeb-SemiBoldItalic'), url(https://fonts.gstatic.com/s/titilliumweb/v5/RZunN20OBmkvrU7sA4GPPubnHKM7EA09T6nhONWaMpo.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Titillium Web Bold Italic'), local('TitilliumWeb-BoldItalic'), url(https://fonts.gstatic.com/s/titilliumweb/v5/RZunN20OBmkvrU7sA4GPPrllv97p_r9FmS3SWdZzB6_3rGVtsTkPsbDajuO5ueQw.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Titillium Web Bold Italic'), local('TitilliumWeb-BoldItalic'), url(https://fonts.gstatic.com/s/titilliumweb/v5/RZunN20OBmkvrU7sA4GPPipre1WS4Xml-pRMufJH74k.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
