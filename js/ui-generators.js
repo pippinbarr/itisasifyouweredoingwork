@@ -199,6 +199,7 @@ function createLoginDialog () {
   dialogDiv.append('<p></p>');
   dialogDiv.append('<label id="passwordLabel">Password:</label><br />');
   dialogDiv.append(passwordField);
+  dialogDiv.append('<div><br /><p>Administrator: <a target="_blank" href="http://www.pippinbarr.com/">Pippin Barr</a></p></div>')
 
   var dialogOptions = {
     appendTo: '#ui',
