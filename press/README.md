@@ -16,11 +16,9 @@ _The robots are here! No more work! It's great! Is it great?! Wait! You feel apa
 
 ## Who is this Pippin Barr guy?
 
-Pippin is an Assistant Professor in the [Department of Design and Computation Arts](http://www.concordia.ca/finearts/design.html) at [Concordia University](http://www.concordia.ca/) in Montréal. 
+Pippin is an Assistant Professor in the [Department of Design and Computation Arts](http://www.concordia.ca/finearts/design.html) at [Concordia University](http://www.concordia.ca/) in Montréal.
 
-I'm the associate director of the [TAG Lab](http://tag.hexagram.ca/), part of the [Milieux](http://milieux.concordia.ca/) Institute for Arts, Culture, and Technology.
-
-
+He works within the [Technoculture, Art, and Games (TAG) Lab](http://tag.hexagram.ca/) which is part of the [Milieux Institute for Arts, Culture, and Technology](http://milieux.concordia.ca/). In fact right now he's the associate director of TAG!
 
 ## History
 
