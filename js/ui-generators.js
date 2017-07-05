@@ -1483,7 +1483,7 @@ function givePromotion() {
   if (jobTitleSubjectIndex >= jobTitler.subject.length) {
     jobTitleSubjectIndex = 0;
     jobTitlePositionIndex++;
-    if (jobTitlePositionIndex >= jobTitle.position.length) {
+    if (jobTitlePositionIndex >= jobTitler.position.length) {
       jobTitlePositionIndex = 0;
       jobTitle = "Chief Technology Officer";
     }
