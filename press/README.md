@@ -14,6 +14,14 @@
 
 _The robots are here! No more work! It's great! Is it great?! Wait! You feel apathetic and unproductive! You miss clicking buttons! You miss waiting for progress bars! You miss checkboxes! You miss work! But it's going to be okay! Use this handy application and it is as if you were doing work!_
 
+## Who is this Pippin Barr guy?
+
+Pippin is an Assistant Professor in the [Department of Design and Computation Arts](http://www.concordia.ca/finearts/design.html) at [Concordia University](http://www.concordia.ca/) in Montréal. 
+
+I'm the associate director of the [TAG Lab](http://tag.hexagram.ca/), part of the [Milieux](http://milieux.concordia.ca/) Institute for Arts, Culture, and Technology.
+
+
+
 ## History
 
 _It is as if you were doing work_ had been around for a long time before I really managed to start working on it properly. I actually documented the original moment that sparked that game in a blog post titled [Close analysis of having a game idea](http://www.pippinbarr.com/2016/08/15/close-analysis-of-having-a-game-idea/) - basically I was watching Rilla resizing an image while working on a project and suddenly felt like it would be amazing to have a game entirely premised on totally conventional operations with traditional user-interfaces. From there it became the idea of a WarioWare-esque game where you would complete simple interface operations under time pressure (I will likely return to this) with various ideas for layering on some kind of meta-narrative, or AI-twist, or something to make it more 'spectacular'.

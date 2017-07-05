@@ -107,7 +107,8 @@ function createBreakoutDialog () {
     buttons: {},
     close: function () {
       window.dispatchEvent(new Event("stop-game"));
-    }
+    },
+    closeOnEscape: false
   };
 
   breakoutDialog = createDialog(dialogDiv, dialogOptions, false);
@@ -209,6 +210,7 @@ function createLoginDialog () {
     width: '400',
     modal: true,
     autoOpen: true,
+    closeOnEscape: false,
     buttons: {
       "Login": function () {
         var usernameValue = $('#usernameInput').val();
@@ -264,6 +266,7 @@ function createReadyDialog () {
     width: '400',
     modal: true,
     autoOpen: true,
+    closeOnEscape: false,
     buttons: {
       "Let's go!": function () {
         playSound(dialogSuccessSFX);
@@ -419,6 +422,7 @@ function createDesktopDialog() {
     width: '400',
     modal: false,
     autoOpen: true,
+    closeOnEscape: false,
     buttons: {
       "Okay": function () {
         playSound(dialogSuccessSFX);
@@ -490,6 +494,7 @@ function createMusicDialog () {
     width: '400',
     modal: false,
     autoOpen: true,
+    closeOnEscape: false,
     buttons: {
       "Okay": function () {
         playSound(dialogSuccessSFX);
@@ -545,7 +550,8 @@ function createInspirationalDialog() {
     width: '400',
     modal: false,
     autoOpen: true,
-    buttons: {}
+    buttons: {},
+    closeOnEscape: false
   };
 
   createDialog(dialogDiv, dialogOptions, true);
@@ -749,6 +755,7 @@ function createWorkDialog() {
     modal: false,
     autoOpen: true,
     buttons: {},
+    closeOnEscape: false,
     beforeClose: function () {
       console.log("Before close");
       if (state == STATE.BREAK) {
@@ -969,6 +976,7 @@ function createSimpleDialog (title, id, content, closeButtonName, random, width,
     modal: false,
     autoOpen: true,
     buttons: {},
+    closeOnEscape: false
   };
 
   if (closeButtonName) {
@@ -1276,6 +1284,7 @@ function createDocumentDialog () {
     width: '600',
     modal: false,
     autoOpen: true,
+    closeOnEscape: false,
     buttons: {
       "Save": function () {
         if (characters >= requiredCharacters) {
@@ -1390,6 +1399,7 @@ function createEmailDialog () {
     width: '600',
     modal: false,
     autoOpen: true,
+    closeOnEscape: false,
     buttons: {
       "Save": function () {
         if (characters >= requiredCharacters) {
@@ -1483,7 +1493,7 @@ function givePromotion() {
   if (jobTitleSubjectIndex >= jobTitler.subject.length) {
     jobTitleSubjectIndex = 0;
     jobTitlePositionIndex++;
-    if (jobTitlePositionIndex >= jobTitle.position.length) {
+    if (jobTitlePositionIndex >= jobTitler.position.length) {
       jobTitlePositionIndex = 0;
       jobTitle = "Chief Technology Officer";
     }
