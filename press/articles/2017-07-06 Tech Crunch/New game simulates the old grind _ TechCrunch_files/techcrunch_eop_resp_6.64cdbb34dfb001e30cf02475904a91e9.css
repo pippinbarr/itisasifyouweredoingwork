@@ -1,0 +1,284 @@
+/* ------------------
+	TechCrunch - RESP 6 - EOP
+------------------------- */
+
+@font-face {
+  font-family:alright_sansmedium;
+  src:url(../../fonts/alright_sansmedium/okay_type_-_alrightsans-medium-webfont.eot);
+  src: url(../../fonts/alright_sansmedium/okay_type_-_alrightsans-medium-webfont.eot?#iefix) format("embedded-opentype"),
+       url(../../fonts/alright_sansmedium/okay_type_-_alrightsans-medium-webfont.woff) format("woff"),
+       url(../../fonts/alright_sansmedium/okay_type_-_alrightsans-medium-webfont.ttf) format("truetype"),
+       url(../../fonts/alright_sansmedium/okay_type_-_alrightsans-medium-webfont.svg#alright_sansmedium) format("svg");
+  font-weight:400;
+  font-style:normal
+}
+@font-face{
+  font-family:alright_sansblack;
+  src:url(../../fonts/alright_sansblack/okay_type_-_alrightsans-black-webfont.eot);
+  src:url(../../fonts/alright_sansblack/okay_type_-_alrightsans-black-webfont.eot?#iefix) format("embedded-opentype"),
+      url(../../fonts/alright_sansblack/okay_type_-_alrightsans-black-webfont.woff) format("woff"),
+      url(../../fonts/alright_sansblack/okay_type_-_alrightsans-black-webfont.ttf) format("truetype"),
+      url(../../fonts/alright_sansblack/okay_type_-_alrightsans-black-webfont.svg#alright_sansblack) format("svg");
+  font-weight:400;
+  font-style:normal
+}
+
+/* ------------------
+  Widget Container
+------------------------- */
+#grv_widget {
+	position: relative;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: alright_sansmedium, HelveticaNeue, Helvetica, Arial, sans-serif;
+  border-top: 1px solid #d5d5d5;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+
+/* ------------------
+  Widget Title
+------------------------- */
+h3.grv_stories_header {
+  font-size: 18px;
+  color: #686C68;
+  font-size: 25px;
+  height: 32px;
+	line-height: 32px;
+	margin: 0 0 12px;
+  font-family: alright_sansblack,HelveticaNeue,Helvetica,Arial,sans-serif!important;
+  font-weight: 400;
+}
+
+/* ------------------
+  Articles
+------------------------- */
+ul.grv_articles {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+  /*border-bottom: 1px solid #d5d5d5;
+  height: 190px;*/
+}
+
+ul.grv_left {
+	margin-bottom: 10px;
+}
+
+li.grv_article {
+	float: left;
+  width: 32%;
+  position: relative;
+  margin: 0;
+  padding: 5px 0;
+  height: 179px;
+}
+
+.grv_article.grv_num_1, 
+.grv_article.grv_num_4{
+	margin: 0 2%;
+}
+
+a.grv_article_title {
+	display: block;
+	position: relative;
+	line-height: 20px;
+	overflow: hidden;
+	text-decoration: none;
+  color: #3e433e;
+  font-size: 16px;
+  z-index: 10;
+  max-height: 40px;
+}
+a.grv_article_title:hover {
+  color: #089e00;
+}
+
+li.grv_article a.grv_img_link {
+  height: 129px;
+  width: 100%;
+  display: block; 
+  position: relative;
+	margin-bottom: 10px;
+  overflow: hidden;
+  background: #f0f0f0;
+  z-index: 0;
+}
+
+
+/* Publisher 
+li.grv_article.grv_num_4 #grv_stat_5 {
+	display: block;
+	position: absolute;
+	top: -17px;
+	left: 0px;
+	right: 0px;
+	text-align: center;
+	font-size: 9px;
+	letter-spacing: .2em;
+	font-weight: 700;
+	color: #a5a5a5;
+	text-transform: uppercase;
+	font-family: alright_sansblack;
+}
+li.grv_article.grv_num_4 #grv_stat_5:after {
+  content: "sponsored";
+}
+*/
+
+/* ------------------
+ 	Gravity Attribution
+------------------------- */
+#grv_badge {
+  position: absolute;
+  top: 28px;
+  right: 0px;
+}
+.grv_badge_inner {
+	padding-right: 0px;
+}
+
+
+
+/* ------------------
+ less than 520
+------------------------- */
+.grv_less_520 .grv_stories_header {
+}
+.grv_less_520 li.grv_article {
+  width: 32%;
+  margin: 0;
+  padding: 0;
+}
+.grv_less_520 li.grv_article.grv_num_0,
+.grv_less_520 li.grv_article.grv_num_1,
+.grv_less_520 li.grv_article.grv_num_2 {
+	margin-bottom: 45px;
+}
+.grv_less_520 li.grv_article.grv_num_1,
+.grv_less_520 li.grv_article.grv_num_4{
+	margin: 0 2%;
+}
+
+
+.grv_less_520 a.grv_article_title:hover {
+	text-decoration: underline;
+}
+.grv_less_520 li.grv_article a.grv_img_link {
+  background: #f0f0f0;
+}
+.grv_less_520 li.grv_article.grv_has_image a.grv_img_link {
+  background: #f0f0f0;
+}
+
+/* ------------------
+ less than grv_less_481
+------------------------- */
+#grv_widget.grv_less_481 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.grv_less_481 h3.grv_stories_header {
+	font-size: 16px;
+	line-height: 20px;
+	height: 20px;
+}
+.grv_less_481 li.grv_article {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  float: left;
+  height: 199px;
+}
+.grv_less_481 li.grv_article.grv_num_0,
+.grv_less_481 li.grv_article.grv_num_1,
+.grv_less_481 li.grv_article.grv_num_2,
+.grv_less_481 li.grv_article.grv_num_3 {
+	margin-bottom: 2%;
+}
+
+.grv_less_481 li.grv_article.grv_num_0,
+.grv_less_481 li.grv_article.grv_num_2,
+.grv_less_481 li.grv_article.grv_num_4{
+	margin-right:2%;
+	margin-left: 0;
+}
+
+.grv_less_481 li.grv_article.grv_num_1,
+.grv_less_481 li.grv_article.grv_num_3,
+.grv_less_481 li.grv_article.grv_num_5{
+	float: right;
+	margin-right: 0;
+}
+
+.grv_less_481 a.grv_article_title {
+	font-size: 12px;
+	line-height: 14px;
+	font-weight: normal;
+	height: auto;
+	position: relative;
+	padding: 10px 3px 15px 0px;
+	display: block;
+}
+
+.grv_less_481 .grv_article_img {
+	left: 0;
+}
+
+.grv_less_481 a.grv_article_title {
+ 	background: none;
+  text-align: left;
+}
+
+.grv_less_481 a.grv_article_title:hover {
+	text-decoration: underline;
+}
+
+.grv_less_481 li.grv_article a.grv_img_link {
+  height: 150px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.grv_less_481 li.grv_article a.grv_img_link {
+  background: #f0f0f0;
+}
+.grv_less_481 li.grv_article.grv_has_image a.grv_img_link {
+  background: #f0f0f0;
+}
+.grv_less_481 .grv_post_type {
+  width: 100%;
+  height: auto;
+}
+
+/* Publisher */
+.grv_less_481 ul.grv_articles {
+	overflow: hidden;
+  border-bottom: none;
+  height: auto;
+}
+
+.grv_less_481 .grv_is_sponsored .grv_sponsored {
+	font-size: 9px;
+	line-height: 14px;
+	background: rgba(0,0,0,.3);
+	position: absolute;
+	top: 136px;
+	left: 0px;
+	right: 0px;
+	color: rgba(255,255,255,.7);
+	display: block;
+	padding-left: 3px;
+}
+
+.grv_less_481 #grv_badge {
+  top: 14px;
+}
+#grvWidgetStylesLoaded_techcrunch_eop_resp_6_64cdbb34dfb001e30cf02475904a91e9_css {
+  width: 1px;
+  height: 1px;
+  visibility: hidden;
+}

@@ -1,0 +1,4 @@
+Krux.ns.voxmedia.kxjsonp_optOutCheck({
+  status: 200,
+  body: { "_kuid_": "DNT" }
+});

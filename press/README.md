@@ -79,6 +79,14 @@ _It is as if you were doing work_ is an open source game licensed under a [Creat
 * Linken, Andre. [It is as if you were doing work - Browserspiel simuliert langweiligen Bürojob](http://www.gamestar.de/artikel/it-is-as-if-you-were-doing-work-browserspiel-simuliert-langweiligen-buerojob,3316648.html). 5 July 2017. GameStar.
 * Bonke, Michael. [It is as if you were doing work: Die langweiligste Simulation aller Zeiten?](http://www.pcgames.de/Panorama-Thema-233992/News/It-is-as-if-you-were-doing-work-Die-langweiligste-Simulation-aller-Zeiten-1232379/). 5 July 2017. PC Games (DE).
 * Priestman, Chris. [It is as if you were doing work](http://warpdoor.com/2017/07/05/it-is-as-if-you-were-doing-work-pippin-barr/). Warp Door. 5 July 2017.
+* Ziegener, Daniel. [It is as if you were doing work v1.0](https://superlevel.de/spiele/it-is-as-if-you-were-doing-work-v1-0/). 5 July 2017. Superlevel.
+* Vincent, James. [Relive the Windows 95 glory days with this work simulation game](https://www.theverge.com/tldr/2017/7/6/15927338/work-simulation-game-windows-95-pippin-barr). 6 July 2017. The Verge.
+* Förtsch, Michael. [Dieses Bürojob-Webgame treibt einen in den Wahnsinn](https://www.wired.de/collection/life/webgame-pippin-barr-arbeit-simulation). 6 July 2017. Wired (Germany).
+* Biggs, John. [New game simulates the old grind](https://techcrunch.com/2017/07/06/new-game-simulates-the-old-grind/). 6 July 2017. Tech Crunch.
+* Regan, Tom. [Recreate the thrills of '90s PC admin in this browser game](https://www.engadget.com/2017/07/06/recreate-the-thrills-of-90s-pc-admin-in-this-browser-game/). 6 July 2017. Engadget.
+* Homola, Adam. [It is as if you were doing work simuluje práci ve světě, kde všechno dělají roboti](https://games.tiscali.cz/preview/it-is-as-if-you-were-doing-work-simuluje-praci-ve-svete-kde-vsechno-delaji-roboti-299838). 6 July 2017. Games.cz.
+* [Ce jeu vous demande de faire tout ce que vous faites déjà au boulot](http://www.ufunk.net/jeux-videos/it-is-as-if-you-were-doing-work/). 6 July 2017. UFunk.
+
 
 ## Additional Links
 

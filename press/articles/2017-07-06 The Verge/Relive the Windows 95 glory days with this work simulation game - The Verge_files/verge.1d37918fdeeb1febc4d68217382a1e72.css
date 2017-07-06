@@ -1,0 +1,59 @@
+
+@font-face {
+ font-family: 'nitti-grotesk';
+ font-style: normal;
+ font-weight: 400;
+ src: url('//fonts.voxmedia.com/unison/unison_base/nittigrotesk/nittigrotesk-normal.eot');
+ src: url('//fonts.voxmedia.com/unison/unison_base/nittigrotesk/nittigrotesk-normal.eot?') format('embedded-opentype'),
+      url('//fonts.voxmedia.com/unison/unison_base/nittigrotesk/nittigrotesk-normal.woff2') format('woff2'),
+      url('//fonts.voxmedia.com/unison/unison_base/nittigrotesk/nittigrotesk-normal.woff') format('woff');
+}
+@font-face {
+ font-family: 'adelle-sans';
+ font-style: normal;
+ font-weight: 600;
+ src: url('//fonts.voxmedia.com/unison/verge/AdelleSans-Semibold.woff2') format('woff2'),
+      url('//fonts.voxmedia.com/unison/verge/AdelleSans-Semibold.woff') format('woff');
+}
+@font-face {
+ font-family: 'adelle-sans';
+ font-style: italic;
+ font-weight: 400;
+ src: url('//fonts.voxmedia.com/unison/verge/AdelleSans-Italic.woff2') format('woff2'),
+      url('//fonts.voxmedia.com/unison/verge/AdelleSans-Italic.woff') format('woff');
+}
+@font-face {
+ font-family: 'Heroic';
+ font-style: italic;
+ font-weight: 600;
+ src: url('//fonts.voxmedia.com/unison/verge/heroic-cond-vrg-web-ltd-bd-obq.woff2') format('woff2'),
+      url('//fonts.voxmedia.com/unison/verge/heroic-cond-vrg-web-ltd-bd-obq.woff') format('woff');
+}
+@font-face {
+ font-family: 'Heroic';
+ font-style: normal;
+ font-weight: 700;
+ src: url('//fonts.voxmedia.com/unison/verge/heroic-cond-vrg-web-ltd-hvy.woff2') format('woff2'),
+      url('//fonts.voxmedia.com/unison/verge/heroic-cond-vrg-web-ltd-hvy.woff') format('woff');
+}
+@font-face {
+ font-family: 'Heroic';
+ font-style: normal;
+ font-weight: 500;
+ src: url('//fonts.voxmedia.com/unison/verge/heroic-cond-vrg-web-ltd-md.woff2') format('woff2'),
+      url('//fonts.voxmedia.com/unison/verge/heroic-cond-vrg-web-ltd-md.woff') format('woff');
+}
+@font-face {
+ font-family: 'Heroic';
+ font-style: italic;
+ font-weight: 500;
+ src: url('//fonts.voxmedia.com/unison/verge/heroic-cond-vrg-web-ltd-md-obq.woff2') format('woff2'),
+      url('//fonts.voxmedia.com/unison/verge/heroic-cond-vrg-web-ltd-md-obq.woff') format('woff');
+}
+@font-face {
+ font-family: 'Pathways';
+ font-style: normal;
+ font-weight: normal;
+ src: url('//fonts.voxmedia.com/unison/verge/pathways-display-webfont.woff2') format('woff2'),
+      url('//fonts.voxmedia.com/unison/verge/pathways-display-webfont.woff') format('woff');
+}
