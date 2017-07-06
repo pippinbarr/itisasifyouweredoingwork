@@ -72,6 +72,13 @@ _It is as if you were doing work_ is an open source game licensed under a [Creat
 * Beschizza, Rob. [_It Is As If You Were Doing Work is a browser game celebrating Windows 3-era cubicle drudgery_](http://boingboing.net/2017/07/04/it-is-as-if-you-were-doing-wor.html). 4 July 2017. Boing Boing.
 * [_Канадец создал симулятор офисного работника. Сыграйте в него на работе_](https://meduza.io/shapito/2017/07/04/kanadets-sozdal-simulyator-ofisnogo-rabotnika-sygrayte-v-nego-na-rabote). 4 July 2017. Meduza.
 * Porreca, Ray. [_This browser game simulates workplace tedium and soul-crushing, endless memos_](https://www.destructoid.com/this-browser-game-simulates-workplace-tedium-and-soul-crushing-endless-memos-446844.phtml). 4 July 2017. Destructoid.
+* Hulfish, Garrett. [PREFER WORK TO LIFE? TRY THE ‘IT IS AS IF YOU WERE DOING WORK’ GAME](https://www.digitaltrends.com/gaming/doing-work-browser-game/). Digital Trends. 5 July 2017.
+* Vincent, Brittany. [‘It Is As If You Were Doing Work’ browser game perfectly encapsulates the life of an office worker](https://mic.com/articles/181513/it-is-as-if-you-were-doing-work-browser-game-perfectly-encapsulates-the-life-of-an-office-worker#.IhuGvyNsT). Mic. 5 July 2017.
+* Cole, Samantha. [This Game Simulates the Thrill of Working On a Computer](https://motherboard.vice.com/en_us/article/3knd8b/this-game-simulates-the-thrill-of-working-on-a-computer). Motherboard. 5 July 2017.
+* Bergert, Denise. [Langweiliger Bürojob als Browserspiel - "It is as if you were doing work"](https://www.pcwelt.de/a/langweiliger-buerojob-als-browserspiel-it-is-as-if-you-were-doing-work,3447298). 5 July 2017. PC Welt.
+* Linken, Andre. [It is as if you were doing work - Browserspiel simuliert langweiligen Bürojob](http://www.gamestar.de/artikel/it-is-as-if-you-were-doing-work-browserspiel-simuliert-langweiligen-buerojob,3316648.html). 5 July 2017. GameStar.
+* Bonke, Michael. [It is as if you were doing work: Die langweiligste Simulation aller Zeiten?](http://www.pcgames.de/Panorama-Thema-233992/News/It-is-as-if-you-were-doing-work-Die-langweiligste-Simulation-aller-Zeiten-1232379/). 5 July 2017. PC Games (DE).
+* Priestman, Chris. [It is as if you were doing work](http://warpdoor.com/2017/07/05/it-is-as-if-you-were-doing-work-pippin-barr/). Warp Door. 5 July 2017.
 
 ## Additional Links
 

@@ -1,0 +1,17 @@
+/*
+* Drop Cap Shortcode styles
+*/
+
+span.dropcap {
+	display: inline;
+	margin: 0;
+	padding: .25em .08em 0 0;
+	#padding: 0.25em 0.08em 0.2em 0.00em; /* override for Microsoft Internet Explorer browsers*/
+	_padding: 0.25em 0.08em 0.4em 0.00em; /* override for IE browsers 6.0 and older */
+	line-height: .4em;
+	font-size: 3.2em;
+	font-family: "Georgia", "Times New Romans", "Trebuchet MS", "Lucida Grande";
+	text-transform: capitalize;
+	color: #c30;
+	float: left;
+}

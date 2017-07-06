@@ -1,0 +1,8 @@
+/*
+ Quantcast measurement tag
+ Copyright (c) 2008-2017, Quantcast Corp.
+*/
+(function(h,l,k){var m="twitter:title og:title title author authors article:author article:authors bt:author bt:authors sailthru.author sailthru.authors sailthru.title lv:author lv:authors lv:title".split(" "),n=function(b){return{}.toString.call(b).match(/\s([a-zA-Z]+)/)[1].toLowerCase()},r=function(b,a,d){return b?"nc"===b?!a||!d||0>a.indexOf(d):"eq"===b?a===d:"sw"===b?0===a.indexOf(d):"ew"===b?(b=a.length-d.length,a=a.lastIndexOf(d,b),-1!==a&&a===b):"c"===b?0<=a.indexOf(d):!1:!1},p=function(b,
+a,d){var c;if(l.top===l.self)c=k.location.href;else{c=k.referrer;var e=k.createElement("a");e.href=c;c=e.href}r(a,c,d)?b(c):b(!1)},g=function(b){return{labels:b}},q=function(b){return"array"===n(b)?g(b.join(",")):g(""+b)};__qc("rules",[h,null,[[q,"VICE Content Specials.WeedWeek2017"]],[[p,"c","weedweek2017"]]],[h,null,[[q,"Branded Content.Geico"]],[[p,"c","partners.vice.com/geico/goamerica"]]],[h,null,[[function(b,a){var d=[],c;if("array"===n(a)){for(c=0;c<a.length;c++)d.push(b+"."+a[c]);return g(d.join(","))}return g(b+
+"."+a)},"Title"]],[[function(b,a,d){a=document.getElementsByTagName("meta");for(var c,e,f=0;f<a.length;f++)if(c=a[f],e=c.getAttribute("name")||c.getAttribute("property"),e==d){e=c.getAttribute("content");a=c=a=void 0;b:{a=void 0;for(a=0;a<m.length;a++)if(m[a]===d){a=!1;break b}a=!0}if(e)if(a){c=e.split(",");for(a=0;a<c.length;a++)d=c,e=a,f=c[a].replace(/[^\w*]/g," ").replace(/^[\s\ufeff\xA0]+|[\s\ufeff\xA0]+$/g,""),d[e]=f;d=c}else d=e.replace(/[^\w*]/g," ");else d=e;b(d);return}b(!1)},"exactmatch",
+"og:title"]]])})("p-6EzWtvBV9sFU3",window,document);
