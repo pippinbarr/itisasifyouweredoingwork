@@ -86,11 +86,17 @@ _It is as if you were doing work_ is an open source game licensed under a [Creat
 * Regan, Tom. [Recreate the thrills of '90s PC admin in this browser game](https://www.engadget.com/2017/07/06/recreate-the-thrills-of-90s-pc-admin-in-this-browser-game/). 6 July 2017. Engadget.
 * Homola, Adam. [It is as if you were doing work simuluje práci ve světě, kde všechno dělají roboti](https://games.tiscali.cz/preview/it-is-as-if-you-were-doing-work-simuluje-praci-ve-svete-kde-vsechno-delaji-roboti-299838). 6 July 2017. Games.cz.
 * [Ce jeu vous demande de faire tout ce que vous faites déjà au boulot](http://www.ufunk.net/jeux-videos/it-is-as-if-you-were-doing-work/). 6 July 2017. UFunk.
+* Arraché, Eric. [Jogo viciante de hoje simula a tortura que era usar o Windows 95 para trabalhar](http://criticalhits.com.br/jogo-viciante-de-hoje-simula-tortura-que-era-usar-o-windows-95-para-trabalhar/). 6 July 2017. Critical Hits.
+* Pierre. [Ce jeu en ligne vous fait revivre l’enfer d’un employé de bureau des années 90](http://www.journaldugeek.com/2017/07/06/ce-jeu-en-ligne-vous-fait-revivre-lenfer-dun-employe-de-bureau-des-annees-90/)./ 6 July 2017. Journal du Geek.
+* Cantisano, Timi. [Transport yourself back to the era of Windows 95 with this cleverly-built office simulator](https://www.neowin.net/news/transport-yourself-back-to-the-era-of-windows-95-with-this-cleverly-built-office-simulator). 7 July 2017. Neowin.
+* Lellouche, Nicolas. [Redécouvrez Windows 95 dans un navigateur Internet](http://www.lefigaro.fr/secteur/high-tech/2017/07/07/32001-20170707ARTFIG00005-redecouvrez-windows-95-dans-un-navigateur-internet.php). 7 July 2017. Le Figaro.
+* Mathieu, Bruno. [Cet émulateur de Windows 95 vous fait travailler en jouant (ou l'inverse)](https://www.tomsguide.fr/actualite/windows-95-emulateur-travail,58038.html). 7 July 2017. Tom's Guide.
+* [Nostalgie: Revivez l'expérience Windows 95 grâce à un hilarant simulateur gratuit](http://www.20minutes.fr/insolite/2101219-20170707-nostalgie-revivez-experience-windows-95-grace-hilarant-simulateur-gratuit). 7 July 2017. 20 Minutes.
 
 
 ## Additional Links
 
-* [Developer blog posts about _It is as if you were doing work_](http://www.pippinbarr.com/search.html?q=%22it%20is%20as%20if%20you%20were%20doing%20work%22)
+* [Pippin's blog posts about _It is as if you were doing work_](http://www.pippinbarr.com/search.html?q=%22it%20is%20as%20if%20you%20were%20doing%20work%22)
 
 * [E-tray Exercise](https://www.wikijob.co.uk/content/aptitude-tests/test-types/e-tray-exercise) - Real world dystopian interface to train people to work with email
 * [In Europe, Fake Jobs Can Have Real Benefits](https://www.nytimes.com/2015/05/31/business/international/in-europe-fake-jobs-can-have-real-benefits.html) - New York Times article about fake businesses used for training
