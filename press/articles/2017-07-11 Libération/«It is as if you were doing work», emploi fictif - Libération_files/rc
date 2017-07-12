@@ -1,0 +1,12 @@
+var nuggad_on=1;(function() {
+  window._adexc = window._adexc || [];
+     window.nugg_kv = window.nugg_kv || {};
+     window.nugg_kv.nuggsid=1646502667;
+     window.nugg_kv.nuggn=400929945;
+    window._adexc.push(
+    ['/244/575/','ut','_kv',window.nugg_kv]
+  );
+var axd = document.createElement('script'); axd.type = 'text/javascript'; axd.async = true;
+    axd.src = ('https:' === document.location.protocol ? 'https://' : 'http://') + 'dmp.theadex.com/d/244/575/s/adex.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(axd, s);
+})();new Image().src ='//ads.stickyadstv.com/data-registering?dataProviderId=681&alli=0&allitest=1';

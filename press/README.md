@@ -92,7 +92,10 @@ _It is as if you were doing work_ is an open source game licensed under a [Creat
 * Lellouche, Nicolas. [Redécouvrez Windows 95 dans un navigateur Internet](http://www.lefigaro.fr/secteur/high-tech/2017/07/07/32001-20170707ARTFIG00005-redecouvrez-windows-95-dans-un-navigateur-internet.php). 7 July 2017. Le Figaro.
 * Mathieu, Bruno. [Cet émulateur de Windows 95 vous fait travailler en jouant (ou l'inverse)](https://www.tomsguide.fr/actualite/windows-95-emulateur-travail,58038.html). 7 July 2017. Tom's Guide.
 * [Nostalgie: Revivez l'expérience Windows 95 grâce à un hilarant simulateur gratuit](http://www.20minutes.fr/insolite/2101219-20170707-nostalgie-revivez-experience-windows-95-grace-hilarant-simulateur-gratuit). 7 July 2017. 20 Minutes.
-
+* Tomaszkiewicz, Michał [Symulator pracy wciąga na całe dni robocze](http://www.antyradio.pl/Technologia/Duperele/Symulator-pracy-wciaga-na-cale-dni-robocze-16100). 7 July 2017. Antyradio.pl.
+* Pavlenko, Dimitri. [Nostalgie : un mini-jeu émule Windows 95 dans votre navigateur web](http://www.clubic.com/humour-informatique-geek/actualite-833246-nostalgie-mini-jeu-emule-windows-95-navigateur-web.html). 9 July 2017. Clubic.
+* Taglinger, Harald. [Wilde Zeiten in der Windows-95-Welt](https://www.heise.de/tp/news/Wilde-Zeiten-in-der-Windows-95-Welt-3766792.html). 10 July 2017. Telepolis.
+* Gévaudan, Camille. [«It is as if you were doing work», emploi fictif](http://www.liberation.fr/futurs/2017/07/11/it-is-as-if-you-were-doing-work-emploi-fictif_1583145). 11 July 2017. Libération.
 
 ## Additional Links
 
