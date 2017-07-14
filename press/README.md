@@ -96,6 +96,7 @@ _It is as if you were doing work_ is an open source game licensed under a [Creat
 * Pavlenko, Dimitri. [Nostalgie : un mini-jeu émule Windows 95 dans votre navigateur web](http://www.clubic.com/humour-informatique-geek/actualite-833246-nostalgie-mini-jeu-emule-windows-95-navigateur-web.html). 9 July 2017. Clubic.
 * Taglinger, Harald. [Wilde Zeiten in der Windows-95-Welt](https://www.heise.de/tp/news/Wilde-Zeiten-in-der-Windows-95-Welt-3766792.html). 10 July 2017. Telepolis.
 * Gévaudan, Camille. [«It is as if you were doing work», emploi fictif](http://www.liberation.fr/futurs/2017/07/11/it-is-as-if-you-were-doing-work-emploi-fictif_1583145). 11 July 2017. Libération.
+* Douglas, Nick. [Officecore: 10 Games That Simulate Boring Jobs](http://lifehacker.com/officecore-10-games-that-simulate-boring-jobs-1796685998). 14 July 2017. Lifehacker.
 
 ## Additional Links
 
