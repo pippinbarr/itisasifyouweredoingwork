@@ -1041,7 +1041,7 @@ function createSelectMenu (_num) {
   var correct = _.random(0,_num-1);
   var correctItem;
   for (var i = 0; i < _num; i++) {
-    var text = technologies[_.random(0,technologies.length)];
+    var text = technologies[_.random(0,technologies.length-1)];
     var option = $('<option>'+text+'</option>');
     if (i == correct) {
       menu.data('correct',text);
@@ -1069,7 +1069,7 @@ function createCheckbox(_numOptions,_index) {
 
   var correctElements = [];
   for (var i = 0; i < _numOptions; i++) {
-    var text = technologies[_.random(0,technologies.length)];
+    var text = technologies[_.random(0,technologies.length-1)];
     var boxName = (name+i);
 
     var label = $('<label for="' + (name+i) + '">' + text + '</label>');
@@ -1110,7 +1110,7 @@ function createRadio(_numOptions,_index) {
 
   var correctElements = [];
   for (var i = 0; i < _numOptions; i++) {
-    var text = technologies[_.random(0,technologies.length)];
+    var text = technologies[_.random(0,technologies.length-1)];
     var boxName = name;
     var radio = $('<input id="'+ (name+i) +'" class="'+ type + '" name="' + boxName + '" type="' + type + '">');
 
@@ -1214,7 +1214,7 @@ INPUT
 function createInput () {
   var input = $('<input></input>');
 
-  input.data('correct',technologies[_.random(0,technologies.length)]);
+  input.data('correct',technologies[_.random(0,technologies.length-1)]);
   input.data('type',TYPE.INPUT);
 
   return input;

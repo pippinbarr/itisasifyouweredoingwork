@@ -97,6 +97,10 @@ _It is as if you were doing work_ is an open source game licensed under a [Creat
 * Taglinger, Harald. [Wilde Zeiten in der Windows-95-Welt](https://www.heise.de/tp/news/Wilde-Zeiten-in-der-Windows-95-Welt-3766792.html). 10 July 2017. Telepolis.
 * Gévaudan, Camille. [«It is as if you were doing work», emploi fictif](http://www.liberation.fr/futurs/2017/07/11/it-is-as-if-you-were-doing-work-emploi-fictif_1583145). 11 July 2017. Libération.
 * Douglas, Nick. [Officecore: 10 Games That Simulate Boring Jobs](http://lifehacker.com/officecore-10-games-that-simulate-boring-jobs-1796685998). 14 July 2017. Lifehacker.
+* Ganapathi, Anusha. [What is the point, really?](http://www.newindianexpress.com/cities/chennai/2017/jul/15/what-is-the-point-really-1628811.html). 15 July 2017. The New Indian Express.
+* Meier, Allison. [A Browser Game Recreates the Tedium of a 1990s Office Job](https://hyperallergic.com/390914/pippin-barr-it-is-as-if-you-were-doing-work-game/). Hyperallergic. 18 July 2017.
+* Kaczmarczyk, Karolina. [pippin barr:
+it is as if you were doing work](http://www.next-level.org/details/pippin_barr_it_is_as_if_you_were_doing_work/#/). Next Level. 18 July 2017.
 
 ## Additional Links
 
