@@ -102,6 +102,10 @@ _It is as if you were doing work_ is an open source game licensed under a [Creat
 * Kaczmarczyk, Karolina. [pippin barr:
 it is as if you were doing work](http://www.next-level.org/details/pippin_barr_it_is_as_if_you_were_doing_work/#/). Next Level. 18 July 2017.
 
+### Radio
+
+* [Program: forwards and backwards](http://www.deutschlandfunkkultur.de/suchergebnisse.2544.de.html?search%5Bword%5D=pippin&search%5Bsubmit%5D=1). 20 July 2017. Deutchlandfunk Kultur.
+
 ## Additional Links
 
 * [Pippin's blog posts about _It is as if you were doing work_](http://www.pippinbarr.com/search.html?q=%22it%20is%20as%20if%20you%20were%20doing%20work%22)
