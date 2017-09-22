@@ -101,6 +101,7 @@ _It is as if you were doing work_ is an open source game licensed under a [Creat
 * Meier, Allison. [A Browser Game Recreates the Tedium of a 1990s Office Job](https://hyperallergic.com/390914/pippin-barr-it-is-as-if-you-were-doing-work-game/). Hyperallergic. 18 July 2017.
 * Kaczmarczyk, Karolina. [pippin barr:
 it is as if you were doing work](http://www.next-level.org/details/pippin_barr_it_is_as_if_you_were_doing_work/#/). Next Level. 18 July 2017.
+* Machiavelli, Gui. [IT IS AS IF YOU WERE DOING WORK (REVIEW)](http://ilu.servus.at/issue11.html). Persuasive Labor Union Special Issue #2 "The Entreprecariat". 10 September 2017.
 
 ### Radio
 
