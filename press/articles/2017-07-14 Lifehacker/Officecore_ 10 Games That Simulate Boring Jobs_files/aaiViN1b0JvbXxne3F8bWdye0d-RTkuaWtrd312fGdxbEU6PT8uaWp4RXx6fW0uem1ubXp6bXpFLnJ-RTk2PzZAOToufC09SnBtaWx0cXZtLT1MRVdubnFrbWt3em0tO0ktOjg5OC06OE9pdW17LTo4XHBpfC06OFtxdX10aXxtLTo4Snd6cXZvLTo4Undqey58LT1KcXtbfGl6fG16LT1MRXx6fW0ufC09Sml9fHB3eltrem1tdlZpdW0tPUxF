@@ -1,1 +1,0 @@
-(function(){  try { if (typeof window._sp_.mms._internal.cdc1 === 'function') { window._sp_.mms._internal.cdc1({"msgID":0,"d":{"abp":true,"abt":false},"o":{"wl":false,"oir":false},"u":{"uuid":"6e8723f9-1848-461f-ac30-90b39919122f","bucket":800},"info":{"cmpgn_id":6097,"prtn_uuid":null,"msg_id":0,"msg_desc":""}});}} catch(e) {console.log("mms cdc:" + e);} })();
