@@ -1,6 +1,6 @@
 # _It is as if you were doing work_ Press Kit
 
-#### [Play _It is as if you were doing work_ in your browser](https://pippinbarr.github.io/itisasifyouweredoingwork/) (probably not mobile-friendly, sorry)
+#### [Play _It is as if you were doing work_ in your browser](https://pippinbarr.github.io/itisasifyouweredoingwork/) (probably not mobile-friendly, sorry!)
 
 ## The basics
 
