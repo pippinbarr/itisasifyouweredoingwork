@@ -103,7 +103,8 @@ _It is as if you were doing work_ is an open source game licensed under a [Creat
 it is as if you were doing work](http://www.next-level.org/details/pippin_barr_it_is_as_if_you_were_doing_work/#/). Next Level. 18 July 2017.
 * Machiavelli, Gui. [IT IS AS IF YOU WERE DOING WORK (REVIEW)](http://ilu.servus.at/issue11.html). Persuasive Labor Union Special Issue #2 "The Entreprecariat". 10 September 2017.
 * Cleon. [It Is As If You Were Doing Work But Actually You're Playing A Video Game](http://tay.kinja.com/it-is-as-if-you-were-doing-work-but-actually-youre-play-1818728688?rev=1506357501356). 25 September 2017.
-* Polansky, Lana. [Gaming on the Fringe: 2017 Roundup](http://sufficientlyhuman.com/archives/1557). 2 January 2018.
+* Polansky, Lana. [Gaming on the Fringe: 2017 Roundup](http://sufficientlyhuman.com/archives/1557). Sufficiently Human. 2 January 2018.
+* Macharia, Tyra. [Artcade Brought a Whole New Meaning to Game Developing](https://thelinknewspaper.ca/article/artcade-2018-concordia). The Link. 10 March 2018.
 
 ### Radio
 
