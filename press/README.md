@@ -105,6 +105,7 @@ it is as if you were doing work](http://www.next-level.org/details/pippin_barr_i
 * Cleon. [It Is As If You Were Doing Work But Actually You're Playing A Video Game](http://tay.kinja.com/it-is-as-if-you-were-doing-work-but-actually-youre-play-1818728688?rev=1506357501356). 25 September 2017.
 * Polansky, Lana. [Gaming on the Fringe: 2017 Roundup](http://sufficientlyhuman.com/archives/1557). Sufficiently Human. 2 January 2018.
 * Macharia, Tyra. [Artcade Brought a Whole New Meaning to Game Developing](https://thelinknewspaper.ca/article/artcade-2018-concordia). The Link. 10 March 2018.
+* Polansky, Lana. [Notes on It’s As If You Were Doing Work: Do Nothing, Feel Fine](http://sufficientlyhuman.com/archives/1590). Sufficiently Human. 3 April 2018.
 
 ### Radio
 
