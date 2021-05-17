@@ -28,46 +28,28 @@ var username = 'Unknown';
 var password = '';
 var jobTitleSubjectIndex = -1;
 var jobTitlePositionIndex = 0;
-var jobTitle = 'Intern';
+var jobTitle = '';
 var workUnitsToPromotion = WORK_UNITS_FOR_PROMOTION;
 var windowSizeDialog = null;
+
+let strings; // To contain all displayed language
 
 $(document).ready(create);
 
 
 function create() {
-
   loadSounds();
   checkWindowSize();
   $(window).resize(checkWindowSize);
-
 }
 
 function setup() {
-
-  createBreakoutDialog();
-
-  // createBreakDialog();
-  // createInspirationalDialog();
-
-  // setTimeout(startBreak,2000);
-  // setTimeout(function () {
-  //   breakoutDialog.dialog('open');
-  //   window.dispatchEvent(new Event("start-game"));
-  // },1000);
-  // console.log(breakoutPhaserGame);
-
-  // createWorkDialog();
-  // createEmailDialog();
-  // createDocumentDialog();
-  // createInspirationalDialog();
-  // createDesktopDialog();
-  // createMusicDialog();
-  // createAboutDialog();
-  // createMenuBar();
-  // return;
-
-  startGame();
+  $.getJSON("assets/languages/en.json", function (data) {
+    strings = data;
+    jobTitle = strings.jobs.intern;
+    createBreakoutDialog();
+    startGame();
+  });
 }
 
 function startGame () {
@@ -110,7 +92,6 @@ function showDesktop () {
   createMenuBar();
 
   setTimeout(function () {
-    console.log("Here.");
     createReadyDialog();
   },2000);
 

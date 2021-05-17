@@ -39,16 +39,9 @@ function loadSounds () {
   music.volume = 0.5;
 
   breakSFX.addEventListener('loadeddata', function () {
-    console.log("Loaded audio...");
     audioLoaded = true;
   });
 }
-
-// function loadTexts () {
-//   $.get("assets/texts/quotes.txt", function (text) {
-//     quotes = text.split('\n');
-//   });
-// }
 
 function loadIcons() {
   createIcon("display", 32, 64*1, createDesktopDialog);
@@ -59,7 +52,7 @@ function loadIcons() {
       breakoutDialog.dialog('open');
     }
     else {
-      createSimpleDialog("Uh-oh!","breakout-forbidden","You can't play Breakout unless you're on a break!","Okay",true, '400');
+      createSimpleDialog(strings.breakout.uhoh,"breakout-forbidden",strings.breakout.forbidden,strings.labels.okay,true, '400');
     }
   });
   createIcon("about", 32, 64*7, createAboutDialog);
@@ -83,15 +76,18 @@ function createIcon(name, x, y, callback) {
 }
 
 function createAboutDialog () {
-  createSimpleDialog ("About", "about-dialog", aboutText, "Got it", true, 600, null, null);
+  let aboutHTML = ``;
+  for (let i = 0; i < strings.about.content.length; i++) {
+    aboutHTML += `<p>${strings.about.content[i]}</p>`
+  }
+  createSimpleDialog (strings.about.title, "about-dialog", aboutHTML, strings.labels.gotit, true, 600, null, null);
 }
 
 function createBreakoutDialog () {
 
-  console.log("Sending stop-game event");
   window.dispatchEvent(new Event("stop-game"));
 
-  var title = "Take a break!";
+  var title = strings.breakout.title;
   var dialogDiv = $('<div class="dialog" id="breakout-dialog" title="'+title+'"></div>');
 
   dialogDiv.append($('#gameContainer'));
@@ -185,22 +181,21 @@ function createMenuBar () {
 }
 
 function createLoginDialog () {
-  var title = "Login";
+  var title = strings.login.title;
   var dialogDiv = $('<div class="dialog" id="login-dialog" title="'+title+'"></div>');
   var usernameField = $('<input id="usernameInput" type="text" maxlength="10"></input>');
   var passwordField = $('<input id="passwordInput" type="password"></input>');
   usernameField.css('border', '1px solid black')
   passwordField.css('border', '1px solid black')
 
-
-  dialogDiv.append('<div><h3>It is as if you were doing work v1.0</h3></div>')
-  dialogDiv.append('<div><p>Please login with your work credentials</p></div>')
-  dialogDiv.append('<label id="usernameLabel">Username:</label><br />');
+  dialogDiv.append(`<div><h3>${strings.login.heading}</h3></div>`)
+  dialogDiv.append(`<div><p>${strings.login.instruction}</p></div>`)
+  dialogDiv.append(`<label id="usernameLabel">${strings.login.username}:</label><br />`);
   dialogDiv.append(usernameField);
-  dialogDiv.append('<p></p>');
-  dialogDiv.append('<label id="passwordLabel">Password:</label><br />');
+  dialogDiv.append(`<p></p>`);
+  dialogDiv.append(`<label id="passwordLabel">${strings.login.password}:</label><br />`);
   dialogDiv.append(passwordField);
-  dialogDiv.append('<div><br /><p>Administrator: <a target="_blank" href="http://www.pippinbarr.com/">Pippin Barr</a></p></div>')
+  dialogDiv.append(`<div><br /><p>${strings.login.administrator}: <a target="_blank" href="http://www.pippinbarr.com/">Pippin Barr</a></p></div>`)
 
   var dialogOptions = {
     appendTo: '#ui',
@@ -254,9 +249,9 @@ function createLoginDialog () {
 
 
 function createReadyDialog () {
-  var title = "Start Work!";
+  var title = strings.ready.title;
   var dialogDiv = $('<div class="dialog" id="ready-dialog" title="'+title+'"></div>');
-  dialogDiv.append("<p>Ready to start work?</p>")
+  dialogDiv.append(`<p>${strings.ready.content}</p>`)
 
   var dialogOptions = {
     appendTo: '#ui',
@@ -267,18 +262,17 @@ function createReadyDialog () {
     modal: true,
     autoOpen: true,
     closeOnEscape: false,
-    buttons: {
-      "Let's go!": function () {
-        playSound(dialogSuccessSFX);
-        startWork();
-        $(this).dialog('destroy');
-      },
-      "Not yet...": function () {
-        playSound(dialogSuccessSFX);
-        startDelayedWork();
-        $(this).dialog('destroy');
-      }
-    }
+    buttons: {}
+  };
+  dialogOptions.buttons[strings.ready.ok] = function () {
+    playSound(dialogSuccessSFX);
+    startWork();
+    $(this).dialog('destroy');
+  };
+  dialogOptions.buttons[strings.ready.notyet] = function () {
+    playSound(dialogSuccessSFX);
+    startDelayedWork();
+    $(this).dialog('destroy');
   };
 
   createDialog(dialogDiv, dialogOptions, false);
@@ -288,9 +282,9 @@ function createReadyDialog () {
 
 
 function createDelayedWorkDialog () {
-  var title = "Get Ready!";
+  var title = strings.delayed.title;
   var dialogDiv = $('<div class="dialog" id="work-delay-dialog" title="'+title+'"></div>');
-  dialogDiv.append("<p>Work will start when the progress bar is full!</p>")
+  dialogDiv.append(`<p>${strings.delayed.content}</p>`)
 
   var progressbar = createProgressBar();
 
@@ -334,10 +328,10 @@ function createDelayedWorkDialog () {
 
 
 function createBreakDialog () {
-  var title = "Time for a break!";
+  var title = strings.break.title;
   var dialogDiv = $('<div class="dialog" id="break-dialog" title="'+title+'"></div>');
-  dialogDiv.append("<p>It's time for a well-deserved break!</p>");
-  dialogDiv.append("<p>Break time is over when the progress bar is full!</p>");
+  dialogDiv.append(`<p>${strings.break.p1}</p>`);
+  dialogDiv.append(`<p>${strings.break.p2}</p>`);
 
   var progressbar = createProgressBar();
 
@@ -391,7 +385,7 @@ function createDesktopDialog() {
 
   var options = ['grass','lake','cat','work'];
 
-  var title = "Set desktop picture";
+  var title = strings.desktop.title;
   var dialogDiv = $('<div id="desktop-dialog" class="dialog" title="'+title+'"></div>');
   var radioField = $('<fieldset id="desktop-select-fieldset"></fieldset>');
 
@@ -403,7 +397,7 @@ function createDesktopDialog() {
     radio.click(function () {
       setDesktop($(this).data('label'));
     });
-    var label = $('<label for="' + name + '">' + options[i] + '</label>');
+    var label = $('<label for="' + name + '">' + strings.desktop.labels[options[i]] + '</label>');
 
     radioField.append(radio);
     radioField.append(label);
@@ -412,7 +406,7 @@ function createDesktopDialog() {
 
   // radioField.checkboxradio();
 
-  dialogDiv.append("Select desktop image:<p>");
+  dialogDiv.append(`${strings.desktop.instruction}<p>`);
   dialogDiv.append(radioField);
 
   var dialogOptions = {
@@ -531,7 +525,7 @@ function setDesktop(theme) {
 function createInspirationalDialog() {
   // playSound(newDialogSFX);
 
-  var title = inspirationWorkSlogans[_.random(0,inspirationWorkSlogans.length-1)];
+  var title = strings.inspirationWorkSlogans[_.random(0,strings.inspirationWorkSlogans.length-1)];
   var dialogDiv = $('<div class="dialog inspirational-dialog" title="'+title+'"></div>');
 
   var imgNumber = _.random(1,17);
@@ -561,7 +555,7 @@ function createInspirationalDialog() {
 function createWorkDialog() {
   // playSound(newDialogSFX);
 
-  var title = technologies[_.random(0,technologies.length-1)];
+  var title = strings.technologies[_.random(0,strings.technologies.length-1)];
   var dialogDiv = $('<div class="dialog work-dialog" title="'+title+'"></div>');
 
   var option = 1;
@@ -732,7 +726,7 @@ function createWorkDialog() {
     var labelDuplicate = true;
     while (labelDuplicate) {
 
-      var label = buttonLabels[_.random(0,buttonLabels.length-1)];
+      var label = strings.labels.list[_.random(0,strings.labels.list.length-1)];
       labelDuplicate = false;
 
       for (var j = 0; j < buttonsArray.length; j++) {
@@ -1041,7 +1035,7 @@ function createSelectMenu (_num) {
   var correct = _.random(0,_num-1);
   var correctItem;
   for (var i = 0; i < _num; i++) {
-    var text = technologies[_.random(0,technologies.length-1)];
+    var text = strings.technologies[_.random(0,strings.technologies.length-1)];
     var option = $('<option>'+text+'</option>');
     if (i == correct) {
       menu.data('correct',text);
@@ -1069,7 +1063,7 @@ function createCheckbox(_numOptions,_index) {
 
   var correctElements = [];
   for (var i = 0; i < _numOptions; i++) {
-    var text = technologies[_.random(0,technologies.length-1)];
+    var text = strings.technologies[_.random(0,strings.technologies.length-1)];
     var boxName = (name+i);
 
     var label = $('<label for="' + (name+i) + '">' + text + '</label>');
@@ -1110,7 +1104,7 @@ function createRadio(_numOptions,_index) {
 
   var correctElements = [];
   for (var i = 0; i < _numOptions; i++) {
-    var text = technologies[_.random(0,technologies.length-1)];
+    var text = strings.technologies[_.random(0,strings.technologies.length-1)];
     var boxName = name;
     var radio = $('<input id="'+ (name+i) +'" class="'+ type + '" name="' + boxName + '" type="' + type + '">');
 
@@ -1214,7 +1208,7 @@ INPUT
 function createInput () {
   var input = $('<input></input>');
 
-  input.data('correct',technologies[_.random(0,technologies.length-1)]);
+  input.data('correct',strings.technologies[_.random(0,strings.technologies.length-1)]);
   input.data('type',TYPE.INPUT);
 
   return input;
@@ -1253,7 +1247,7 @@ function createInput () {
 
 
 function createDocumentDialog () {
-  var title = inspirationWorkSlogans[_.random(0,inspirationWorkSlogans.length-1)];
+  var title = strings.inspirationWorkSlogans[_.random(0,strings.inspirationWorkSlogans.length-1)];
   var div = $('<div class="dialog document-dialog" title="'+ title + '"></div>');
   var requiredCharacters = _.random(250,750);
   var instruction1 = $('<span>Write and save a document of at least '+ requiredCharacters +' characters (currently </span>');
@@ -1262,10 +1256,10 @@ function createDocumentDialog () {
   var input = $('<textarea class="document-input" style="user-select: none" readonly="readonly"></textarea>');
   // var input = $('<textarea class="document-input" readonly="readonly"></textarea>');
 
-  var quoteIndex = Math.floor(Math.random() * technologies.length);
+  var quoteIndex = Math.floor(Math.random() * strings.technologies.length);
   var quoteChar = 0;
   var characters = 0;
-  var quoteArray = technologies;
+  var quoteArray = strings.technologies;
 
   var instruction = $('<p></p>');
   instruction.append(instruction1, charactersSpan, instruction2);
@@ -1317,7 +1311,7 @@ function createDocumentDialog () {
   input.on('keypress', function (e) {
     e.preventDefault();
 
-    if (quoteArray == technologies && quoteChar == 0) {
+    if (quoteArray == strings.technologies && quoteChar == 0) {
       input.append("* ");
     }
 
@@ -1332,14 +1326,14 @@ function createDocumentDialog () {
 
     if (quoteChar == quoteArray[quoteIndex].length) {
       quoteChar = 0;
-      if (quoteArray == technologies) {
+      if (quoteArray == strings.technologies) {
         input.append(':\n\n');
-        quoteArray = inspirationalQuotes;
+        quoteArray = strings.inspirationalQuotes;
       }
       else if (Math.random() < 0.4) {
         input.append('\n\n');
         if (Math.random() < 0.5) {
-          quoteArray = technologies;
+          quoteArray = strings.technologies;
         }
       }
       else {
@@ -1366,20 +1360,20 @@ function createEmailDialog () {
   var charactersSpan = $('<span>0</span>');
   var instruction2 = $('<span>)</span>');
 
-  var email = technologies[_.random(0,technologies.length-1)].replace(/ /g,".").toLowerCase();
-  email += "@" + technologies[_.random(0,technologies.length-1)].replace(/ /g,"").toLowerCase();
+  var email = strings.technologies[_.random(0,strings.technologies.length-1)].replace(/ /g,".").toLowerCase();
+  email += "@" + strings.technologies[_.random(0,strings.technologies.length-1)].replace(/ /g,"").toLowerCase();
   email += ".com";
 
   var to = $('<span name="email-to-field" class="email-field">'+email+'</span>');
 
-  var subjectText = "Re: " + technologies[_.random(0,technologies.length-1)];
+  var subjectText = "Re: " + strings.technologies[_.random(0,strings.technologies.length-1)];
   var subject = $('<span name="email-subject-field" class="email-field">'+subjectText+'</span>')
   var input = $('<textarea class="email-input" style="user-select: none" readonly="readonly"></textarea>');
   // var input = $('<textarea class="email-input" readonly="readonly"></textarea>');
 
-  var quoteIndex = Math.floor(Math.random() * inspirationalQuotes.length);
+  var quoteIndex = Math.floor(Math.random() * strings.inspirationalQuotes.length);
   var quoteChar = 0;
-  var quoteArray = technologies;
+  var quoteArray = strings.technologies;
   var characters = 0;
 
   var instruction = $('<p></p>');
@@ -1433,7 +1427,7 @@ function createEmailDialog () {
   input.on('keypress', function (e) {
     e.preventDefault();
 
-    if (quoteArray == technologies && quoteChar == 0) {
+    if (quoteArray == strings.technologies && quoteChar == 0) {
       input.append("* ");
     }
 
@@ -1448,14 +1442,14 @@ function createEmailDialog () {
 
     if (quoteChar == quoteArray[quoteIndex].length) {
       quoteChar = 0;
-      if (quoteArray == technologies) {
+      if (quoteArray == strings.technologies) {
         input.append(':\n\n');
-        quoteArray = inspirationalQuotes;
+        quoteArray = strings.inspirationalQuotes;
       }
       else if (Math.random() < 0.4) {
         input.append('\n\n');
         if (Math.random() < 0.5) {
-          quoteArray = technologies;
+          quoteArray = strings.technologies;
         }
       }
       else {
@@ -1486,37 +1480,35 @@ function updateWorkUnits(num) {
 }
 
 function givePromotion() {
-  if (jobTitle == "Chief Technology Officer") return;
+  if (jobTitle == strings.jobs.cto) return;
 
   jobTitle = null;
   jobTitleSubjectIndex++;
-  if (jobTitleSubjectIndex >= jobTitler.subject.length) {
+  if (jobTitleSubjectIndex >= strings.jobs.subject.length) {
     jobTitleSubjectIndex = 0;
     jobTitlePositionIndex++;
-    if (jobTitlePositionIndex >= jobTitler.position.length) {
+    if (jobTitlePositionIndex >= strings.jobs.position.length) {
       jobTitlePositionIndex = 0;
-      jobTitle = "Chief Technology Officer";
+      jobTitle = strings.jobs.cto;
     }
   }
   playSound(promotionSFX);
-  console.log(jobTitleSubjectIndex,jobTitlePositionIndex);
   if (!jobTitle) jobTitle = getJobTitle(jobTitleSubjectIndex,jobTitlePositionIndex);
-  console.log(jobTitle);
 
   $('#menubar-job-title-text').text(jobTitle);
   createPromotionDialog(jobTitle);
 }
 
 function getJobTitle(subjectIndex,positionIndex) {
-  var subject = jobTitler.subject[subjectIndex]
-  var position = jobTitler.position[positionIndex]
+  var subject = strings.jobs.subject[subjectIndex]
+  var position = strings.jobs.position[positionIndex]
   return subject + ' ' + position;
 }
 
 
 
 function resetWorkUnits () {
-  if (jobTitle == "Chief Technology Officer") {
+  if (jobTitle == strings.jobs.cto) {
     WORK_UNITS_FOR_PROMOTION = undefined;
   }
   else {
