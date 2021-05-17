@@ -106,6 +106,7 @@ it is as if you were doing work](http://www.next-level.org/details/pippin_barr_i
 * Polansky, Lana. [Gaming on the Fringe: 2017 Roundup](http://sufficientlyhuman.com/archives/1557). Sufficiently Human. 2 January 2018.
 * Macharia, Tyra. [Artcade Brought a Whole New Meaning to Game Developing](https://thelinknewspaper.ca/article/artcade-2018-concordia). The Link. 10 March 2018.
 * Polansky, Lana. [Notes on It’s As If You Were Doing Work: Do Nothing, Feel Fine](http://sufficientlyhuman.com/archives/1590). Sufficiently Human. 3 April 2018.
+* Bacaranm Mihai. [It is as if you were doing work - a (mis)reading](http://hz-journal.org/n21/bacaran.html). Hz Journal \#21. January 2019.
 
 ### Radio
 
