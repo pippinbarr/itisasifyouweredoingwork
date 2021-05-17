@@ -1,4 +1,9 @@
 {
+  "tooSmall": {
+    "title": "Window too small!",
+    "p1": "You can't get any work done with a browser width that narrow!",
+    "p2": "Make it bigger!"
+  },
   "login": {
     "title": "Login",
     "heading": "It is as if you were doing work v1.0",
@@ -6,6 +11,10 @@
     "username": "Username",
     "password": "Password",
     "administrator": "Administrator"
+  },
+  "menubar": {
+    "jobTitle": "Job Title",
+    "toPromotion": "Work Units to Promotion"
   },
   "ready": {
     "title": "Start Work!",
@@ -39,6 +48,60 @@
       "cat": "cat",
       "work": "work"
     }
+  },
+  "music": {
+    "title": "Choose music",
+    "instruction": "Select music:",
+    "volume": "Select volume:",
+    "labels": {
+      "none": "none",
+      "world": "world",
+      "jazz": "jazz",
+      "classical": "classical",
+      "hiphop": "hiphop"
+    }
+  },
+  "workDialog": {
+    "select": "Select",
+    "and": "and",
+    "setSpinner": "Set spinner to",
+    "setSlider": "Set slider to",
+    "currently": "currently",
+    "progressBar": "Wait for progress bar to complete",
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May","June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "date": "Set date to",
+    "write": "Write",
+    "inputField": "in the input field",
+    "click": "Click",
+    "document": {
+      "p1": "Write and save a document of at least",
+      "p2": "characters (currently"
+    },
+    "email": {
+      "title": "Email",
+      "instruction": {
+        "p1": "Write and send an email of at least",
+        "p2": "characters (currently"
+      },
+      "re": "Re"
+    }
+  },
+  "promotion": {
+    "title": "Promotion!",
+    "announcement": "You have been promoted to",
+    "encouragement": "Keep working hard!"
   },
   "break": {
     "title": "Time for a break!",
@@ -75,6 +138,7 @@
   },
   "labels": {
     "okay": "Okay",
+    "save": "Save",
     "gotit": "Got it",
     "list": [
       "Ok",

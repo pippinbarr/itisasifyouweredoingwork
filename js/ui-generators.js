@@ -129,7 +129,7 @@ function createMenuBar () {
 
 
   // rank = getNextRank();
-  var menubarJobTitle = $('<div id="menubar-job-title"><b>Job Title:</b> <span id="menubar-job-title-text">' + jobTitle + '</span></div>');
+  var menubarJobTitle = $(`<div id="menubar-job-title"><b>${strings.menubar.jobTitle}:</b> <span id="menubar-job-title-text">` + jobTitle + '</span></div>');
   menubarJobTitle.css({
     // marginLeft: 20,
     // left: '0%',
@@ -143,7 +143,7 @@ function createMenuBar () {
 
   });
 
-  var menubarUnits = $('<div id="menubar-units"><b>Work Units to Promotion:</b> <span id="menubar-units-text">' + workUnitsToPromotion + '</span></div>');
+  var menubarUnits = $(`<div id="menubar-units"><b>${toPromotion}:</b> <span id="menubar-units-text">` + workUnitsToPromotion + '</span></div>');
   menubarUnits.css({
     // left: '33%',
     // width: '320px',
@@ -417,18 +417,15 @@ function createDesktopDialog() {
     modal: false,
     autoOpen: true,
     closeOnEscape: false,
-    buttons: {
-      "Okay": function () {
-        playSound(dialogSuccessSFX);
-        updateWorkUnits(WORK_UNITS_PER_DIALOG);
-        $(this).dialog('close');
-      },
-    }
+    buttons: {}
+  };
+  dialogOptions.buttons[strings.labels.okay] = function () {
+    playSound(dialogSuccessSFX);
+    updateWorkUnits(WORK_UNITS_PER_DIALOG);
+    $(this).dialog('close');
   };
 
   createDialog(dialogDiv, dialogOptions, true);
-
-
 }
 
 
@@ -441,7 +438,7 @@ function createMusicDialog () {
 
   var options = ['none','world','jazz','classical','hiphop'];
 
-  var title = "Choose music";
+  var title = strings.music.title;
   var dialogDiv = $('<div id="music-dialog" class="dialog" title="'+title+'"></div>');
   var radioField = $('<fieldset id="music-select-fieldset"></fieldset>');
 
@@ -453,7 +450,7 @@ function createMusicDialog () {
     radio.click(function () {
       setMusic($(this).data('label'));
     });
-    var label = $('<label for="' + name + '">' + options[i] + '</label>');
+    var label = $('<label for="' + name + '">' + strings.music.labels[options[i]] + '</label>');
 
     radioField.append(radio);
     radioField.append(label);
@@ -475,9 +472,9 @@ function createMusicDialog () {
 
   // radioField.checkboxradio();
 
-  dialogDiv.append("Select music:<p>");
+  dialogDiv.append(`${strings.music.instruction}<p>`);
   dialogDiv.append(radioField);
-  dialogDiv.append("<p>Select volume:<p>");
+  dialogDiv.append(`<p>${strings.music.volume}<p>`);
   volumeSlider.appendTo(dialogDiv);
 
 
@@ -489,13 +486,12 @@ function createMusicDialog () {
     modal: false,
     autoOpen: true,
     closeOnEscape: false,
-    buttons: {
-      "Okay": function () {
-        playSound(dialogSuccessSFX);
-        updateWorkUnits(WORK_UNITS_PER_DIALOG);
-        $(this).dialog('close');
-      },
-    }
+    buttons: {}
+  };
+  dialogOptions.buttons[strings.labels.okay] = function () {
+    playSound(dialogSuccessSFX);
+    updateWorkUnits(WORK_UNITS_PER_DIALOG);
+    $(this).dialog('close');
   };
 
   createDialog(dialogDiv, dialogOptions, true);
@@ -521,11 +517,13 @@ function setDesktop(theme) {
   });
 }
 
-
+function getRandomInspirationalWorkSlogan() {
+  return strings.inspirationWorkSlogans[_.random(0,strings.inspirationWorkSlogans.length-1)]
+}
 function createInspirationalDialog() {
   // playSound(newDialogSFX);
 
-  var title = strings.inspirationWorkSlogans[_.random(0,strings.inspirationWorkSlogans.length-1)];
+  var title = getRandomInspirationalWorkSlogan();
   var dialogDiv = $('<div class="dialog inspirational-dialog" title="'+title+'"></div>');
 
   var imgNumber = _.random(1,17);
@@ -551,11 +549,14 @@ function createInspirationalDialog() {
   createDialog(dialogDiv, dialogOptions, true);
 }
 
+function getRandomTechnology() {
+  return strings.technologies[_.random(0,strings.technologies.length-1)];
+}
 
 function createWorkDialog() {
   // playSound(newDialogSFX);
 
-  var title = strings.technologies[_.random(0,strings.technologies.length-1)];
+  var title = getRandomTechnology();
   var dialogDiv = $('<div class="dialog work-dialog" title="'+title+'"></div>');
 
   var option = 1;
@@ -576,7 +577,7 @@ function createWorkDialog() {
       case TYPE.SELECTMENU:
       var selectMenu = createSelectMenu(3);
 
-      var selectString = '<p>' + option + '. Select ' + selectMenu.data('correct') + '</p>';
+      var selectString = '<p>' + option + `. ${strings.workDialog.select} ` + selectMenu.data('correct') + '</p>';
 
       dialogDiv.append(selectString);
       selectMenu.appendTo(dialogDiv);
@@ -591,10 +592,10 @@ function createWorkDialog() {
       case TYPE.CHECKBOX:
       var checkboxes = createCheckbox(3,option);
 
-      var selectString = '<p>' + option + '. Select ';
+      var selectString = '<p>' + option + `. ${strings.workDialog.select} `;
       for (var i = 0; i < checkboxes.data('correct').length; i++) {
         selectString += checkboxes.data('correct')[i];
-        if (i == checkboxes.data('correct').length - 2) selectString += ' and ';
+        if (i == checkboxes.data('correct').length - 2) selectString += ` ${strings.workDialog.and} `;
         else if (checkboxes.data('correct').length != 1) selectString += ', ';
       }
 
@@ -608,7 +609,7 @@ function createWorkDialog() {
       case TYPE.RADIO:
       var radios = createRadio(3,option);
 
-      var selectString = '<p>' + option + '. Select ' + radios.data('correct') + '</p>';
+      var selectString = '<p>' + option + `. ${strings.workDialog.select} ` + radios.data('correct') + '</p>';
 
       dialogDiv.append(selectString);
       radios.appendTo(dialogDiv);
@@ -620,7 +621,7 @@ function createWorkDialog() {
       case TYPE.SPINNER:
       var spinner = createSpinner();
 
-      var selectString = '<p>' + option + '. Set spinner to ' + spinner.data('correct') + '</p>';
+      var selectString = '<p>' + option + `. ${strings.workDialog.setSpinner} ` + spinner.data('correct') + '</p>';
 
       dialogDiv.append(selectString);
       spinner.appendTo(dialogDiv);
@@ -640,10 +641,8 @@ function createWorkDialog() {
       var slider = createSlider();
 
       var sliderStartValue = _.random(0,100);
-      var sliderValueSpan = $('<span>'+sliderStartValue+'</span>')
-      var instruction = $('<p>' + option + '. Set slider to ' + slider.data('correct') + ' (currently </p>');
-      instruction.append(sliderValueSpan);
-      instruction.append(')');
+      var sliderValueSpan = $(`<span>${sliderStartValue}</span>`)
+      var instruction = $(`<p>${option} . ${strings.workDialog.setSlider}${slider.data('correct')} (${strings.workDialog.currently} ${sliderValueSpan})</p>`);
       dialogDiv.append(instruction);
 
       slider.appendTo(dialogDiv);
@@ -666,7 +665,7 @@ function createWorkDialog() {
       case TYPE.PROGRESSBAR:
       var progressbar = createProgressBar();
 
-      var instruction = '<p>' + option + '. Wait for progress bar to complete</p>';
+      var instruction = '<p>' + option + `. ${strings.workDialog.progressBar}</p>`;
 
       dialogDiv.append(instruction);
       progressbar.appendTo(dialogDiv);
@@ -691,9 +690,9 @@ function createWorkDialog() {
       var datepicker = createDatepicker();
 
       var date = new Date(datepicker.data('correct'));
-      var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      var months = strings.workDialog.months;
       var dateString = date.getDate() + ' ' + months[(date.getMonth())] + ' ' + date.getFullYear()
-      var instruction = '<p>' + option + '. Set date to '+ dateString + '</p>';
+      var instruction = `<p>${option}. ${strings.workDialog.date} ${dateString}</p>`;
 
       dialogDiv.append(instruction);
       datepicker.appendTo(dialogDiv);
@@ -707,7 +706,7 @@ function createWorkDialog() {
       case TYPE.INPUT:
       var input = createInput();
 
-      var instructions = '<p>' + option + '. Write "'+ input.data('correct') +'" in the input field</p>';
+      var instructions = '<p>' + option + `. ${strings.workDialog.write} "`+ input.data('correct') +`" ${strings.workDialog.inputField}</p>`;
       dialogDiv.append(instructions);
       input.appendTo(dialogDiv);
 
@@ -781,10 +780,8 @@ function createWorkDialog() {
 
             case TYPE.SELECTMENU:
             if (element.data('correct') == element.val()) {
-              console.log("ELEMENT CORRECT");
             }
             else {
-              console.log("ELEMENT INCORRECT");
               dialogCorrect = false;
               break;
             }
@@ -808,10 +805,8 @@ function createWorkDialog() {
               }
             });
             if (correct) {
-              console.log("CHECKBOX CORRECT");
             }
             else {
-              console.log("CHECKBOX INCORRECT");
               dialogCorrect = false;
               break;
             }
@@ -828,10 +823,8 @@ function createWorkDialog() {
               }
             });
             if (correct) {
-              console.log("RADIO CORRECT");
             }
             else {
-              console.log("RADIO INCORRECT");
               dialogCorrect = false;
               break;
             }
@@ -839,10 +832,8 @@ function createWorkDialog() {
 
             case TYPE.SPINNER:
             if (element.spinner('value') == element.data('correct')) {
-              console.log("SPINNER CORRECT");
             }
             else {
-              console.log("SPINNER INCORRECT");
               dialogCorrect = false;
               break;
             }
@@ -852,10 +843,8 @@ function createWorkDialog() {
             case TYPE.SLIDER:
             console.log(element.slider('value'));
             if (element.slider('value') == element.data('correct')) {
-              console.log("SLIDER CORRECT");
             }
             else {
-              console.log("SLIDER INCORRECT");
               dialogCorrect = false;
               break;
             }
@@ -864,23 +853,17 @@ function createWorkDialog() {
             case TYPE.PROGRESSBAR:
             console.log(element.progressbar('value'));
             if (element.progressbar('value') >= 100) {
-              console.log("PROGRESSBAR COMPLETE");
             }
             else {
-              console.log("PROGRESSBAR NOT COMPLETE");
               dialogCorrect = false;
               break;
             }
             break;
 
             case TYPE.DATEPICKER:
-            console.log("Entered date: " + element.val());
-            console.log("Correct date: " + element.data('correct'));
             if (element.val() == element.data('correct')) {
-              console.log("DATE CORRECT");
             }
             else {
-              console.log("DATE INCORRECT");
               dialogCorrect = false;
               break;
             }
@@ -888,10 +871,8 @@ function createWorkDialog() {
 
             case TYPE.INPUT:
             if (element.val() == element.data('correct')) {
-              console.log("INPUT CORRECT");
             }
             else {
-              console.log("INPUT INCORRECT");
               dialogCorrect = false;
               break;
             }
@@ -914,14 +895,13 @@ function createWorkDialog() {
     }
     else {
       dialogOptions.buttons[buttonsArray[i]] = function () {
-        console.log("Incorrect dialog button!");
         playSound(dialogFailureSFX);
         $(this).parent().effect('shake',{distance:4});
       }
     }
   }
 
-  dialogDiv.append('<p>'+(option)+'. Click ' + buttonsArray[correctButton] + '</p>')
+  dialogDiv.append('<p>'+(option)+`. ${strings.workDialog.click} ` + buttonsArray[correctButton] + '</p>')
 
   createDialog(dialogDiv, dialogOptions, true);
 
@@ -952,7 +932,7 @@ function createWorkDialog() {
 }
 
 function createWindowSizeDialog () {
-  var d = createSimpleDialog("Window too small!","window-size-dialog","<p>You can't get any work done with a browser width that narrow!</p><p>Make it bigger!</p>",null,false,'80%',true,'#wrapper');
+  var d = createSimpleDialog(strings.tooSmall.title,"window-size-dialog",`<p>${strings.tooSmall.p1}</p><p>${strings.tooSmall.p2}</p>`,null,false,'80%',true,'#wrapper');
 
   d.parent().css('z-index',1001);
 
@@ -1035,7 +1015,7 @@ function createSelectMenu (_num) {
   var correct = _.random(0,_num-1);
   var correctItem;
   for (var i = 0; i < _num; i++) {
-    var text = strings.technologies[_.random(0,strings.technologies.length-1)];
+    var text = getRandomTechnology();
     var option = $('<option>'+text+'</option>');
     if (i == correct) {
       menu.data('correct',text);
@@ -1063,7 +1043,7 @@ function createCheckbox(_numOptions,_index) {
 
   var correctElements = [];
   for (var i = 0; i < _numOptions; i++) {
-    var text = strings.technologies[_.random(0,strings.technologies.length-1)];
+    var text = getRandomTechnology();
     var boxName = (name+i);
 
     var label = $('<label for="' + (name+i) + '">' + text + '</label>');
@@ -1104,7 +1084,7 @@ function createRadio(_numOptions,_index) {
 
   var correctElements = [];
   for (var i = 0; i < _numOptions; i++) {
-    var text = strings.technologies[_.random(0,strings.technologies.length-1)];
+    var text = getRandomTechnology();
     var boxName = name;
     var radio = $('<input id="'+ (name+i) +'" class="'+ type + '" name="' + boxName + '" type="' + type + '">');
 
@@ -1208,7 +1188,7 @@ INPUT
 function createInput () {
   var input = $('<input></input>');
 
-  input.data('correct',strings.technologies[_.random(0,strings.technologies.length-1)]);
+  input.data('correct',getRandomTechnology());
   input.data('type',TYPE.INPUT);
 
   return input;
@@ -1247,10 +1227,10 @@ function createInput () {
 
 
 function createDocumentDialog () {
-  var title = strings.inspirationWorkSlogans[_.random(0,strings.inspirationWorkSlogans.length-1)];
+  var title = getRandomInspirationalWorkSlogan();
   var div = $('<div class="dialog document-dialog" title="'+ title + '"></div>');
   var requiredCharacters = _.random(250,750);
-  var instruction1 = $('<span>Write and save a document of at least '+ requiredCharacters +' characters (currently </span>');
+  var instruction1 = $(`<span>${strings.workDialog.document.p1} ${requiredCharacters} ${strings.workDialog.document.p2} </span>`);
   var charactersSpan = $('<span>0</span>');
   var instruction2 = $('<span>)</span>');
   var input = $('<textarea class="document-input" style="user-select: none" readonly="readonly"></textarea>');
@@ -1279,21 +1259,8 @@ function createDocumentDialog () {
     modal: false,
     autoOpen: true,
     closeOnEscape: false,
-    buttons: {
-      "Save": function () {
-        if (characters >= requiredCharacters) {
-          updateWorkUnits(WORK_UNITS_PER_DIALOG);
-          playSound(dialogSuccessSFX);
-          $(this).dialog('destroy');
-        }
-        else {
-          playSound(dialogFailureSFX);
-          $(this).parent().effect('shake',{distance:4});
-        }
-      },
-    },
+    buttons: {},
     beforeClose: function () {
-      console.log("Before close");
       if (state == STATE.BREAK) {
         return true;
       }
@@ -1303,8 +1270,19 @@ function createDocumentDialog () {
         return false;
       }
     }
-
   };
+
+  dialogOptions.buttons[strings.labels.save] = function () {
+    if (characters >= requiredCharacters) {
+      updateWorkUnits(WORK_UNITS_PER_DIALOG);
+      playSound(dialogSuccessSFX);
+      $(this).dialog('destroy');
+    }
+    else {
+      playSound(dialogFailureSFX);
+      $(this).parent().effect('shake',{distance:4});
+    }
+  }
 
   createDialog(div,dialogOptions,true);
 
@@ -1353,20 +1331,20 @@ function createDocumentDialog () {
 
 function createEmailDialog () {
 
-  var title = "Email";
+  var title = strings.workDialog.email.title;
   var div = $('<div class="dialog email-dialog" title="'+ title + '"></div>');
   var requiredCharacters = _.random(200,500);
-  var instruction1 = $('<span>Write and send an email of at least '+ requiredCharacters +' characters (currently </span>');
+  var instruction1 = $(`<span>${strings.workDialog.email.instruction.p1} `+ requiredCharacters +` ${strings.workDialog.email.instruction.p2} </span>`);
   var charactersSpan = $('<span>0</span>');
   var instruction2 = $('<span>)</span>');
 
-  var email = strings.technologies[_.random(0,strings.technologies.length-1)].replace(/ /g,".").toLowerCase();
-  email += "@" + strings.technologies[_.random(0,strings.technologies.length-1)].replace(/ /g,"").toLowerCase();
+  var email = getRandomTechnology().replace(/ /g,".").toLowerCase();
+  email += "@" + getRandomTechnology().replace(/ /g,"").toLowerCase();
   email += ".com";
 
   var to = $('<span name="email-to-field" class="email-field">'+email+'</span>');
 
-  var subjectText = "Re: " + strings.technologies[_.random(0,strings.technologies.length-1)];
+  var subjectText = `${strings.workDialog.email.re}: ` + getRandomTechnology();
   var subject = $('<span name="email-subject-field" class="email-field">'+subjectText+'</span>')
   var input = $('<textarea class="email-input" style="user-select: none" readonly="readonly"></textarea>');
   // var input = $('<textarea class="email-input" readonly="readonly"></textarea>');
@@ -1394,19 +1372,7 @@ function createEmailDialog () {
     modal: false,
     autoOpen: true,
     closeOnEscape: false,
-    buttons: {
-      "Save": function () {
-        if (characters >= requiredCharacters) {
-          updateWorkUnits(WORK_UNITS_PER_DIALOG);
-          playSound(dialogSuccessSFX);
-          $(this).dialog('destroy');
-        }
-        else {
-          playSound(dialogFailureSFX);
-          $(this).parent().effect('shake',{distance:4});
-        }
-      },
-    },
+    buttons: {},
     beforeClose: function () {
       console.log("Before close");
       if (state == STATE.BREAK) {
@@ -1419,7 +1385,17 @@ function createEmailDialog () {
         return false;
       }
     }
-
+  };
+  dialogOptions.buttons[strings.labels.save] = function () {
+    if (characters >= requiredCharacters) {
+      updateWorkUnits(WORK_UNITS_PER_DIALOG);
+      playSound(dialogSuccessSFX);
+      $(this).dialog('destroy');
+    }
+    else {
+      playSound(dialogFailureSFX);
+      $(this).parent().effect('shake',{distance:4});
+    }
   };
 
   createDialog(div, dialogOptions, true);
@@ -1467,7 +1443,6 @@ function createEmailDialog () {
 }
 
 function updateWorkUnits(num) {
-  console.log("updateWorkUnits",workUnitsToPromotion,num);
   if (!workUnitsToPromotion) return;
 
   workUnitsToPromotion -= num;
@@ -1529,9 +1504,9 @@ function resetWorkUnits () {
 
 function createPromotionDialog (newJobTitle) {
 
-  var dialogDiv = $('<div class="dialog promotion-dialog" title="Promotion!"></div>');
-  dialogDiv.append("<p>You have been promoted to <b>" + newJobTitle + "</b></p>");
-  dialogDiv.append("<p>Keep working hard!<p>");
+  var dialogDiv = $(`<div class="dialog promotion-dialog" title="${strings.promotion.title}"></div>`);
+  dialogDiv.append(`<p>${strings.promotion.announcement} <b>` + newJobTitle + "</b></p>");
+  dialogDiv.append(`<p>${strings.promotion.encouragement}<p>`);
 
   var dialogOptions = {
     appendTo: '#ui',
@@ -1541,15 +1516,15 @@ function createPromotionDialog (newJobTitle) {
     width: '400',
     modal: false,
     autoOpen: true,
-    buttons: {
-      "Okay": function () {
-        playSound(dialogSuccessSFX);
-        updateWorkUnits(WORK_UNITS_PER_DIALOG);
-        $(this).dialog('destroy');
-      }
-    },
+    buttons: {},
     closeOnEscape: false
   }
+
+  dialogOptions.buttons[strings.labels.okay] = function () {
+    playSound(dialogSuccessSFX);
+    updateWorkUnits(WORK_UNITS_PER_DIALOG);
+    $(this).dialog('destroy');
+  };
 
   createDialog(dialogDiv,dialogOptions,true);
 
