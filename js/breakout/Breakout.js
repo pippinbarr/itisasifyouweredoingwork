@@ -222,7 +222,6 @@ BasicGame.Breakout.prototype = {
 
     }
 
-    console.log("Setting ball to collide...");
     this.ball.collides = true;
 
   },

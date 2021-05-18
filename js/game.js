@@ -47,6 +47,7 @@ function setup() {
   $.getJSON("assets/languages/en.json", function (data) {
     strings = data;
     jobTitle = strings.jobs.intern;
+    document.title = strings.pageTitle.title;
     createBreakoutDialog();
     startGame();
   });

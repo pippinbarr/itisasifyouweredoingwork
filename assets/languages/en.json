@@ -1,4 +1,7 @@
 {
+  "pageTitle": {
+    "title": "It is as if you were doing work"
+  },
   "tooSmall": {
     "title": "Window too small!",
     "p1": "You can't get any work done with a browser width that narrow!",
@@ -24,7 +27,7 @@
   },
   "delayed": {
     "title": "Get Ready!",
-    "content":"Work will start when the progress bar is full!"
+    "content": "Work will start when the progress bar is full!"
   },
   "about": {
     "title": "About",
