@@ -15,6 +15,8 @@
 * Look at the [Code Repository](https://github.com/pippinbarr/itisasifyouweredoingwork) for source code etc.
 
 ## Press
+Read the [Press Kit](../press) for press information
+
 * O'Connor, Alice. [_It is as if you were doing work really is_](https://www.rockpapershotgun.com/2017/07/04/free-desktop-work-simulator/). 4 July 2017. Rock, Paper, Shotgun.
 * Beschizza, Rob. [_It Is As If You Were Doing Work is a browser game celebrating Windows 3-era cubicle drudgery_](http://boingboing.net/2017/07/04/it-is-as-if-you-were-doing-wor.html). 4 July 2017. Boing Boing.
 * [_Канадец создал симулятор офисного работника. Сыграйте в него на работе_](https://meduza.io/shapito/2017/07/04/kanadets-sozdal-simulyator-ofisnogo-rabotnika-sygrayte-v-nego-na-rabote). 4 July 2017. Meduza.
@@ -54,7 +56,6 @@ it is as if you were doing work](http://www.next-level.org/details/pippin_barr_i
 * Macharia, Tyra. [Artcade Brought a Whole New Meaning to Game Developing](https://thelinknewspaper.ca/article/artcade-2018-concordia). The Link. 10 March 2018.
 * Polansky, Lana. [Notes on It’s As If You Were Doing Work: Do Nothing, Feel Fine](http://sufficientlyhuman.com/archives/1590). Sufficiently Human. 3 April 2018.
 
-Read the [Press Kit](../press) for press information
 
 ## License
 _It is as if you were doing work_ is licensed under a [Creative Commons Attribution-NonCommercial 3.0 Unported License](http://creativecommons.org/licenses/by-nc/3.0/).
