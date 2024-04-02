@@ -5,22 +5,25 @@
 # [Play Online](http://www.pippinbarr.com/itisasifyouweredoingwork/) (desktop only)
 
 ## Description
+
 *The robots are here! No more work! It’s great! Is it great?! Wait! You feel apathetic and unproductive! You miss clicking buttons! You miss waiting for progress bars! You miss checkboxes! You miss work! But it’s going to be okay! Use this handy application and it is as if you were doing work!*
 
 *It is as if you were doing work* is a work of [speculative play](https://www.speculativeplay.com), presenting a vision of a possible/near-future in the form of an application that helps people pretend they're doing standard-issue computer work. Jump in an answer emails, write documents, click check boxes, and so much more!
 
 ## Documentation
+
 * Read the [Process Documentation](../process) for todos, process journal, blog posts, and correspondence
 * Read the [Commit History](https://github.com/pippinbarr/itisasifyouweredoingwork/commits/master) for detailed, moment-to-moment insights into the development process
 * Look at the [Code Repository](https://github.com/pippinbarr/itisasifyouweredoingwork) for source code etc.
 
 ## Press
+
 Read the [Press Kit](../press) for press information
 
-* O'Connor, Alice. [_It is as if you were doing work really is_](https://www.rockpapershotgun.com/2017/07/04/free-desktop-work-simulator/). 4 July 2017. Rock, Paper, Shotgun.
-* Beschizza, Rob. [_It Is As If You Were Doing Work is a browser game celebrating Windows 3-era cubicle drudgery_](http://boingboing.net/2017/07/04/it-is-as-if-you-were-doing-wor.html). 4 July 2017. Boing Boing.
-* [_Канадец создал симулятор офисного работника. Сыграйте в него на работе_](https://meduza.io/shapito/2017/07/04/kanadets-sozdal-simulyator-ofisnogo-rabotnika-sygrayte-v-nego-na-rabote). 4 July 2017. Meduza.
-* Porreca, Ray. [_This browser game simulates workplace tedium and soul-crushing, endless memos_](https://www.destructoid.com/this-browser-game-simulates-workplace-tedium-and-soul-crushing-endless-memos-446844.phtml). 4 July 2017. Destructoid.
+* O'Connor, Alice. [*It is as if you were doing work really is*](https://www.rockpapershotgun.com/2017/07/04/free-desktop-work-simulator/). 4 July 2017. Rock, Paper, Shotgun.
+* Beschizza, Rob. [*It Is As If You Were Doing Work is a browser game celebrating Windows 3-era cubicle drudgery*](http://boingboing.net/2017/07/04/it-is-as-if-you-were-doing-wor.html). 4 July 2017. Boing Boing.
+* [*Канадец создал симулятор офисного работника. Сыграйте в него на работе*](https://meduza.io/shapito/2017/07/04/kanadets-sozdal-simulyator-ofisnogo-rabotnika-sygrayte-v-nego-na-rabote). 4 July 2017. Meduza.
+* Porreca, Ray. [*This browser game simulates workplace tedium and soul-crushing, endless memos*](https://www.destructoid.com/this-browser-game-simulates-workplace-tedium-and-soul-crushing-endless-memos-446844.phtml). 4 July 2017. Destructoid.
 * Hulfish, Garrett. [PREFER WORK TO LIFE? TRY THE ‘IT IS AS IF YOU WERE DOING WORK’ GAME](https://www.digitaltrends.com/gaming/doing-work-browser-game/). Digital Trends. 5 July 2017.
 * Vincent, Brittany. [‘It Is As If You Were Doing Work’ browser game perfectly encapsulates the life of an office worker](https://mic.com/articles/181513/it-is-as-if-you-were-doing-work-browser-game-perfectly-encapsulates-the-life-of-an-office-worker#.IhuGvyNsT). Mic. 5 July 2017.
 * Cole, Samantha. [This Game Simulates the Thrill of Working On a Computer](https://motherboard.vice.com/en_us/article/3knd8b/this-game-simulates-the-thrill-of-working-on-a-computer). Motherboard. 5 July 2017.
@@ -55,7 +58,8 @@ it is as if you were doing work](http://www.next-level.org/details/pippin_barr_i
 * Polansky, Lana. [Gaming on the Fringe: 2017 Roundup](http://sufficientlyhuman.com/archives/1557). Sufficiently Human. 2 January 2018.
 * Macharia, Tyra. [Artcade Brought a Whole New Meaning to Game Developing](https://thelinknewspaper.ca/article/artcade-2018-concordia). The Link. 10 March 2018.
 * Polansky, Lana. [Notes on It’s As If You Were Doing Work: Do Nothing, Feel Fine](http://sufficientlyhuman.com/archives/1590). Sufficiently Human. 3 April 2018.
-
+* de la Puente, Gabrielle. [It is as if you were doing work](https://thewhitepube.co.uk/reviews/2024/it-is-as-if-you-were-doing-work/). The White Pube. 24 March 2024.
 
 ## License
-_It is as if you were doing work_ is licensed under a [Creative Commons Attribution-NonCommercial 3.0 Unported License](http://creativecommons.org/licenses/by-nc/3.0/).
+
+_It is as if you were doing work* is licensed under a [Creative Commons Attribution-NonCommercial 3.0 Unported License](http://creativecommons.org/licenses/by-nc/3.0/).
